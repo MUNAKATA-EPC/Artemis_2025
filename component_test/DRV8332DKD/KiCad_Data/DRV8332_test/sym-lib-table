@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "DRV8332DKD")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/project_DRV8332/KiCad_Data/library/DRV8332DKD/DRV8332DKD.kicad_sym")(options "")(descr ""))
+  (lib (name "XIAO_RP2040")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/Common_Data/KiCad_Library/XIAO_RP2040/XIAO_RP2040.kicad_sym")(options "")(descr ""))
+  (lib (name "NJU7043D")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/project_DRV8332/KiCad_Data/library/NJU7043D/NJU7043D.kicad_sym")(options "")(descr ""))
+)
