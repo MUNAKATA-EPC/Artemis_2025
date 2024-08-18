@@ -1,4 +1,4 @@
-# Artemis_2024
+# Artemis_2025
 
 宗高アルテミス 2025シーズンリポジトリです。
 
@@ -20,7 +20,8 @@
 　間違ってもファイル名を"unko"とかにするなよ！！！！！(戒め)
 
  ## 開発環境
- ・機体設計：Autodesk Fusion 
- ・回路設計：KiCad 7.x (only use 7.x ver.)  
- ・ソフト開発：Microsoft Visual Studio Code (with PlatformIO)
-　　　　　　　 Arduino IDE  
+ |種類|使用ソフト|
+ |:---:|:---|
+ |機体設計|Autodesk Fusion|
+ |回路設計|KiCad 7.x (only use 7.x ver.)|
+ |ソフト開発|Microsoft Visual Studio Code (with PlatformIO)<br>Arduino IDE<br>OpenMV IDE|
