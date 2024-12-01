@@ -9,7 +9,7 @@
 //                                                           ,V
 //                                                        OOb"
 
-// Tsukuyomi Main Program α-0.0.1
+// Tsukuyomi Main Program (Teensy 4.0)
 
 // Please check out the history of updates : https://github.com/MUNAKATA-EPC/Artemis_2025/commits/main/
 
