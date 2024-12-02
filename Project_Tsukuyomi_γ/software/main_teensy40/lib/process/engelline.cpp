@@ -32,6 +32,6 @@ void line_process()
 {
     if(is_line_detected())
     {
-        tone(3, 4000, 100);
+        //tone(3, 4000, 100);
     }
 }

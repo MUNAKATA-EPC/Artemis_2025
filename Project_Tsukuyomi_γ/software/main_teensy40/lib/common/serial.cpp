@@ -2,6 +2,9 @@
 #include "serial.hpp"
 #include "sensor_variables.hpp"
 
+// gyro_sensor
+int gyro_deg;
+
 // line sensor
 int line_value;
 int line_data[16];

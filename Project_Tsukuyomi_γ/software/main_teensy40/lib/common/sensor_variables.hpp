@@ -1,6 +1,9 @@
 #ifndef _SENSOR_VARIABLES_HPP
 #define _SENSOR_VARIABLES_HPP
 
+// gyro sensor
+extern int gyro_deg;
+
 // line sensor
 extern int line_data[16];
 

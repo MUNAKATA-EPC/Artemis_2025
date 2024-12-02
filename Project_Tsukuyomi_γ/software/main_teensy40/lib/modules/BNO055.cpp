@@ -12,7 +12,7 @@ int reset_deg;
 
 int degrees;
 
-void BNO055::init(int reset_pin, int sub_pin = -1)
+void BNO055::init(int reset_pin, int sub_pin /*= -1*/)
 {
     if (!bno.begin(OPERATION_MODE_IMUPLUS)) // センサの初期化
     {
