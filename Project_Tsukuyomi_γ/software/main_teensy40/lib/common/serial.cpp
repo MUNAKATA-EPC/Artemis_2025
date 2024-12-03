@@ -15,11 +15,17 @@ int cam3_data;
 
 void serials_init()
 {
-    //Cameras
+    //Omnidirectional Camera
     Serial2.begin(115200);
+    Serial2.setTimeout(10);
+
+    //Front Camera
     Serial3.begin(115200);
     Serial3.setTimeout(10);
+
+    //Back camera
     Serial4.begin(115200);
+    Serial4.setTimeout(10);
 
     //Line
     Serial5.begin(115200);
@@ -27,9 +33,16 @@ void serials_init()
 
 void serials_process()
 {
+    if(Serial2.available() > 0)
+    {
+    }
+
     if(Serial3.available() > 0)
     {
-        Serial.println(Serial3.readString());
+    }
+    
+    if(Serial4.available() > 0)
+    {
     }
 
     if(Serial5.available() > 0)

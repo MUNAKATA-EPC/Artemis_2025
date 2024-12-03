@@ -32,9 +32,9 @@ int parent_floor;
 typedef enum{
     RUN,
     SENSOR,
+    TOTAL,
     TEST,
     CONFIG,
-    TOTAL
 } FIRST_FLOOR;
 
 typedef enum{
@@ -48,11 +48,11 @@ typedef enum{
     RUN_TOTAL,
 
     SENSOR_BACK = 20,
-    SENSOR_BALL,
+    SENSOR_OMNI_CAM,
+    SENSOR_FRONT_CAM,
+    SENSOR_BACK_CAM,
     SENSOR_LINE,
     SENSOR_GYRO,
-    SENSOR_YELLOW,
-    SENSOR_BLUE,
     SENSOR_TOUCH,
     SENSOR_TOTAL,
 
@@ -306,11 +306,65 @@ void ui_process()
     {
         if(parent_floor == FIRST_FLOOR::RUN)
         {
+            if(now_select_mode == SECOND_FLOOR::RUN_BACK)
+            {
 
+            }
+            else if(now_select_mode == SECOND_FLOOR::RUN_AT_GYRO)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::RUN_AT_YELLOW)
+            {
+                
+            }
+            else if(now_select_mode == SECOND_FLOOR::RUN_AT_BLUE)
+            {
+                
+            }
+            else if(now_select_mode == SECOND_FLOOR::RUN_DF_GYRO)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::RUN_DF_YELLOW)
+            {
+                
+            }
+            else if(now_select_mode == SECOND_FLOOR::RUN_DF_BLUE)
+            {
+                
+            }
         }
         else if(parent_floor == FIRST_FLOOR::SENSOR)
         {
+            if(now_select_mode == SECOND_FLOOR::SENSOR_BACK)
+            {
 
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_OMNI_CAM)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_FRONT_CAM)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_BACK_CAM)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_GYRO)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_LINE)
+            {
+
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_TOUCH)
+            {
+
+            }
         }
         else if(parent_floor == FIRST_FLOOR::TEST)
         {
