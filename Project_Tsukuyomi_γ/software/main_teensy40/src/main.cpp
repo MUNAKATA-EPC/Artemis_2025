@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Servo.h>
 
 #include "serial.hpp"
 #include "sensor_variables.hpp"
@@ -20,7 +21,18 @@ BNO055 bno_imu;
 Kicker kicker;
 Button bt_start;
 
+Servo dribbler;
+
 bool is_running;
+
+void dribbler_init()
+{
+  dribbler.attach(33);
+  dribbler.writeMicroseconds(2000);
+  delay(500);
+  dribbler.writeMicroseconds(1000);
+  delay(500);
+}
 
 void play_startup_sound()
 {
@@ -39,6 +51,8 @@ void setup() {
   serials_init();
   line_init();
   motor_init();
+  dribbler_init();
+  kicker.init(12, 26);
   bno_imu.init(9);
 
   bt_start.init(11, Button::Button_Value_Type::PULLDOWN);
@@ -52,17 +66,27 @@ void loop() {
   ui_process();
   line_process();
 
-  if(bt_start.is_pushed())
+  gyro_deg = bno_imu.get_degrees();
+
+  kicker.loop();
+
+  bt_start.loop();
+  if(bt_start.is_pushing())
   {
     is_running = !is_running;
+    kicker.kick();
   }
 
   if(is_running)
   {
-    attacker_process(50);
+    //dribbler.writeMicroseconds(1200);
+    //attacker_process(50);
   }
   else
   {
+    dribbler.writeMicroseconds(1000);
     motor_direct_drive(0, 0, 0, 0);
   }
+
+  Serial.println(kicker.is_kicking());
 }

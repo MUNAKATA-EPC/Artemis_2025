@@ -39,5 +39,7 @@ void attacker_process(int speed)
     // C.白線を踏んだ場合
     //   コート内に戻る。
 
-    motor_direct_drive(speed, speed, speed, speed);
+    pid_gyro();
+
+    motor_move(0, 0);
 }

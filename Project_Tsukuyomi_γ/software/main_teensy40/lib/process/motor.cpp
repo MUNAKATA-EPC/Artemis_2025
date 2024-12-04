@@ -4,7 +4,7 @@
 #include "sensor_variables.hpp"
 #include "motor.hpp"
 
-#define GYRO_PGAIN 0.6
+#define GYRO_PGAIN 0.8
 #define GYRO_DGAIN 2.5
 #define GOAL_PGAIN 1.4
 #define GOAL_DGAIN 1.0
@@ -67,8 +67,8 @@ void motor_move(int deg, int power)
     float powers[4] = {0, 0, 0, 0};
 
     powers[0] = sin(radians(deg + 50)) * -power;
-    powers[1] = sin(radians(deg - 50)) * -power;
-    powers[2] = sin(radians(deg + 130)) * -power;
+    powers[1] = sin(radians(deg + 50)) * -power;
+    powers[2] = sin(radians(deg - 130)) * -power;
     powers[3] = sin(radians(deg - 130)) * -power;
 
     //モーターの出力がちゃんとpower通りになるようにする
@@ -117,5 +117,5 @@ void motor_move(int deg, int power)
         }
     }
 
-    motor_direct_drive((int)powers[0], (int)powers[1], (int)powers[2], (int)powers[3]);
+    motor_direct_drive((int)powers[0], (int)-powers[1], (int)powers[2], (int)-powers[3]);
 }
