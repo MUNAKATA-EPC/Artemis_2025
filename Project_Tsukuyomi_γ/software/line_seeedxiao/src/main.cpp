@@ -57,7 +57,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   for(int i = 0; i < 16; i++)
   {
-    line_circle_values[15 - i] = get_from_multiplexer(i);// > 300 ? 1 : 0;
+    line_circle_values[15 - i] = get_from_multiplexer(i) > 300 ? 1 : 0;
   }
 
   output_value = 0;
@@ -78,6 +78,7 @@ void loop() {
       Serial.print(",");
     }
   }
+  
   Serial.println();
 
   Serial1.println(output_value);
