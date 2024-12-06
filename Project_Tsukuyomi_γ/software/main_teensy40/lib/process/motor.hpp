@@ -7,5 +7,6 @@ extern void motor_move(int deg, int power);
 extern void motor_break();
 
 extern void pid_gyro();
+extern void pid_camera(int value);
 
 #endif

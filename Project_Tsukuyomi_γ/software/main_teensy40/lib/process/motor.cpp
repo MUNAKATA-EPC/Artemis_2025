@@ -4,9 +4,9 @@
 #include "sensor_variables.hpp"
 #include "motor.hpp"
 
-#define GYRO_PGAIN 0.8
-#define GYRO_DGAIN 2.5
-#define GOAL_PGAIN 1.4
+#define GYRO_PGAIN 1.2
+#define GYRO_DGAIN 3.4
+#define GOAL_PGAIN 0.5
 #define GOAL_DGAIN 1.0
 
 DSR1202 md = DSR1202(0);
@@ -50,6 +50,20 @@ void pid_gyro()
 
     pid_value = p_value * GYRO_PGAIN + d_value * GYRO_DGAIN;
 }
+void pid_camera(int value)
+{
+    int p_value = 0, d_value = 0;
+    int gyro_value = value;
+    gyro_value = gyro_value > 180 ? gyro_value - 360 : gyro_value;
+    
+    p_value = gyro_value;
+
+    pid_deviation = gyro_value;
+    d_value = pid_deviation - pid_previous_deviation;
+    pid_previous_deviation = gyro_value;
+
+    pid_value = p_value * GOAL_PGAIN + d_value * GOAL_DGAIN;
+}
 
 void motor_break()
 {
@@ -58,7 +72,7 @@ void motor_break()
 
 void motor_direct_drive(int a, int b, int c, int d)
 {
-    md.move(a, b, c, d);
+    md.move(a, b, -c, -d);
 }
 
 void motor_move(int deg, int power)
@@ -67,8 +81,8 @@ void motor_move(int deg, int power)
     float powers[4] = {0, 0, 0, 0};
 
     powers[0] = sin(radians(deg + 50)) * -power;
-    powers[1] = sin(radians(deg + 50)) * -power;
-    powers[2] = sin(radians(deg - 130)) * -power;
+    powers[1] = sin(radians(deg - 50)) * -power;
+    powers[2] = sin(radians(deg + 130)) * -power;
     powers[3] = sin(radians(deg - 130)) * -power;
 
     //モーターの出力がちゃんとpower通りになるようにする
@@ -85,10 +99,10 @@ void motor_move(int deg, int power)
     }
 
     //PID処理
-    for(int i = 0; i < 4; i++)
-    {
-        powers[i] -= pid_value;
-    }
+    powers[0] -= pid_value;
+    powers[1] += pid_value;
+    powers[2] += pid_value;
+    powers[3] -= pid_value;
 
     //PIDの値によって値が100より大きくなったとき補正する
     strongest_power = get_max_value_in_array(powers, 4);
@@ -117,5 +131,5 @@ void motor_move(int deg, int power)
         }
     }
 
-    motor_direct_drive((int)powers[0], (int)-powers[1], (int)powers[2], (int)-powers[3]);
+    motor_direct_drive((int)powers[0], (int)powers[1], (int)powers[2], (int)powers[3]);
 }

@@ -30,6 +30,7 @@ extern int gyro_deg;
 
 // line sensor
 extern int line_data[16];
+extern int line_deg;
 
 // touch sensors
 extern int touch_front;

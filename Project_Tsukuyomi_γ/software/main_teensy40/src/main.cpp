@@ -71,16 +71,15 @@ void loop() {
   kicker.loop();
 
   bt_start.loop();
-  if(bt_start.is_pushing())
+  if(bt_start.is_pushed())
   {
     is_running = !is_running;
-    kicker.kick();
   }
 
   if(is_running)
   {
-    //dribbler.writeMicroseconds(1200);
-    //attacker_process(50);
+    dribbler.writeMicroseconds(1000);
+    attacker_process(50);
   }
   else
   {
@@ -88,5 +87,5 @@ void loop() {
     motor_direct_drive(0, 0, 0, 0);
   }
 
-  Serial.println(kicker.is_kicking());
+  //Serial.println(kicker.is_kicking());
 }

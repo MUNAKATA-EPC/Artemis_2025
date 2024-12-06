@@ -39,7 +39,28 @@ void attacker_process(int speed)
     // C.白線を踏んだ場合
     //   コート内に戻る。
 
-    pid_gyro();
+    if(fcam_goal_yellow_deg == 255)
+    {
+        pid_gyro();
+    }
+    else
+    {
+        pid_camera(fcam_goal_yellow_deg);
+    }
 
-    motor_move(0, 0);
+    if(is_line_detected())
+    {
+        motor_move(line_deg, 50);
+    }
+    else
+    {
+        if(fcam_ball_deg <= 10 || fcam_ball_deg >= 350)
+        {
+            motor_move(0, 50);
+        }
+        else
+        {
+            motor_move(0, 0);
+        }
+    }
 }
