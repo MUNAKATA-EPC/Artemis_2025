@@ -1,8 +1,10 @@
 import sensor, image, time, math
 from machine import UART
+import Maix
 from fpioa_manager import fm
+from Maix import GPIO
 
-threshold_for_ball = (46, 66, 42, 87, 23, 69)# ボールの色取り用変数
+threshold_for_ball = (38, 78, -18, 61, 7, 58)# ボールの色取り用変数
 threshold_for_goal_yellow = (75, 85, -32, -12, 35, 64)# ゴールの色取り用変数(黄色)
 #threshold_for_goal_yellow = (17, 35, 1, 18, -50, -27)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (29, 47, -17, 17, -45, -18)
@@ -21,6 +23,9 @@ sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False, rgb_gain_db = (45, 40, 90))
 #sensor.set_auto_whitebal(False)
+
+fm.register(35, fm.fpioa.UART1_TX, force=True)
+fm.register(34, fm.fpioa.UART1_RX, force=True)
 
 uart = UART(UART.UART1, 115200, 8, None, 1, timeout= 1000)
 
@@ -94,7 +99,7 @@ while(True):
         cy_goal_blue[read_count_goal_blue] = blob.cy()
         area_goal_blue[read_count_goal_blue] = blob.area()
 
-    for blob in img.find_blobs([threshold_for_ball], pixels_threshold=10, area_threshold=10, merge=True,margin=25):
+    for blob in img.find_blobs([threshold_for_ball], pixels_threshold=3, area_threshold=3, merge=True,margin=25):
         if read_count_ball + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -115,11 +120,6 @@ while(True):
             maximum_cx_goal_yellow = cx_goal_yellow[i]
             maximum_cy_goal_yellow = cy_goal_yellow[i]
             break
-
-
-    img.draw_cross(maximum_cx_goal_yellow, maximum_cy_goal_yellow)    # コートの中心を交差線で描画
-    img.draw_line(screen_center[0], screen_center[1], maximum_cx_goal_yellow, maximum_cy_goal_yellow, thickness=4)  # 画面中心からコート中心へのライン描画
-
     maximum_cx_goal_blue = (max(cx_goal_blue[:]))
     maximum_cy_goal_blue = (max(cy_goal_blue[:]))
     maximum_area_goal_blue = (max(area_goal_blue[:]))
@@ -129,10 +129,6 @@ while(True):
             maximum_cx_goal_blue = cx_goal_blue[i]
             maximum_cy_goal_blue = cy_goal_blue[i]
             break
-
-    img.draw_cross(maximum_cx_goal_blue, maximum_cy_goal_blue)    # コートの中心を交差線で描画
-    img.draw_line(screen_center[0], screen_center[1], maximum_cx_goal_blue, maximum_cy_goal_blue, thickness=2)  # 画面中心からコート中心へのライン描画
-
     maximum_cx_ball = (max(cx_ball[:]))
     maximum_cy_ball = (max(cy_ball[:]))
     maximum_area_ball = (max(area_ball[:]))
@@ -142,6 +138,10 @@ while(True):
             maximum_cx_ball = cx_ball[i]
             maximum_cy_ball = cy_ball[i]
             break
+
+    img.draw_cross(maximum_cx_ball, maximum_cy_ball)    # コートの中心を交差線で描画
+    img.draw_line(screen_center[0], screen_center[1], maximum_cy_ball, maximum_cy_ball, thickness=2)  # 画面中心からコート中心へのライン描画
+
 
     #======================計算フェーズ=======================
 
@@ -165,7 +165,7 @@ while(True):
     ball_deg = math.atan2((maximum_cx_ball - screen_center[0]), (maximum_cy_ball - screen_center[1]))
     if ball_deg < 0:
         ball_deg = (2 * math.pi) - abs(ball_deg)
-    ball_deg = (((math.floor(ball_deg / (2 * math.pi) * 180))+ 450)% 360)
+    ball_deg = (((math.floor(ball_deg / (2 * math.pi) * 360)) + 90) % 360)
 
     ball_distance = math.sqrt(math.pow((maximum_cx_ball - screen_center[0]), 2) + math.pow((maximum_cy_ball - screen_center[1]), 2));
 
@@ -173,17 +173,18 @@ while(True):
 
     #======================出力フェーズ=======================
 
+
     if maximum_area_goal_yellow == 0:
-        goal_yellow_deg = 255
-        goal_yellow_distance = 255
+        goal_yellow_deg = 500
+        goal_yellow_distance = 500
 
     if maximum_area_goal_blue == 0:
-        goal_blue_deg = 255
-        goal_blue_distance = 255
+        goal_blue_deg = 500
+        goal_blue_distance = 500
 
     if maximum_area_ball == 0:
-        ball_deg = 255
-        ball_distance = 255
+        ball_deg = 500
+        ball_distance = 500
 
     uart.write(str(ball_deg))
     uart.write("a")
@@ -197,6 +198,5 @@ while(True):
     uart.write("e")
     uart.write(str(goal_blue_distance))
     uart.write("f")
-
 
     print(ball_deg)

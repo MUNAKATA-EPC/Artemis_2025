@@ -6,7 +6,7 @@
 
 #define GYRO_PGAIN 1.2
 #define GYRO_DGAIN 3.4
-#define GOAL_PGAIN 0.5
+#define GOAL_PGAIN 0.75
 #define GOAL_DGAIN 1.0
 
 DSR1202 md = DSR1202(0);

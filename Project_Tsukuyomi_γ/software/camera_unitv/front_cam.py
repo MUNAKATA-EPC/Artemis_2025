@@ -31,17 +31,17 @@ sensor.reset(dual_buff=True)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-3)#明るさ
+sensor.set_brightness(0)#明るさ
 sensor.set_saturation(3)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (45, 40, 90))
+sensor.set_auto_whitebal(False, rgb_gain_db = (70, 35, 70))
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(48, 100, -35, 55, 39, 81)]
-y_goal_thresholds = [(78, 93, -68, -29, 35, 78)]
+ball_thresholds = [(63, 74, 10, 52, 53, 85)]
+y_goal_thresholds = [(79, 90, -20, 23, 54, 120)]
 b_goal_thresholds = [(33, 48, 26, 63, -101, -49)]
 court_thresholds = [(0, 100, -16, -2, -19, 0)]
 
@@ -83,11 +83,14 @@ while True:
     clock.tick()                    # Update the FPS clock.
     img = sensor.snapshot() #映像の取得
 
+    img.draw_rectangle(0, 0, 320, 50, (0, 0, 0), 0, True)
+    img.draw_rectangle(0, 190, 320, 240, (0, 0, 0), 0, True)
+
     #ボールを見つける
     ball_rectarray = []
     ball_x = 0
     ball_y = 0
-    for blob in img.find_blobs(ball_thresholds, pixel_threshold = 5, area_threshold = 5, merge = True, margin = 10):
+    for blob in img.find_blobs(ball_thresholds, pixel_threshold = 100, area_threshold = 100, merge = True, margin = 10):
         if blob[2] < 150:
             ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
@@ -109,7 +112,7 @@ while True:
     y_goal_width = 0
     y_goal_hight = 0
 
-    for blob in img.find_blobs(y_goal_thresholds,  pixel_threshold = 100, area_threshold = 100, merge = True, margin = 75):
+    for blob in img.find_blobs(y_goal_thresholds,  pixel_threshold = 100, area_threshold = 100):
         y_goal_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
     try:
@@ -210,5 +213,5 @@ while True:
     uart.write(str(b_goal_dis))
     uart.write("f")
 
-    print(ball_dir)
+    print(y_goal_dir)
 

@@ -16,44 +16,59 @@ int line_evacuation_deg;
 
 bool is_halfout;
 
-bool is_exist_line_in_range(int check_value)
+bool is_exist_deg_value_in_range(int check_value, int base_value, int check_range)
 {
-    if(line_first_deg <= check_value)
+    if(base_value - check_range < 0)
     {
-        if(line_deg >= line_first_deg + check_value && line_deg <= line_first_deg - check_value + 360)
+        if( check_value <= base_value + check_range || 
+            check_value >= base_value - check_range + 360)
         {
-
+            return true;
         }
         else
         {
-            line_first_deg = line_deg;
-            is_halfout = false;
+            return false;
         }
     }
-    else if(line_first_deg >= 360 - check_value)
+    else if(base_value + check_range > 360)
     {
-        if(line_deg >= line_first_deg + check_value - 360 && line_deg <= line_first_deg - check_value)
+        if( check_value <= base_value + check_range - 360 ||
+            check_value >= base_value - check_range)
         {
-
+            return true;
         }
         else
         {
-            line_first_deg = line_deg;
-            is_halfout = false;
+            return false;
         }
     }
     else
     {
-        if(line_deg >= line_first_deg + check_value || line_deg <= line_first_deg - check_value)
+        if( check_value >= base_value - check_range &&
+            check_value <= base_value + check_range)
         {
-
+            return true;
         }
         else
         {
-            line_first_deg = line_deg;
-            is_halfout = false;
+            return false;
         } 
     }
+}
+
+int get_count_of_detected_sensor()
+{
+    int ret = 0;
+
+    for(int i = 0; i < 16; i++)
+    {
+        if(line_data[i] == 1)
+        {
+            ret++;
+        }
+    }
+
+    return ret;
 }
 
 bool is_line_detected()
@@ -71,6 +86,16 @@ bool is_line_detected()
     return ret;
 }
 
+bool is_line_evacuation()
+{
+    return is_line_detected() || is_halfout;
+}
+
+bool is_previous_line_detected()
+{
+    return previous_line_deg != -1;
+}
+
 void line_init()
 {
     
@@ -78,12 +103,16 @@ void line_init()
 
 void line_process()
 {
+    if(get_count_of_detected_sensor() > 14)
+    {
+        return;
+    }
+
     if(is_line_detected())
     {
         tone(3, 4000, 100);
 
-
-        double line_vec_x, line_vec_y;
+        double line_vec_x = 0, line_vec_y = 0;
 
         for(int i = 0; i < 16; i++)
         {
@@ -104,20 +133,75 @@ void line_process()
         {
             line_deg = 360 - (line_deg - 180) + 180;
         }
-
-        /*
-        for(int i = 0; i < 16; i++)
-        {
-            Serial.print(line_data[i]);
-            Serial.print(",");
-        }
-        Serial.println(line_deg);
-        */
     }
     else
     {
         line_deg = -1;
     }
+    
+    //今回初めてラインが反応したら
+    if( is_line_detected() && !is_previous_line_detected())
+    {
+        if(!is_halfout)
+        {
+            line_first_deg = line_deg;
+            previous_line_deg = line_deg;
+            line_evacuation_deg = line_first_deg;
+
+            return;
+        }
+    }
+
+    //さっきまでラインが反応していたら
+    if( !is_line_detected() && is_previous_line_detected())
+    {
+        if(!is_halfout)
+        {
+            line_first_deg = -1;
+        }
+    }
+
+    //継続してラインが反応していたら
+    if( is_line_detected() && is_previous_line_detected())
+    {
+        //前回とのラインの角度を比較して、もし大きく値がずれていたら「ハーフアウト」判定にする
+        if(!is_exist_deg_value_in_range(line_deg, line_first_deg, 120))
+        {
+            is_halfout = true;
+        }
+        else
+        {
+            is_halfout = false;
+
+            if(is_exist_deg_value_in_range(line_deg, line_first_deg, 60))
+            {
+                line_first_deg = line_deg;
+            }
+        }
+    }
 
     previous_line_deg = line_deg;
+
+    line_evacuation_deg = line_first_deg;
+
+    //ハーフアウト中はline_first_degを使用
+    if(is_halfout)
+    {
+        line_evacuation_deg = line_first_deg;
+    }
+    Serial.print(line_deg);
+    Serial.print(",");
+    Serial.print(previous_line_deg);
+    Serial.print(",");
+    Serial.print(line_first_deg);
+    Serial.print(",");
+    Serial.print(line_evacuation_deg);
+    Serial.print(",");
+    Serial.print(is_halfout);
+    for(int i = 0; i < 16; i++)
+    {
+        Serial.print(",");
+        Serial.print(line_data[i]);
+    }
+    Serial.println();
 }

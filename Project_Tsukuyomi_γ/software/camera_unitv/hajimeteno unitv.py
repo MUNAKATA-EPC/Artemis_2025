@@ -9,7 +9,7 @@ lcd.init(freq=15000000)
 
 sensor.reset(dual_buff=True)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
-sensor.set_framesize(sensor.QQVGA)#解像度Ss
+sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.set_contrast(1)#コントラスト
 sensor.set_brightness(3)#明るさ
 sensor.set_saturation(3)#彩3~-3

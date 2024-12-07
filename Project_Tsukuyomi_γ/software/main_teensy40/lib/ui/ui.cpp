@@ -3,6 +3,7 @@
 #include <Adafruit_GFX.h>
 
 #include "ui.hpp"
+#include "sensor_variables.hpp"
 
 #include "button.hpp"
 #include "timer.hpp"
@@ -308,11 +309,18 @@ void ui_process()
         {
             if(now_select_mode == SECOND_FLOOR::RUN_BACK)
             {
+                display.setTextSize(2);
+                display.setCursor(0, 35);
+                display.println("BACK TO HOME");
 
+                if(is_selected())
+                {
+                    now_floor = 1;
+                    now_select_mode = (int)FIRST_FLOOR::RUN;
+                }
             }
             else if(now_select_mode == SECOND_FLOOR::RUN_AT_GYRO)
             {
-
             }
             else if(now_select_mode == SECOND_FLOOR::RUN_AT_YELLOW)
             {
@@ -339,23 +347,59 @@ void ui_process()
         {
             if(now_select_mode == SECOND_FLOOR::SENSOR_BACK)
             {
+                display.setTextSize(2);
+                display.setCursor(0, 35);
+                display.println("BACK TO HOME");
 
+                if(is_selected())
+                {
+                    now_floor = 1;
+                    now_select_mode = (int)FIRST_FLOOR::SENSOR;
+                }
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_OMNI_CAM)
             {
-
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("OMNI CAM");
+                display.setCursor(0, 30);
+                display.println("ball:" + String(cam_ball_deg)          + "," + String(cam_ball_distance));
+                display.setCursor(0, 40);
+                display.println("yell:" + String(cam_goal_yellow_deg)   + "," + String(cam_goal_yellow_distance));
+                display.setCursor(0, 50);
+                display.println("blue:" + String(cam_goal_blue_deg)     + "," + String(cam_goal_blue_distance));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_FRONT_CAM)
             {
-
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("FRONT CAM");
+                display.setCursor(0, 30);
+                display.println("ball:" + String(fcam_ball_deg)          + "," + String(fcam_ball_distance));
+                display.setCursor(0, 40);
+                display.println("yell:" + String(fcam_goal_yellow_deg)   + "," + String(fcam_goal_yellow_distance));
+                display.setCursor(0, 50);
+                display.println("blue:" + String(fcam_goal_blue_deg)     + "," + String(fcam_goal_blue_distance));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_BACK_CAM)
             {
-
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("BACK CAM");
+                display.setCursor(0, 30);
+                display.println("ball:" + String(bcam_ball_deg)          + "," + String(bcam_ball_distance));
+                display.setCursor(0, 40);
+                display.println("yell:" + String(bcam_goal_yellow_deg)   + "," + String(bcam_goal_yellow_distance));
+                display.setCursor(0, 50);
+                display.println("blue:" + String(bcam_goal_blue_deg)     + "," + String(bcam_goal_blue_distance));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_GYRO)
             {
-
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("GYRO");
+                display.setCursor(0, 30);
+                display.println("value:" + String(gyro_deg));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_LINE)
             {

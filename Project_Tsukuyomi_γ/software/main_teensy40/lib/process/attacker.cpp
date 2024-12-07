@@ -48,19 +48,63 @@ void attacker_process(int speed)
         pid_camera(fcam_goal_yellow_deg);
     }
 
-    if(is_line_detected())
+    if(is_line_evacuation())
     {
-        motor_move(line_deg, 50);
+        motor_move(line_evacuation_deg, 100);
     }
     else
     {
-        if(fcam_ball_deg <= 10 || fcam_ball_deg >= 350)
+        if(fcam_ball_deg != 255)
         {
-            motor_move(0, 50);
+            if(fcam_ball_deg <= 5 || fcam_ball_deg >= 355)
+            {
+                motor_move(0, 80);
+            }
+            else
+            {
+                if(fcam_ball_deg <= 15)
+                {
+                    motor_move(fcam_ball_deg, 80);
+                }
+                else if(fcam_ball_deg <= 90)
+                {
+                    motor_move(fcam_ball_deg + 70, 50);
+                }
+                else if(fcam_ball_deg >= 345)
+                {
+                    motor_move(fcam_ball_deg, 80);
+                }
+                else if(fcam_ball_deg >= 270)
+                {
+                    motor_move(fcam_ball_deg - 70, 50);
+                }
+            }
         }
         else
         {
-            motor_move(0, 0);
+            if(cam_ball_deg == 500)
+            {
+                motor_move(180, 40);
+            }
+            else
+            {
+                if(cam_ball_deg <= 90)
+                {
+                    motor_move(cam_ball_deg + 55, 80);
+                }
+                else if(cam_ball_deg <= 180)
+                {
+                    motor_move(cam_ball_deg + 35, 80);
+                }
+                else if(cam_ball_deg <= 270)
+                {
+                    motor_move(cam_ball_deg - 35, 80);
+                }
+                else if(cam_ball_deg <= 360)
+                {
+                    motor_move(cam_ball_deg - 55, 80);
+                }
+            }
         }
     }
 }

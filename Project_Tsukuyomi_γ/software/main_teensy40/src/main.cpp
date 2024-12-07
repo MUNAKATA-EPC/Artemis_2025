@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <Servo.h>
 
-#include "serial.hpp"
 #include "sensor_variables.hpp"
+#include "serial.hpp"
 #include "timer.hpp"
 
 #include "DSR1202.h"
