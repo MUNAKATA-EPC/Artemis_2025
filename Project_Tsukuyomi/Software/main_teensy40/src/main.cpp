@@ -54,6 +54,7 @@ void setup() {
   dribbler_init();
   kicker.init(12, 26);
   bno_imu.init(9);
+  attacker_init();
 
   bt_start.init(11, Button::Button_Value_Type::PULLDOWN);
 

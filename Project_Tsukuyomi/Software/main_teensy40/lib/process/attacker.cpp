@@ -10,8 +10,11 @@
 #include "motor.hpp"
 #include "engelline.hpp"
 
+Timer ball_check;
+
 void attacker_init()
 {
+    
 
 }
 
@@ -39,15 +42,17 @@ void attacker_process(int speed)
     // C.白線を踏んだ場合
     //   コート内に戻る。
 
-    if((fcam_goal_blue_deg == 255 ) || fcam_ball_deg == 255)
-    {
-        pid_gyro();
-    }
-    else
+    ball_check.tick();
+
+    /*if((fcam_goal_blue_deg != 255 ))
     {
         pid_camera(fcam_goal_blue_deg);
     }
-
+    else
+    {
+       pid_gyro();
+    }*/
+    pid_gyro();
 
     if(is_line_evacuation())
     {
@@ -57,64 +62,95 @@ void attacker_process(int speed)
     {
         if(fcam_ball_deg != 255)
         {
-            if(fcam_ball_deg <= 5 || fcam_ball_deg >= 355)
+            ball_check.stop();
+            ball_check.reset();
+
+            if(fcam_ball_deg <= 10 || fcam_ball_deg >= 350)
             {
-                motor_move(0, 80);
+                motor_move(0, 70);
             }
             else
             {
-                if(fcam_ball_deg <= 15)
+                if(fcam_ball_deg >= 340)
                 {
-                    motor_move(fcam_ball_deg, 80);
+                    motor_move(fcam_ball_deg - 15, 60);
                 }
-                else if(fcam_ball_deg <= 50)
+                else if(fcam_ball_deg >= 315)
                 {
-                    motor_move(fcam_ball_deg + 30, 50);
+                    motor_move(fcam_ball_deg - 40, 60);
                 }
-                else if(fcam_ball_deg <= 90)
+                else if(fcam_ball_deg <= 20)
                 {
-                    motor_move(fcam_ball_deg + 70, 50);
+                    motor_move(fcam_ball_deg + 15, 60);
                 }
-                else if(fcam_ball_deg >= 345)
+                else if(fcam_ball_deg <= 45)
                 {
-                    motor_move(fcam_ball_deg, 80);
+                    motor_move(fcam_ball_deg + 40, 60);
                 }
-                else if(fcam_ball_deg <= 310)
-                {
-                    motor_move(fcam_ball_deg - 30, 50);
-                }
-                else if(fcam_ball_deg >= 270)
-                {
-                    motor_move(fcam_ball_deg - 70, 50);
-                }
+        
             }
         }
+        else if(bcam_ball_deg != 255)
+        {
+            ball_check.stop();
+            ball_check.reset();
+
+            if(bcam_ball_deg >= 200)
+            {
+                motor_move(bcam_ball_deg - 30, 60);
+            }
+            else if(bcam_ball_deg >= 180)
+            {
+                motor_move(bcam_ball_deg - 60, 60);
+            }
+            else if(bcam_ball_deg >= 160)
+            {
+                motor_move(bcam_ball_deg + 60, 60);
+            }
+            else if(bcam_ball_deg >= 135)
+            {
+                motor_move(bcam_ball_deg + 30, 60);
+            }
+            
+        } 
         else
         {
+                 
             if(cam_ball_deg != 500)
             {
+                
+                ball_check.stop();
+                ball_check.reset();
+
                 if(cam_ball_deg <= 90)
                 {
-                    motor_move(cam_ball_deg + 45, 80);
+                    motor_move(cam_ball_deg + 45, 60);
                 }
                 else if(cam_ball_deg <= 180)
                 {
-                    motor_move(cam_ball_deg + 30, 80);
+                    motor_move(cam_ball_deg + 30, 60);
                 }
                 else if(cam_ball_deg <= 270)
                 {
-                    motor_move(cam_ball_deg - 30, 80);
+                    motor_move(cam_ball_deg - 30, 60);
                 }
                 else if(cam_ball_deg <= 360)
                 {
-                    motor_move(cam_ball_deg - 45, 80);
+                    motor_move(cam_ball_deg - 45, 60);
                 }
             }
             else
             {
-                motor_move(180,0);
+                ball_check.start();
+                if(ball_check.get_value() < 300)
+                {
+                    motor_move(180,600);
+                }
+                else
+                {
+                    motor_move(180,0);
+                }
             }
-           
         }
     }
 }
