@@ -14,6 +14,7 @@
 #include "motor.hpp"
 #include "engelline.hpp"
 #include "attacker.hpp"
+#include "defender.hpp"
 
 #include "ui.hpp"
 
@@ -67,7 +68,6 @@ void loop() {
   ui_process();
   line_process();
  
-  
   gyro_deg = bno_imu.get_degrees();
 
   kicker.loop();
@@ -81,13 +81,12 @@ void loop() {
   if(is_running)
   {
     dribbler.writeMicroseconds(1000);
-    attacker_process(50);
+    defender_process(50);
+    //attacker_process(50);
   }
   else
   {
     dribbler.writeMicroseconds(1000);
     motor_direct_drive(0, 0, 0, 0);
   }
-
-  Serial.println(fcam_ball_deg);
 }

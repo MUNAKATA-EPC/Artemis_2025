@@ -7,8 +7,12 @@ extern void reset_line_process();
 extern bool is_line_detected();
 extern bool is_previous_line_detected();
 extern bool is_line_evacuation();
+extern bool is_exist_deg_value_in_range(int check_value, int base_value, int check_range);
 extern int get_count_of_detected_sensor();
 
+extern int line_deg;
+extern int line_first_deg;
 extern int line_evacuation_deg;
+extern bool is_halfout;
 
 #endif

@@ -36,13 +36,13 @@ sensor.set_saturation(3)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (70, 35, 70))
+sensor.set_auto_whitebal(False, rgb_gain_db = (80, 30, 70))
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(63, 74, 10, 52, 53, 85)]
+ball_thresholds = [(57, 79, 11, 71, 15, 89)]
 y_goal_thresholds = [(79, 90, -20, 23, 54, 120)]
-b_goal_thresholds = [(33, 48, 26, 63, -101, -49)]
+b_goal_thresholds = [(30, 46, 56, 92, -113, -44)]
 court_thresholds = [(0, 100, -16, -2, -19, 0)]
 
 
@@ -90,7 +90,7 @@ while True:
     ball_rectarray = []
     ball_x = 0
     ball_y = 0
-    for blob in img.find_blobs(ball_thresholds, pixel_threshold = 100, area_threshold = 100, merge = True, margin = 10):
+    for blob in img.find_blobs(ball_thresholds, pixel_threshold = 60, area_threshold = 60, merge = True, margin = 10):
         if blob[2] < 150:
             ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 

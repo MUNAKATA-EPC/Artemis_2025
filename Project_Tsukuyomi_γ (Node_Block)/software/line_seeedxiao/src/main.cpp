@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
 #define PIN_DATA 0
 
@@ -51,13 +51,14 @@ void setup() {
   pinMode(PIN_E, OUTPUT);
 
   Serial1.begin(115200);
+  Serial1.setTimeout(10);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   for(int i = 0; i < 16; i++)
   {
-    line_circle_values[15 - i] = get_from_multiplexer(i) > 300 ? 1 : 0;
+    line_circle_values[15 - i] = get_from_multiplexer(i) > 250 ? 1 : 0;
   }
 
   output_value = 0;

@@ -9,6 +9,8 @@
 #include "timer.hpp"
 #include "kicker.hpp"
 
+#include "engelline.hpp"
+
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
@@ -359,51 +361,74 @@ void ui_process()
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_OMNI_CAM)
             {
+                display.setTextSize(2);
+                display.setCursor(0, 0);
+                display.println("OMNI CAM");
                 display.setTextSize(1);
                 display.setCursor(0, 20);
-                display.println("OMNI CAM");
-                display.setCursor(0, 30);
                 display.println("ball:" + String(cam_ball_deg)          + "," + String(cam_ball_distance));
-                display.setCursor(0, 40);
                 display.println("yell:" + String(cam_goal_yellow_deg)   + "," + String(cam_goal_yellow_distance));
-                display.setCursor(0, 50);
                 display.println("blue:" + String(cam_goal_blue_deg)     + "," + String(cam_goal_blue_distance));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_FRONT_CAM)
             {
+                display.setTextSize(2);
+                display.setCursor(0, 0);
+                display.println("FRONT CAM");
                 display.setTextSize(1);
                 display.setCursor(0, 20);
-                display.println("FRONT CAM");
-                display.setCursor(0, 30);
                 display.println("ball:" + String(fcam_ball_deg)          + "," + String(fcam_ball_distance));
-                display.setCursor(0, 40);
                 display.println("yell:" + String(fcam_goal_yellow_deg)   + "," + String(fcam_goal_yellow_distance));
-                display.setCursor(0, 50);
                 display.println("blue:" + String(fcam_goal_blue_deg)     + "," + String(fcam_goal_blue_distance));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_BACK_CAM)
             {
-                display.setTextSize(1);
-                display.setCursor(0, 20);
+                display.setTextSize(2);
+                display.setCursor(0, 0);
                 display.println("BACK CAM");
-                display.setCursor(0, 30);
-                display.println("ball:" + String(bcam_ball_deg)          + "," + String(bcam_ball_distance));
-                display.setCursor(0, 40);
-                display.println("yell:" + String(bcam_goal_yellow_deg)   + "," + String(bcam_goal_yellow_distance));
-                display.setCursor(0, 50);
-                display.println("blue:" + String(bcam_goal_blue_deg)     + "," + String(bcam_goal_blue_distance));
-            }
-            else if(now_select_mode == SECOND_FLOOR::SENSOR_GYRO)
-            {
                 display.setTextSize(1);
                 display.setCursor(0, 20);
-                display.println("GYRO");
-                display.setCursor(0, 30);
-                display.println("value:" + String(gyro_deg));
+                display.println("ball:" + String(bcam_ball_deg)          + "," + String(bcam_ball_distance));
+                display.println("yell:" + String(bcam_goal_yellow_deg)   + "," + String(bcam_goal_yellow_distance));
+                display.println("blue:" + String(bcam_goal_blue_deg)     + "," + String(bcam_goal_blue_distance));
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_LINE)
             {
+                display.setTextSize(2);
+                display.setCursor(0, 0);
+                display.println("LINE");
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("detection:" + String(is_line_detected()));
+                display.println("line_deg:" + String(line_deg));
+                display.println("first_deg:" + String(line_first_deg));
+                display.println("evacuation:" + String(line_evacuation_deg));
+                display.println("is_halfout:" + String(is_halfout));
 
+                display.drawCircle(100, 40, 20, SSD1306_WHITE);
+                if(is_line_detected())
+                {
+                    display.drawLine(   100, 
+                                        40, 
+                                        100 + cos(radians(line_evacuation_deg - 90)) * 20, 
+                                        40 + sin(radians(line_evacuation_deg - 90)) * 20, 
+                                        SSD1306_WHITE);
+                }
+            }
+            else if(now_select_mode == SECOND_FLOOR::SENSOR_GYRO)
+            {
+                display.setTextSize(2);
+                display.setCursor(0, 0);
+                display.println("GYRO");
+                display.setTextSize(1);
+                display.setCursor(0, 30);
+                display.println("value:" + String(gyro_deg));
+                display.drawCircle(90, 40, 20, SSD1306_WHITE);
+                display.drawLine(   90, 
+                                    40, 
+                                    90 + cos(radians(360 - gyro_deg - 90)) * 20, 
+                                    40 + sin(radians(360 - gyro_deg - 90)) * 20, 
+                                    SSD1306_WHITE);
             }
             else if(now_select_mode == SECOND_FLOOR::SENSOR_TOUCH)
             {
@@ -424,6 +449,6 @@ void ui_process()
     {
         display.display();
 
-        next_send_time = send_timer.get_value() + 100;
+        next_send_time = send_timer.get_value() + 200;
     }
 }

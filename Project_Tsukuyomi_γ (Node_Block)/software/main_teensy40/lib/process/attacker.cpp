@@ -42,21 +42,18 @@ void attacker_process(int speed)
     // C.白線を踏んだ場合
     //   コート内に戻る。
 
-    ball_check.tick();
-
-    /*if((fcam_goal_blue_deg != 255 ))
+    if(fcam_goal_blue_deg == 255)
     {
         pid_camera(fcam_goal_blue_deg);
     }
     else
     {
-       pid_gyro();
-    }*/
-    pid_gyro();
+        pid_camera(fcam_goal_blue_deg);
+    }
 
     if(is_line_evacuation())
     {
-        motor_move(line_evacuation_deg, 100);
+        motor_move(line_evacuation_deg, 60);
     }
     else
     {
@@ -77,7 +74,7 @@ void attacker_process(int speed)
                 }
                 else if(fcam_ball_deg >= 315)
                 {
-                    motor_move(fcam_ball_deg - 40, 60);
+                    motor_move(fcam_ball_deg + 70, 60);
                 }
                 else if(fcam_ball_deg <= 20)
                 {
@@ -85,7 +82,7 @@ void attacker_process(int speed)
                 }
                 else if(fcam_ball_deg <= 45)
                 {
-                    motor_move(fcam_ball_deg + 40, 60);
+                    motor_move(fcam_ball_deg - 70, 60);
                 }
         
             }
@@ -115,8 +112,19 @@ void attacker_process(int speed)
         } 
         else
         {
-                 
-            if(cam_ball_deg != 500)
+            if(cam_ball_deg == 500)
+            {
+                ball_check.start();
+                if(ball_check.get_value() < 300)
+                {
+                    motor_move(180,600);
+                }
+                else
+                {
+                    motor_move(180,0);
+                }
+            }
+            else
             {
                 
                 ball_check.stop();
@@ -137,18 +145,6 @@ void attacker_process(int speed)
                 else if(cam_ball_deg <= 360)
                 {
                     motor_move(cam_ball_deg - 45, 60);
-                }
-            }
-            else
-            {
-                ball_check.start();
-                if(ball_check.get_value() < 300)
-                {
-                    motor_move(180,600);
-                }
-                else
-                {
-                    motor_move(180,0);
                 }
             }
         }

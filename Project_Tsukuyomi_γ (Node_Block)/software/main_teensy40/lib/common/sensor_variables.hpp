@@ -36,4 +36,7 @@ extern int line_deg;
 extern int touch_front;
 extern int touch_back;
 
+extern int process_type;
+extern int is_processing;
+
 #endif

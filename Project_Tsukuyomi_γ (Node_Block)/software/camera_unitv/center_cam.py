@@ -4,7 +4,7 @@ import Maix
 from fpioa_manager import fm
 from Maix import GPIO
 
-threshold_for_ball = (38, 78, -18, 61, 7, 58)# ボールの色取り用変数
+threshold_for_ball = (50, 78, 25, 65, 12, 64)# ボールの色取り用変数
 threshold_for_goal_yellow = (75, 85, -32, -12, 35, 64)# ゴールの色取り用変数(黄色)
 #threshold_for_goal_yellow = (17, 35, 1, 18, -50, -27)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (29, 47, -17, 17, -45, -18)
@@ -99,7 +99,7 @@ while(True):
         cy_goal_blue[read_count_goal_blue] = blob.cy()
         area_goal_blue[read_count_goal_blue] = blob.area()
 
-    for blob in img.find_blobs([threshold_for_ball], pixels_threshold=3, area_threshold=3, merge=True,margin=25):
+    for blob in img.find_blobs([threshold_for_ball], pixels_threshold=1, area_threshold=1, merge=True,margin=25):
         if read_count_ball + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。

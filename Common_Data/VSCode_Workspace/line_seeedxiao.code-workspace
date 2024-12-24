@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "line_seeedxiao",
+			"path": "../../Project_Tsukuyomi_γ/software/line_seeedxiao"
+		},
+		{
+			"name": "main_teensy40",
+			"path": "../../Project_Tsukuyomi_γ/software/main_teensy40"
+		},
+		{
+			"path": "../../../Artemis_2024/Project_OHKA/Software/main_world_teensy40"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "cpp"
+		}
+	}
+}
