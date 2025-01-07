@@ -17,23 +17,23 @@ void Kicker::loop()
 
         if(_kick_timer.get_value() <= 5)
         {
-            analogWrite(_charge_pin, 0);
-            analogWrite(_kick_pin, 0);
+            digitalWrite(_charge_pin, 0);
+            digitalWrite(_kick_pin, 0);
         }
-        else if(_kick_timer.get_value() <= 50)
+        else if(_kick_timer.get_value() <= 55)
         {
-            analogWrite(_charge_pin, 0);
-            analogWrite(_kick_pin, 1023);
+            digitalWrite(_charge_pin, 0);
+            digitalWrite(_kick_pin, HIGH);
         }
         else if(_kick_timer.get_value() <= 60)
         {
-            analogWrite(_charge_pin, 0);
-            analogWrite(_kick_pin, 0);
+            digitalWrite(_charge_pin, 0);
+            digitalWrite(_kick_pin, 0);
         }
         else if(_kick_timer.get_value() <= 300)
         {
-            analogWrite(_charge_pin, 1023);
-            analogWrite(_kick_pin, 0);
+            digitalWrite(_charge_pin, HIGH);
+            digitalWrite(_kick_pin, 0);
         }
         else
         {
@@ -43,8 +43,8 @@ void Kicker::loop()
     }
     else
     {
-        analogWrite(_kick_pin, 0);
-        analogWrite(_charge_pin, 1023);
+        digitalWrite(_kick_pin, 0);
+        digitalWrite(_charge_pin, HIGH);
     }
 }
 

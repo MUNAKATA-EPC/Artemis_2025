@@ -83,8 +83,8 @@ while True:
     clock.tick()                    # Update the FPS clock.
     img = sensor.snapshot() #映像の取得
 
-    img.draw_rectangle(0, 0, 320, 50, (0, 0, 0), 0, True)
-    img.draw_rectangle(0, 190, 320, 240, (0, 0, 0), 0, True)
+    #img.draw_rectangle(0, 0, 320, 50, (0, 0, 0), 0, True)
+    #img.draw_rectangle(0, 190, 320, 240, (0, 0, 0), 0, True)
 
     #ボールを見つける
     ball_rectarray = []

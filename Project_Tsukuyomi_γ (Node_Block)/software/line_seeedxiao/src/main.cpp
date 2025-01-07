@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define DEBUG 0
+#define DEBUG 1
 
 #define PIN_DATA 0
 
@@ -58,7 +58,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   for(int i = 0; i < 16; i++)
   {
-    line_circle_values[15 - i] = get_from_multiplexer(i) > 250 ? 1 : 0;
+    line_circle_values[15 - i] = get_from_multiplexer(i);
   }
 
   output_value = 0;
@@ -78,9 +78,9 @@ void loop() {
       Serial.print(line_circle_values[i]);
       Serial.print(",");
     }
+    Serial.println();
   }
   
-  Serial.println();
 
   Serial1.println(output_value);
   Serial1.flush();

@@ -99,6 +99,9 @@ void serials_process()
         bcam_goal_blue_deg          = bcam_goal_blue_deg == 255     ? 255 : (-bcam_goal_blue_deg + 360) % 360;
 
     }
+    bcam_ball_deg = 255;
+    bcam_goal_yellow_deg = 255;
+    bcam_goal_blue_deg = 255;
 
     //Line
     while(Serial5.available() > 0)

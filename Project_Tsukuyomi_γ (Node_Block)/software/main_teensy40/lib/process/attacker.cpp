@@ -42,13 +42,13 @@ void attacker_process(int speed)
     // C.白線を踏んだ場合
     //   コート内に戻る。
 
-    if(fcam_goal_blue_deg == 255)
+    if(fcam_goal_yellow_deg == 255)
     {
-        pid_camera(fcam_goal_blue_deg);
+        pid_gyro();
     }
     else
     {
-        pid_camera(fcam_goal_blue_deg);
+        pid_camera(fcam_goal_yellow_deg);
     }
 
     if(is_line_evacuation())

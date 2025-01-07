@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../../../Artemis_2024/Project_OHKA/Software/main_world_teensy40"
+			"path": "../../Project_Tsukuyomi_γ (Node_Block)/software/line_seeedxiao"
+		},
+		{
+			"path": "../../Project_Tsukuyomi_γ (Node_Block)/software/main_teensy40"
 		}
 	],
 	"settings": {
