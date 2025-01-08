@@ -79,9 +79,9 @@ void serials_process()
         fcam_goal_blue_deg          = Serial3.readStringUntil('e').toInt();
         fcam_goal_blue_distance     = Serial3.readStringUntil('f').toInt();
 
-        fcam_ball_deg               = fcam_ball_deg == 255          ? 255 : (fcam_ball_deg - 45 + 360) % 360;
-        fcam_goal_yellow_deg        = fcam_goal_yellow_deg == 255   ? 255 : (-fcam_goal_yellow_deg + 360) % 360;
-        fcam_goal_blue_deg          = fcam_goal_blue_deg == 255     ? 255 : (-fcam_goal_blue_deg + 360) % 360;
+        fcam_ball_deg               = fcam_ball_deg == 500          ? 500 : (fcam_ball_deg - 45 + 360) % 360;
+        fcam_goal_yellow_deg        = fcam_goal_yellow_deg == 500   ? 500 : (-fcam_goal_yellow_deg + 360) % 360;
+        fcam_goal_blue_deg          = fcam_goal_blue_deg == 500     ? 500 : (-fcam_goal_blue_deg + 360) % 360;
     }
     
     //Back camera
@@ -94,19 +94,18 @@ void serials_process()
         bcam_goal_blue_deg          = Serial4.readStringUntil('e').toInt();
         bcam_goal_blue_distance     = Serial4.readStringUntil('f').toInt();
 
-        bcam_ball_deg               = bcam_ball_deg == 255          ? 255 : (bcam_ball_deg + 135)% 360;
-        bcam_goal_yellow_deg        = bcam_goal_yellow_deg == 255   ? 255 : (-bcam_goal_yellow_deg + 360) % 360;
-        bcam_goal_blue_deg          = bcam_goal_blue_deg == 255     ? 255 : (-bcam_goal_blue_deg + 360) % 360;
+        bcam_ball_deg               = bcam_ball_deg == 500          ? 500 : (bcam_ball_deg + 135)% 360;
+        bcam_goal_yellow_deg        = bcam_goal_yellow_deg == 500   ? 500 : (-bcam_goal_yellow_deg + 180) % 360;
+        bcam_goal_blue_deg          = bcam_goal_blue_deg == 500     ? 500 : (-bcam_goal_blue_deg + 180) % 360;
 
     }
-    bcam_ball_deg = 255;
-    bcam_goal_yellow_deg = 255;
-    bcam_goal_blue_deg = 255;
 
     //Line
     while(Serial5.available() > 0)
     {
         int line_value = Serial5.readStringUntil('\n').toInt();
+        Serial.print(line_value);
+        Serial.print(" | ");
     
         for(int i = 15; i >= 0; i--)
         {
@@ -122,5 +121,10 @@ void serials_process()
         }
     }
 
-    //Serial.println(fcam_ball_deg);
+    for(int i = 0; i < 16; i++)
+    {
+        Serial.print(line_data[i]);
+        Serial.print(",");
+    }
+    Serial.println();
 }

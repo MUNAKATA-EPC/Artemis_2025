@@ -48,14 +48,14 @@ void play_startup_sound()
 void setup() {
   Serial.begin(9600);
 
-  //ui_init();
-  //serials_init();
-  //line_init();
-  //motor_init();
-  //dribbler_init();
+  ui_init();
+  serials_init();
+  line_init();
+  motor_init();
+  dribbler_init();
   kicker.init(12, 27);
-  //bno_imu.init(9);
-  //attacker_init();
+  bno_imu.init(9);
+  attacker_init();
 
   bt_start.init(11, Button::Button_Value_Type::PULLDOWN);
 
@@ -63,33 +63,31 @@ void setup() {
 } 
 
 void loop() {
-  //bno_imu.process();
-  //serials_process();
-  //ui_process();
-  //line_process();
+  bno_imu.process();
+  serials_process();
+  ui_process();
+  line_process();
  
-  //gyro_deg = bno_imu.get_degrees();
+  gyro_deg = bno_imu.get_degrees();
 
   kicker.loop();
 
   bt_start.loop();
   if(bt_start.is_pushed())
   {
-    tone(3, 2700, 90);
-    delay(50);
     kicker.kick();
-    //is_running = !is_running;
+    is_running = !is_running;
   }
-
+  
   if(is_running)
   {
-    //dribbler.writeMicroseconds(1000);
+    dribbler.writeMicroseconds(1000);
     //defender_process(50);
-    //attacker_process(50);
+    attacker_process(50, false);
   }
   else
   {
-    //dribbler.writeMicroseconds(1000);
-    //motor_direct_drive(0, 0, 0, 0);
+    dribbler.writeMicroseconds(1000);
+    motor_direct_drive(0, 0, 0, 0);
   }
 }

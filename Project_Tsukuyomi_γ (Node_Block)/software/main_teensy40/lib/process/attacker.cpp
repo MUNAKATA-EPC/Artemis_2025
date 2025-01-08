@@ -18,7 +18,7 @@ void attacker_init()
 
 }
 
-void attacker_process(int speed)
+void attacker_process(int speed, bool isYellow)
 {
     // 【アタッカープログラム構想】
     // A.ボールが見つからなかった場合
@@ -42,13 +42,29 @@ void attacker_process(int speed)
     // C.白線を踏んだ場合
     //   コート内に戻る。
 
-    if(fcam_goal_yellow_deg == 255)
+    int fcam_deg, fcam_dis, bcam_deg, bcam_dis;
+    if(isYellow)
+    {
+        fcam_deg = fcam_goal_yellow_deg;
+        fcam_dis = fcam_goal_yellow_distance;
+        bcam_deg = bcam_goal_blue_deg;
+        bcam_dis = bcam_goal_blue_distance;
+    }
+    else
+    {
+        fcam_deg = fcam_goal_blue_deg;
+        fcam_dis = fcam_goal_blue_distance;
+        bcam_deg = bcam_goal_yellow_deg;
+        bcam_dis = bcam_goal_yellow_distance;
+    }
+
+    if(fcam_deg == 500)
     {
         pid_gyro();
     }
     else
     {
-        pid_camera(fcam_goal_yellow_deg);
+        pid_camera(fcam_deg);
     }
 
     if(is_line_evacuation())
@@ -57,14 +73,12 @@ void attacker_process(int speed)
     }
     else
     {
-        if(fcam_ball_deg != 255)
+        if(fcam_ball_deg != 500)
         {
-            ball_check.stop();
-            ball_check.reset();
-
+        
             if(fcam_ball_deg <= 10 || fcam_ball_deg >= 350)
             {
-                motor_move(0, 70);
+                motor_move(0, 60);
             }
             else
             {
@@ -74,7 +88,7 @@ void attacker_process(int speed)
                 }
                 else if(fcam_ball_deg >= 315)
                 {
-                    motor_move(fcam_ball_deg + 70, 60);
+                    motor_move(fcam_ball_deg - 70, 60);
                 }
                 else if(fcam_ball_deg <= 20)
                 {
@@ -82,16 +96,14 @@ void attacker_process(int speed)
                 }
                 else if(fcam_ball_deg <= 45)
                 {
-                    motor_move(fcam_ball_deg - 70, 60);
+                    motor_move(fcam_ball_deg + 70, 60);
                 }
         
             }
         }
-        else if(bcam_ball_deg != 255)
+        else if(bcam_ball_deg != 500)
         {
-            ball_check.stop();
-            ball_check.reset();
-
+          
             if(bcam_ball_deg >= 200)
             {
                 motor_move(bcam_ball_deg - 30, 60);
@@ -112,24 +124,14 @@ void attacker_process(int speed)
         } 
         else
         {
-            if(cam_ball_deg == 500)
+            if(cam_ball_deg == 255)
             {
-                ball_check.start();
-                if(ball_check.get_value() < 300)
-                {
-                    motor_move(180,600);
-                }
-                else
-                {
-                    motor_move(180,0);
-                }
+               
+                motor_move(bcam_deg,0);
             }
             else
             {
-                
-                ball_check.stop();
-                ball_check.reset();
-
+            
                 if(cam_ball_deg <= 90)
                 {
                     motor_move(cam_ball_deg + 45, 60);
