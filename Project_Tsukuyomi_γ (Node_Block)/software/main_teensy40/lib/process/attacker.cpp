@@ -58,95 +58,92 @@ void attacker_process(int speed, bool isYellow)
         bcam_dis = bcam_goal_yellow_distance;
     }
 
-    if(fcam_deg == 500)
+    if((fcam_deg != 500) && (fcam_ball_deg != 500))
     {
-        pid_gyro();
+        //pid_gyro();
+        pid_camera(fcam_deg);
     }
     else
     {
-        pid_camera(fcam_deg);
+        pid_gyro();
     }
 
     if(is_line_evacuation())
     {
-        motor_move(line_evacuation_deg, 60);
+        motor_move(line_evacuation_deg, 75);
     }
     else
     {
         if(fcam_ball_deg != 500)
         {
         
-            if(fcam_ball_deg <= 10 || fcam_ball_deg >= 350)
+            if(fcam_ball_deg <= 15 || fcam_ball_deg >= 345)
             {
                 motor_move(0, 60);
             }
             else
             {
-                if(fcam_ball_deg >= 340)
+                if(fcam_ball_deg >= 330)
                 {
-                    motor_move(fcam_ball_deg - 15, 60);
+                    motor_move(fcam_ball_deg - 35, 70);
                 }
                 else if(fcam_ball_deg >= 315)
                 {
-                    motor_move(fcam_ball_deg - 70, 60);
+                    motor_move(fcam_ball_deg - 60, 70);
                 }
-                else if(fcam_ball_deg <= 20)
+                else if(fcam_ball_deg <= 25)
                 {
-                    motor_move(fcam_ball_deg + 15, 60);
+                    motor_move(fcam_ball_deg + 35, 70);
                 }
-                else if(fcam_ball_deg <= 45)
+                else if(fcam_ball_deg <= 50)
                 {
-                    motor_move(fcam_ball_deg + 70, 60);
+                    motor_move(fcam_ball_deg + 60, 70);
                 }
         
             }
         }
         else if(bcam_ball_deg != 500)
         {
-          
             if(bcam_ball_deg >= 200)
             {
-                motor_move(bcam_ball_deg - 30, 60);
+                motor_move(bcam_ball_deg - 20, 70);
             }
             else if(bcam_ball_deg >= 180)
             {
-                motor_move(bcam_ball_deg - 60, 60);
+                motor_move(bcam_ball_deg - 50, 70);
             }
             else if(bcam_ball_deg >= 160)
             {
-                motor_move(bcam_ball_deg + 60, 60);
+                motor_move(bcam_ball_deg + 50, 70);
             }
             else if(bcam_ball_deg >= 135)
             {
-                motor_move(bcam_ball_deg + 30, 60);
+                motor_move(bcam_ball_deg + 20, 70);
             }
-            
         } 
         else
         {
-            if(cam_ball_deg == 255)
+            if(cam_ball_deg == 500)
             {
-               
                 motor_move(bcam_deg,0);
             }
             else
             {
-            
                 if(cam_ball_deg <= 90)
                 {
-                    motor_move(cam_ball_deg + 45, 60);
+                    motor_move(cam_ball_deg + 35, 70);
                 }
                 else if(cam_ball_deg <= 180)
                 {
-                    motor_move(cam_ball_deg + 30, 60);
+                    motor_move(cam_ball_deg + 55, 70);
                 }
                 else if(cam_ball_deg <= 270)
                 {
-                    motor_move(cam_ball_deg - 30, 60);
+                    motor_move(cam_ball_deg - 55, 70);
                 }
                 else if(cam_ball_deg <= 360)
                 {
-                    motor_move(cam_ball_deg - 45, 60);
+                    motor_move(cam_ball_deg - 35, 70);
                 }
             }
         }

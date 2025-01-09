@@ -77,13 +77,16 @@ void loop() {
   {
     kicker.kick();
     is_running = !is_running;
+    tone(3, 2700, 10);
+    delay(10);
   }
   
   if(is_running)
   {
     dribbler.writeMicroseconds(1000);
     //defender_process(50);
-    attacker_process(50, false);
+    attacker_process(50, true);
+
   }
   else
   {

@@ -4,10 +4,10 @@
 #include "sensor_variables.hpp"
 #include "motor.hpp"
 
-#define GYRO_PGAIN 1.2
+#define GYRO_PGAIN 0.5
 #define GYRO_DGAIN 3.4
-#define GOAL_PGAIN 0.45
-#define GOAL_DGAIN 0
+#define GOAL_PGAIN 0.55
+#define GOAL_DGAIN 3.2
 
 DSR1202 md = DSR1202(0);
 
