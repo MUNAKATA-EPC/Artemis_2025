@@ -128,5 +128,5 @@ void serials_process()
         Serial.print(line_data[i]);
         Serial.print(",");
     }
-    Serial.println();
+    Serial.println(bcam_ball_deg);
 }
