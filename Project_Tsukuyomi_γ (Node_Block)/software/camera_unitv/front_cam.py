@@ -37,7 +37,7 @@ sensor.skip_frames(time = 250)
 sensor.set_auto_gain(False) # must be turned off for color tracking
 #sensor.set_auto_exposure(False, exposure_us = 1750)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (35, 28, 55))
+sensor.set_auto_whitebal(False, rgb_gain_db = (40,  32, 55))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
@@ -45,7 +45,7 @@ sensor.skip_frames(time = 200)
 
 #各閾値
 ball_thresholds = [(36, 74, 36, 85, 51, 88)]
-y_goal_thresholds = [(64, 82, -58, -23, 42, 83)]
+y_goal_thresholds = [(23, 62, -24, -5, 26, 63)]
 b_goal_thresholds = [(30, 46, 6, 75, -93, -29)]
 
 

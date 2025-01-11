@@ -4,14 +4,14 @@ import Maix
 from fpioa_manager import fm
 from Maix import GPIO
 
-threshold_for_ball =(47, 65, 4, 62, 46, 72)#ボールの色取り用変数
+threshold_for_ball = (41, 75, -8, 52, 27, 61)#ボールの色取り用変数
 threshold_for_goal_yellow = (75, 85, -32, -12, 35, 64)# ゴールの色取り用変数(黄色)
 #threshold_for_goal_yellow = (17, 35, 1, 18, -50, -27)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (29, 47, -17, 17, -45, -18)
 
 thresholds = [threshold_for_ball]
 
-screen_center = [int(305), int(244)]                  # 画面の中央座標
+screen_center = [int(297), int(245)]                  # 画面の中央座標
 
 sensor.reset(dual_buff=False)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
@@ -38,7 +38,8 @@ while(True):
     clock.tick()
     img = sensor.snapshot()
     img.draw_cross(screen_center[0], screen_center[1])    # クロスヘアの表示
-    img.draw_circle(screen_center[0], screen_center[1], int(360) ,[0,0,0], int(300))
+    #img.draw_circle(screen_center[0], screen_center[1], int(360) ,[0,0,0], int(300))
+    img.draw_circle(screen_center[0], screen_center[1], int(360) ,[0,0,0], int(400))
 
     #=======================変数定義ライン=======================
 

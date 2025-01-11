@@ -87,11 +87,12 @@ void loop() {
     //defender_process(50);
     if(process_type == 0)
     {
-      attacker_process(50, true);
+      //defender_process(50);
+      attacker_process(70, true);
     }
     else if(process_type == 1)
     {
-      attacker_process(50, false);
+      attacker_process(70, false);
     }
   }
   else
