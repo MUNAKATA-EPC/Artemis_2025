@@ -11,6 +11,7 @@
 #include "engelline.hpp"
 
 Timer ball_check;
+#define MOTER_SPEED 60
 
 void attacker_init()
 {
@@ -77,27 +78,27 @@ void attacker_process(int speed, bool isYellow)
         if(fcam_ball_deg != 500)
         {
         
-            if(fcam_ball_deg <= 15 || fcam_ball_deg >= 345)
+            if(fcam_ball_deg <= 20 || fcam_ball_deg >= 340)
             {
                 motor_move(0, 60);
             }
             else
             {
-                if(fcam_ball_deg >= 330)
+                if(fcam_ball_deg <= 35)
                 {
-                    motor_move(fcam_ball_deg - 35, 70);
+                    motor_move(fcam_ball_deg - 25, MOTER_SPEED);
                 }
-                else if(fcam_ball_deg >= 315)
+                else if(fcam_ball_deg <= 60)
                 {
-                    motor_move(fcam_ball_deg - 60, 70);
+                    motor_move(fcam_ball_deg - 40, MOTER_SPEED);
                 }
-                else if(fcam_ball_deg <= 25)
+                else if(fcam_ball_deg <= 325)
                 {
-                    motor_move(fcam_ball_deg + 35, 70);
+                    motor_move(fcam_ball_deg + 40, MOTER_SPEED);
                 }
-                else if(fcam_ball_deg <= 50)
+                else
                 {
-                    motor_move(fcam_ball_deg + 60, 70);
+                    motor_move(fcam_ball_deg + 25, MOTER_SPEED);
                 }
         
             }
@@ -106,19 +107,19 @@ void attacker_process(int speed, bool isYellow)
         {
             if(bcam_ball_deg >= 200)
             {
-                motor_move(bcam_ball_deg - 20, 70);
+                motor_move(bcam_ball_deg - 20, MOTER_SPEED);
             }
             else if(bcam_ball_deg >= 180)
             {
-                motor_move(bcam_ball_deg - 50, 70);
+                motor_move(bcam_ball_deg - 40, MOTER_SPEED);
             }
             else if(bcam_ball_deg >= 160)
             {
-                motor_move(bcam_ball_deg + 50, 70);
+                motor_move(bcam_ball_deg + 40, MOTER_SPEED);
             }
             else if(bcam_ball_deg >= 135)
             {
-                motor_move(bcam_ball_deg + 20, 70);
+                motor_move(bcam_ball_deg + 20, MOTER_SPEED);
             }
         } 
         else
@@ -131,19 +132,19 @@ void attacker_process(int speed, bool isYellow)
             {
                 if(cam_ball_deg <= 90)
                 {
-                    motor_move(cam_ball_deg + 35, 70);
+                    motor_move(cam_ball_deg + 35, MOTER_SPEED);
                 }
                 else if(cam_ball_deg <= 180)
                 {
-                    motor_move(cam_ball_deg + 55, 70);
+                    motor_move(cam_ball_deg + 50, MOTER_SPEED);
                 }
                 else if(cam_ball_deg <= 270)
                 {
-                    motor_move(cam_ball_deg - 55, 70);
+                    motor_move(cam_ball_deg - 50, MOTER_SPEED);
                 }
                 else if(cam_ball_deg <= 360)
                 {
-                    motor_move(cam_ball_deg - 35, 70);
+                    motor_move(cam_ball_deg - 35, MOTER_SPEED);
                 }
             }
         }

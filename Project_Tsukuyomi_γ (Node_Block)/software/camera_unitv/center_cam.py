@@ -4,24 +4,26 @@ import Maix
 from fpioa_manager import fm
 from Maix import GPIO
 
-threshold_for_ball = (50, 78, 25, 65, 12, 64)# ボールの色取り用変数
+threshold_for_ball = (55, 70, -6, 64, 23, 61) #ボールの色取り用変数
 threshold_for_goal_yellow = (75, 85, -32, -12, 35, 64)# ゴールの色取り用変数(黄色)
 #threshold_for_goal_yellow = (17, 35, 1, 18, -50, -27)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (29, 47, -17, 17, -45, -18)
 
-screen_center = [160, 120]                  # 画面の中央座標
+thresholds = [threshold_for_ball]
 
-sensor.reset()
+screen_center = [int(285), int(230)]                  # 画面の中央座標
+
+sensor.reset(dual_buff=False)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
-sensor.set_framesize(sensor.QVGA)#解像度Ss
+sensor.set_framesize(sensor.VGA)#解像度Ss
 sensor.skip_frames(time = 1500)
 sensor.set_contrast(3)#コントラスト
-sensor.set_brightness(0)#明るさ
+sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(3)#彩3~-3
 sensor.skip_frames(time = 250)
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
-sensor.set_auto_whitebal(False, rgb_gain_db = (45, 40, 90))
+sensor.set_auto_whitebal(False, rgb_gain_db = (40, 35, 70))
 #sensor.set_auto_whitebal(False)
 
 fm.register(35, fm.fpioa.UART1_TX, force=True)
@@ -36,7 +38,7 @@ while(True):
     clock.tick()
     img = sensor.snapshot()
     img.draw_cross(screen_center[0], screen_center[1])    # クロスヘアの表示
-    img.draw_circle(screen_center[0], screen_center[1],190,[0,0,0],120)
+    img.draw_circle(screen_center[0], screen_center[1], int(360) ,[0,0,0], int(300))
 
     #=======================変数定義ライン=======================
 
@@ -79,35 +81,37 @@ while(True):
 
     #=======================黄ゴール色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_goal_yellow], pixels_threshold=10, area_threshold=10, merge=True,margin=25):
-        if read_count_goal_yellow + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
-            break
-        else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
-            read_count_goal_yellow += 1
+    for blob in img.find_blobs(thresholds, pixels_threshold=10, area_threshold=10, merge=True,margin=25,):
 
-        cx_goal_yellow[read_count_goal_yellow] = blob.cx()
-        cy_goal_yellow[read_count_goal_yellow] = blob.cy()
-        area_goal_yellow[read_count_goal_yellow] = blob.area()
+        if blob.code() == 2:
+            if read_count_goal_yellow + 1 >= 2:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
+                break
+            else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
+                read_count_goal_yellow += 1
 
-    for blob in img.find_blobs([threshold_for_goal_blue], pixels_threshold=10, area_threshold=10, merge=True,margin=30):
-        if read_count_goal_blue + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
-            break
-        else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
-            read_count_goal_blue += 1
+            cx_goal_yellow[read_count_goal_yellow] = blob.cx()
+            cy_goal_yellow[read_count_goal_yellow] = blob.cy()
+            area_goal_yellow[read_count_goal_yellow] = blob.area()
 
-        cx_goal_blue[read_count_goal_blue] = blob.cx()
-        cy_goal_blue[read_count_goal_blue] = blob.cy()
-        area_goal_blue[read_count_goal_blue] = blob.area()
+        elif blob.code() == 4:
+            if read_count_goal_blue + 1 >= 2:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
+                break
+            else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
+                read_count_goal_blue += 1
 
-    for blob in img.find_blobs([threshold_for_ball], pixels_threshold=1, area_threshold=1, merge=True,margin=25):
-        if read_count_ball + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
-            break
-        else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
-            read_count_ball += 1
+            cx_goal_blue[read_count_goal_blue] = blob.cx()
+            cy_goal_blue[read_count_goal_blue] = blob.cy()
+            area_goal_blue[read_count_goal_blue] = blob.area()
 
-        cx_ball[read_count_ball] = blob.cx()
-        cy_ball[read_count_ball] = blob.cy()
-        area_ball[read_count_ball] = blob.area()
+        elif blob.code() == 1:
+            if read_count_ball + 1 >= 2:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
+                break
+            else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
+                read_count_ball += 1
+
+            cx_ball[read_count_ball] = blob.cx()
+            cy_ball[read_count_ball] = blob.cy()
+            area_ball[read_count_ball] = blob.area()
 
     #==============================================
 
@@ -199,4 +203,4 @@ while(True):
     uart.write(str(goal_blue_distance))
     uart.write("f")
 
-    print(ball_deg)
+    print(clock.fps())
