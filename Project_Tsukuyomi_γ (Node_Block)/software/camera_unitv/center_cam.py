@@ -11,7 +11,7 @@ threshold_for_goal_blue = (29, 47, -17, 17, -45, -18)
 
 thresholds = [threshold_for_ball]
 
-screen_center = [int(285), int(224)]                  # 画面の中央座標
+screen_center = [int(305), int(244)]                  # 画面の中央座標
 
 sensor.reset(dual_buff=False)
 sensor.set_pixformat(sensor.RGB565)#カラースケール

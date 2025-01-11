@@ -37,17 +37,17 @@ sensor.skip_frames(time = 250)
 sensor.set_auto_gain(False) # must be turned off for color tracking
 #sensor.set_auto_exposure(False, exposure_us = 1750)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (40, 28, 55))
+sensor.set_auto_whitebal(False, rgb_gain_db = (35, 28, 55))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(21, 76, 27, 85, 31, 82)]
-y_goal_thresholds = [(70, 96, -43, -4, 0, 74)]
-b_goal_thresholds = [(20, 34, 17, 65, -83, -37)]
-court_thresholds = [(0, 100, -16, -2, -19, 0)]
+ball_thresholds = [(36, 74, 36, 85, 51, 88)]
+y_goal_thresholds = [(64, 82, -58, -23, 42, 83)]
+b_goal_thresholds = [(30, 46, 6, 75, -93, -29)]
+
 
 
 #変数定義
@@ -110,14 +110,9 @@ while True:
     b_goal_width = 0
     b_goal_hight = 0
 
-    court_rectarray = []
-    court_x = 0
-    court_y = 0
-
     for blob in img.find_blobs(ball_thresholds, pixel_threshold = 4, area_threshold = 4, merge = True, margin = 10):
         if blob[2] < 150:
             ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
-
     try:
         ball_maxrect = max(ball_rectarray, key = lambda x: x[1])    #配列の中から一番画面の下にあるものを選定
         ball_x = ball_maxrect[0] + (ball_maxrect[2] * 0.5)  #中心のx座標の算出
@@ -159,23 +154,6 @@ while True:
            check_b_goal =  0;
            pass
 
-    for blob in img.find_blobs(court_thresholds,pixel_threshold = 1000, area_threshold = 1000, merge = True, margin = 1000):
-        court_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
-
-    try:
-        court_maxrect = max(court_rectarray, key = lambda x: x[2] * x[3])  # Y座標が一番大きい要素を選定
-        court_x = court_maxrect[0] + (court_maxrect[2] * 0.5)  #中心のx座標の算出
-        court_y = court_maxrect[1]
-        img.draw_line(0, court_maxrect[1], 320, court_maxrect[1])     #オブジェクトを囲う四角形の描画
-
-    except ValueError as err:   #オブジェクトがひとつも見つからなかった場合の例外処理
-        pass
-
-    world_court_vector = HomographyProjection(court_x - 160 ,court_y)
-
-    #コートベクトルの大きさ
-    court_dis = int(world_court_vector[1][0] * 0.5)
-
     #カメラ座標でのボールベクトル
     world_ball_vector = HomographyProjection(ball_x - 160,ball_y)
     world_y_goal_vector = HomographyProjection(y_goal_x - 160,y_goal_y)
@@ -203,7 +181,7 @@ while True:
         b_goal_dir = 500
         b_goal_dis = 500
 
-    print(b_goal_dir)
+    print(ball_dir)
 
     #uart送信
     uart.write(str(ball_dir))
