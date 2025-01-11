@@ -42,12 +42,12 @@ typedef enum{
 
 typedef enum{
     RUN_BACK = 0,
-    RUN_AT_GYRO,
+    //RUN_AT_GYRO,
     RUN_AT_YELLOW,
     RUN_AT_BLUE,
-    RUN_DF_GYRO,
-    RUN_DF_YELLOW,
-    RUN_DF_BLUE,
+    //RUN_DF_GYRO,
+    //RUN_DF_YELLOW,
+    //RUN_DF_BLUE,
     RUN_TOTAL,
 
     SENSOR_BACK = 20,
@@ -314,24 +314,38 @@ void ui_process()
                 display.setTextSize(2);
                 display.setCursor(0, 35);
                 display.println("BACK TO HOME");
+                process_type = -1;
 
                 if(is_selected())
                 {
                     now_floor = 1;
                     now_select_mode = (int)FIRST_FLOOR::RUN;
                 }
-            }
+            }/*
             else if(now_select_mode == SECOND_FLOOR::RUN_AT_GYRO)
             {
-            }
+
+            }*/
             else if(now_select_mode == SECOND_FLOOR::RUN_AT_YELLOW)
             {
-                
+                display.setTextSize(2);
+                display.setCursor(0, 0);
+                display.println("ATTACK_YELLOW");
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("gyro:" + String(gyro_deg));
+                process_type = 0;
             }
             else if(now_select_mode == SECOND_FLOOR::RUN_AT_BLUE)
             {
-                
-            }
+                display.setTextSize(2);
+                display.setCursor(0, 0);
+                display.println("ATTACK_BLUE");
+                display.setTextSize(1);
+                display.setCursor(0, 20);
+                display.println("gyro:" + String(gyro_deg));
+                process_type = 1;
+            }/*
             else if(now_select_mode == SECOND_FLOOR::RUN_DF_GYRO)
             {
 
@@ -343,7 +357,7 @@ void ui_process()
             else if(now_select_mode == SECOND_FLOOR::RUN_DF_BLUE)
             {
                 
-            }
+            }*/
         }
         else if(parent_floor == FIRST_FLOOR::SENSOR)
         {

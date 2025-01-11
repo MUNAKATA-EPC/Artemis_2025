@@ -85,8 +85,14 @@ void loop() {
   {
     dribbler.writeMicroseconds(1000);
     //defender_process(50);
-    attacker_process(50, true);
-
+    if(process_type == 0)
+    {
+      attacker_process(50, true);
+    }
+    else if(process_type == 1)
+    {
+      attacker_process(50, false);
+    }
   }
   else
   {

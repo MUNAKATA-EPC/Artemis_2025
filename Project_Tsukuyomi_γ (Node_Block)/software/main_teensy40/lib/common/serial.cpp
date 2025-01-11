@@ -37,6 +37,8 @@ int cam1_data;
 int cam2_data;
 int cam3_data;
 
+int process_type;
+
 void serials_init()
 {
     //Omnidirectional Camera
@@ -89,12 +91,12 @@ void serials_process()
     {
         bcam_ball_deg               = Serial4.readStringUntil('a').toInt();
         bcam_ball_distance          = Serial4.readStringUntil('b').toInt();
-        bcam_goal_yellow_deg        = Serial4.readStringUntil('b').toInt();
+        bcam_goal_yellow_deg        = Serial4.readStringUntil('c').toInt();
         bcam_goal_yellow_distance   = Serial4.readStringUntil('d').toInt();
         bcam_goal_blue_deg          = Serial4.readStringUntil('e').toInt();
         bcam_goal_blue_distance     = Serial4.readStringUntil('f').toInt();
 
-        bcam_ball_deg               = bcam_ball_deg == 500          ? 500 : (bcam_ball_deg + 135)% 360;
+        bcam_ball_deg               = bcam_ball_deg == 500          ? 500 : (bcam_ball_deg + 135) % 360;
         bcam_goal_yellow_deg        = bcam_goal_yellow_deg == 500   ? 500 : (-bcam_goal_yellow_deg + 180) % 360;
         bcam_goal_blue_deg          = bcam_goal_blue_deg == 500     ? 500 : (-bcam_goal_blue_deg + 180) % 360;
 

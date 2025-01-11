@@ -165,7 +165,7 @@ void line_process()
     if( is_line_detected() && is_previous_line_detected())
     {
         //前回とのラインの角度を比較して、もし大きく値がずれていたら「ハーフアウト」判定にする
-        if(!is_exist_deg_value_in_range(line_deg, line_first_deg, 120))
+        if(!is_exist_deg_value_in_range(line_deg, line_first_deg, 130))
         {
             is_halfout = true;
         }
@@ -173,7 +173,7 @@ void line_process()
         {
             is_halfout = false;
 
-            if(is_exist_deg_value_in_range(line_deg, line_first_deg, 60))
+            if(is_exist_deg_value_in_range(line_deg, line_first_deg, 80))
             {
                 line_first_deg = line_deg;
             }

@@ -81,7 +81,7 @@ while(True):
 
     #=======================黄ゴール色取りライン=======================
 
-    for blob in img.find_blobs(thresholds, pixels_threshold=4, area_threshold=4, merge=True,margin=25,):
+    for blob in img.find_blobs(thresholds, pixels_threshold=2, area_threshold=2, merge=True,margin=25,):
 
         if blob.code() == 2:
             if read_count_goal_yellow + 1 >= 2:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
