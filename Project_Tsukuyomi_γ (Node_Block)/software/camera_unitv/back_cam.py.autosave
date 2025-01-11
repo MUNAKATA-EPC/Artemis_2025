@@ -4,7 +4,7 @@ from fpioa_manager import fm
 from machine import UART
 from Maix import GPIO
 
-
+from modules import ws2812
 
 #定数定義
 WIDTH = const(160)
@@ -37,7 +37,7 @@ sensor.skip_frames(time = 250)
 sensor.set_auto_gain(False) # must be turned off for color tracking
 #sensor.set_auto_exposure(False, exposure_us = 1750)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (30, 28, 60))
+sensor.set_auto_whitebal(False, rgb_gain_db = (30, 28, 55))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
