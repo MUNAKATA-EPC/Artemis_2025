@@ -15,6 +15,8 @@
 
 int defender_mode;
 
+int _previous_line_deg;
+
 struct Line_Group
 {
     int start_index;
@@ -150,11 +152,11 @@ void defender_process(int speed)
                 //全カメラのボールの角度を考慮した角度を取得
                 int ball_deg_from_allcam = -1;
 
-                if(fcam_ball_deg != 255)
+                if(fcam_ball_deg != 500)
                 {
                     ball_deg_from_allcam = fcam_ball_deg;
                 }
-                else if(bcam_ball_deg != 255)
+                else if(bcam_ball_deg != 500)
                 {
                     ball_deg_from_allcam = bcam_ball_deg;
                 }
@@ -174,19 +176,29 @@ void defender_process(int speed)
                 Serial.print(ball_deg_from_allcam);
                 Serial.print(",");
 
+                int speed = (ball_deg_from_allcam <= 20 || ball_deg_from_allcam >= 340) ? 40 : 80;
+            
                 if(ball_deg_from_allcam != -1)
                 {
-                    if(is_exist_deg_value_in_range(ball_deg_from_allcam, ball_detection_degrees[0], 88))
+                    if(bcam_goal_yellow_deg <= 160)
+                    {
+                        motor_move(270, 40);
+                    }
+                    else if(bcam_goal_yellow_deg >= 200)
+                    {
+                        motor_move(90, 40);
+                    }
+                    else if(is_exist_deg_value_in_range(ball_deg_from_allcam, ball_detection_degrees[0], 88))
                     {
                         Serial.print("A");
                         if(is_exist_deg_value_in_range(degrees_of_two_lines[0], ball_detection_degrees[0], 90))
                         {
-                            motor_move((degrees_of_two_lines[1] + 180) % 360, 50);
+                            motor_move((degrees_of_two_lines[1] + 180) % 360, speed);
                             Serial.print("A");
                         }
                         else if(is_exist_deg_value_in_range(degrees_of_two_lines[1], ball_detection_degrees[0], 90))
                         {
-                            motor_move((degrees_of_two_lines[0] + 180) % 360, 50);
+                            motor_move((degrees_of_two_lines[0] + 180) % 360, speed);
                             Serial.print("B");
                         }
                         Serial.println("");
@@ -196,12 +208,12 @@ void defender_process(int speed)
                         Serial.print("B");
                         if(is_exist_deg_value_in_range(degrees_of_two_lines[0], ball_detection_degrees[1], 90))
                         {
-                            motor_move((degrees_of_two_lines[1] + 180) % 360, 50);
+                            motor_move((degrees_of_two_lines[1] + 180) % 360, speed);
                             Serial.print("A");
                         }
                         else if(is_exist_deg_value_in_range(degrees_of_two_lines[1], ball_detection_degrees[1], 90))
                         {
-                            motor_move((degrees_of_two_lines[0] + 180) % 360, 50);
+                            motor_move((degrees_of_two_lines[0] + 180) % 360, speed);
                             Serial.print("B");
                         }
                         Serial.println("");
@@ -217,10 +229,11 @@ void defender_process(int speed)
                     motor_move(0, 0);
                 }
             }
+            _previous_line_deg = line_deg;
         }
         else
         {
-            motor_move(0, 0);
+            motor_move(_previous_line_deg + 180, 30);
         }
     }
 }

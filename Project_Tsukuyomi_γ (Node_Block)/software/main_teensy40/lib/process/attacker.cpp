@@ -79,22 +79,22 @@ void attacker_process(int speed, bool isYellow)
         {
             if(fcam_ball_deg <= 5 || fcam_ball_deg >= 355)
             {
-                motor_move(0, speed);
+                motor_move(0, speed * 0.7);
             }
             else 
             {
-                if(fcam_ball_deg >= 150)
+                if(fcam_ball_distance >= 150)
                 {
-                    motor_move(fcam_ball_deg, speed);    
+                    motor_move(fcam_ball_deg, speed * 0.8);    
                 }
                 else
                 {
-                    if(fcam_ball_deg <= 20)
+                    if(fcam_ball_deg <= 10)
                     {
                         int deg = (fcam_ball_deg) * 0.2;
                         motor_move(deg, speed * 0.9);
                     }
-                    else if(fcam_ball_deg >= 340)
+                    else if(fcam_ball_deg >= 350)
                     {
                         int deg = 360 - (360 - fcam_ball_deg) * 0.2;
                         motor_move(deg, speed * 0.9);
@@ -103,7 +103,7 @@ void attacker_process(int speed, bool isYellow)
                     {
                         if(fcam_ball_deg <= 35)
                         {
-                            motor_move(fcam_ball_deg + 30, speed * 0.5);
+                            motor_move(fcam_ball_deg + 60, speed * 0.5);
                         }
                         else if(fcam_ball_deg <= 60)
                         {
@@ -111,11 +111,11 @@ void attacker_process(int speed, bool isYellow)
                         }
                         else if(fcam_ball_deg <= 325)
                         {
-                            motor_move(fcam_ball_deg - 50, speed * 0.7);
+                            motor_move(fcam_ball_deg - 90, speed * 0.7);
                         }
                         else
                         {
-                            motor_move(fcam_ball_deg - 50, speed * 0.5);
+                            motor_move(fcam_ball_deg - 90, speed * 0.5);
                         }
                     }
                 }
@@ -166,7 +166,7 @@ void attacker_process(int speed, bool isYellow)
         {
             if(cam_ball_deg == 500)
             {
-                motor_move(180, speed * 0.7);
+                motor_move(180, 0);
             }
             else
             {

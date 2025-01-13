@@ -44,9 +44,9 @@ sensor.set_auto_whitebal(False, rgb_gain_db = (40,  32, 55))
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(36, 74, 36, 85, 51, 88)]
-y_goal_thresholds = [(23, 62, -24, -5, 26, 63)]
-b_goal_thresholds = [(30, 46, 6, 75, -93, -29)]
+ball_thresholds = [(46, 89, 5, 83, 54, 82)]
+y_goal_thresholds = [(64, 71, -52, -17, 61, 80)]
+b_goal_thresholds = [(26, 34, -21, -3, -25, -2)]
 
 
 

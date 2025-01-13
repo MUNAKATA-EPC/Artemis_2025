@@ -4,7 +4,7 @@ import Maix
 from fpioa_manager import fm
 from Maix import GPIO
 
-threshold_for_ball = (41, 75, -8, 52, 27, 61)#ボールの色取り用変数
+threshold_for_ball = (48, 78, -18, 64, 14, 75)#ボールの色取り用変数
 threshold_for_goal_yellow = (75, 85, -32, -12, 35, 64)# ゴールの色取り用変数(黄色)
 #threshold_for_goal_yellow = (17, 35, 1, 18, -50, -27)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (29, 47, -17, 17, -45, -18)
