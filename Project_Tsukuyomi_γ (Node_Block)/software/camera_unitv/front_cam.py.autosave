@@ -21,9 +21,9 @@ uart = UART(UART.UART1, 115200, 8, None, 1, timeout= 1000)
 clock = time.clock()
 
 #ホモグラフィー変換行列
-homegraphy_matrix = [   [ 1.68984476e-02,  1.28072445e-01,  5.30789133e+01],
-                        [ 4.05562743e-01,  3.41283959e-01, -1.70181113e+01],
-                        [ 2.70375162e-02, -1.99385511e-02,  1.00000000e+00]]
+homegraphy_matrix = [   [ 5.93750000e+00,  0.00000000e+00,  0.00000000e+00],
+                        [ 5.01768765e-15,  8.44444444e+01, -1.26666667e+03,]
+                        [ 0.00000000e+00,  3.91666667e-01,  1.00000000e+00]]
 #センサーの設定
 
 sensor.reset(dual_buff=True)
@@ -110,7 +110,7 @@ while True:
     b_goal_width = 0
     b_goal_hight = 0
 
-    for blob in img.find_blobs(ball_thresholds, pixel_threshold = 4, area_threshold = 4, merge = True, margin = 10):
+    for blob in img.find_blobs(ball_thresholds, pixel_threshold = 20, area_threshold = 20, merge = True, margin = 10):
         if blob[2] < 150:
             ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
     try:
@@ -181,7 +181,7 @@ while True:
         b_goal_dir = 500
         b_goal_dis = 500
 
-    print(ball_dis)
+    print(ball_y)
 
     #uart送信
     uart.write(str(ball_dir))
