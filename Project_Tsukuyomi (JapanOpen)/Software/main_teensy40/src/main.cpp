@@ -15,6 +15,8 @@
 
 #include <Arduino.h>
 
+#include "common/serial.hpp"
+
 void setup() {
 }
 
