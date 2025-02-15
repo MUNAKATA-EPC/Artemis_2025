@@ -31,7 +31,7 @@ void read_cam_data(HardwareSerialIMXRT serial, int index)
 void setup() {
   // put your setup code here, to run once:
 
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   Serial1.begin(115200);
   Serial1.setTimeout(10);
@@ -70,6 +70,10 @@ void loop() {
     cam_data[1][3] = Serial3.readStringUntil('d').toInt();
     cam_data[1][4] = Serial3.readStringUntil('e').toInt();
     cam_data[1][5] = Serial3.readStringUntil('f').toInt();
+
+    cam_data[1][0] = cam_data[1][0] == 500 ? 500 : cam_data[1][0] + 60;
+    cam_data[1][2] = cam_data[1][0] == 500 ? 500 : cam_data[1][2] + 60;
+    cam_data[1][4] = cam_data[1][0] == 500 ? 500 : cam_data[1][4] + 60;
   }
 
   if(Serial4.available() > 0 && (read_serial_type == 2 || read_serial_type == 3 || read_serial_type == 4))
@@ -80,6 +84,10 @@ void loop() {
     cam_data[2][3] = Serial4.readStringUntil('d').toInt();
     cam_data[2][4] = Serial4.readStringUntil('e').toInt();
     cam_data[2][5] = Serial4.readStringUntil('f').toInt();
+
+    cam_data[2][0] = cam_data[2][0] == 500 ? 500 : cam_data[2][0] + 60 * 2;
+    cam_data[2][2] = cam_data[2][0] == 500 ? 500 : cam_data[2][2] + 60 * 2;
+    cam_data[2][4] = cam_data[2][0] == 500 ? 500 : cam_data[2][4] + 60 * 2;
   }
 
   if(Serial5.available() > 0 && (read_serial_type == 3 || read_serial_type == 4 || read_serial_type == 5))
@@ -90,6 +98,10 @@ void loop() {
     cam_data[3][3] = Serial5.readStringUntil('d').toInt();
     cam_data[3][4] = Serial5.readStringUntil('e').toInt();
     cam_data[3][5] = Serial5.readStringUntil('f').toInt();
+
+    cam_data[3][0] = cam_data[3][0] == 500 ? 500 : cam_data[3][0] + 60 * 3;
+    cam_data[3][2] = cam_data[3][0] == 500 ? 500 : cam_data[3][2] + 60 * 3;
+    cam_data[3][4] = cam_data[3][0] == 500 ? 500 : cam_data[3][4] + 60 * 3;
   }
 
   if(Serial6.available() > 0 && (read_serial_type == 4 || read_serial_type == 5 || read_serial_type == 0))
@@ -100,6 +112,10 @@ void loop() {
     cam_data[4][3] = Serial6.readStringUntil('d').toInt();
     cam_data[4][4] = Serial6.readStringUntil('e').toInt();
     cam_data[4][5] = Serial6.readStringUntil('f').toInt();
+
+    cam_data[4][0] = cam_data[4][0] == 500 ? 500 : cam_data[4][0] + 60 * 4;
+    cam_data[4][2] = cam_data[4][0] == 500 ? 500 : cam_data[4][2] + 60 * 4;
+    cam_data[4][4] = cam_data[4][0] == 500 ? 500 : cam_data[4][4] + 60 * 4;
   }
 
   if(Serial7.available() > 0 && (read_serial_type == 5 || read_serial_type == 0 || read_serial_type == 1))
@@ -110,6 +126,10 @@ void loop() {
     cam_data[5][3] = Serial7.readStringUntil('d').toInt();
     cam_data[5][4] = Serial7.readStringUntil('e').toInt();
     cam_data[5][5] = Serial7.readStringUntil('f').toInt();
+
+    cam_data[5][0] = cam_data[5][0] == 500 ? 500 : cam_data[5][0] + 60 * 5;
+    cam_data[5][2] = cam_data[5][0] == 500 ? 500 : cam_data[5][2] + 60 * 5;
+    cam_data[5][4] = cam_data[5][0] == 500 ? 500 : cam_data[5][4] + 60 * 5;
   }
 
   read_serial_type = (read_serial_type + 1) % 6;
