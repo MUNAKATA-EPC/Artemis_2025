@@ -44,9 +44,9 @@ sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(46, 68, 29, 91, 38, 75)]
-y_goal_thresholds = [(64, 71, -52, -17, 61, 80)]
-b_goal_thresholds = [(26, 34, -21, -3, -25, -2)]
+ball_thresholds = [(51, 88, -13, 82, 42, 82)]
+y_goal_thresholds = [(64, 96, -36, -14, 46, 88)]
+b_goal_thresholds = [(23, 42, 16, 54, -72, -29)]
 
 
 
@@ -119,7 +119,7 @@ while True:
         ball_x = 0
         ball_y = 0
 
-        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 4, area_threshold = 4, merge = True, margin = 10):
+        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 4, area_threshold = 4, merge = True, margin = 4):
             if blob[2] < 150:
                 ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
@@ -136,7 +136,7 @@ while True:
 
         color_tracking_mode = 1
 
-    elif color_tracking_mode == 1 or color_tracking_mode == 2:
+    if color_tracking_mode == 1 or color_tracking_mode == 2:
         #黄色ゴールを見つける
         y_goal_rectarray = []
         y_goal_x = 0
@@ -160,7 +160,7 @@ while True:
 
         color_tracking_mode = 2
 
-    elif color_tracking_mode == 2 or color_tracking_mode == 0:
+    if color_tracking_mode == 2 or color_tracking_mode == 0:
         #青色ゴールを見つける
         b_goal_rectarray = []
         b_goal_x = 0
