@@ -14,6 +14,7 @@ int cam_data[6][6] = {
 HardwareSerialIMXRT serial_list[6] = {Serial2, Serial3, Serial4, Serial5, Serial6, Serial7};
 
 int read_serial_type = 0;
+int ball_deg = -1;
 
 void read_cam_data(HardwareSerialIMXRT serial, int index)
 {
@@ -48,6 +49,52 @@ void setup() {
   Serial6.setTimeout(10);
   Serial7.begin(9600);
   Serial7.setTimeout(10);
+}
+
+int calculate_average() 
+{
+  int sum = 0;
+  int count = 0;
+
+  for (int i = 0; i < 6; i++) 
+  {
+    // cam_data[0][0] と cam_data[5][0] に特別な処理を適用
+    if (i == 0 && cam_data[i][0] != 500) 
+    {
+      sum += cam_data[i][0] + 360;  // cam_data[0][0] に 360 を足す
+      count++;
+    }
+    else if (i == 5 && cam_data[i][0] != 500) 
+    {
+      sum += cam_data[i][0];  // cam_data[5][0] はそのまま加算
+      count++;
+    }
+    else if (i != 0 && i != 5 && cam_data[i][0] != 500) 
+    {
+      sum += cam_data[i][0];  // その他のカメラはそのまま加算
+      count++;
+    }
+  }
+
+  if (count > 0) 
+  {
+    // 平均を計算
+    float average = (float)sum / count;
+
+    // 360で割った余りを求める
+    if(average >= 360)
+    {
+      return (int)(average) % 360;
+    }
+    else
+    {
+      return(average);
+    }
+  } 
+  else 
+  {
+    return -1;
+  }
 }
 
 void loop() {
@@ -139,5 +186,10 @@ void loop() {
     Serial.print(cam_data[i][0]);
     Serial.print("\t");
   }
-  Serial.println(read_serial_type);
+
+  //Serial.println(read_serial_type);
+
+ 
+  float average = calculate_average();
+  Serial.println(average);
 }
