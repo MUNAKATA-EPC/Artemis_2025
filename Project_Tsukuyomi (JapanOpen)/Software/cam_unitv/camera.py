@@ -44,7 +44,7 @@ sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(51, 88, -13, 82, 42, 82)]
+ball_thresholds = [(50, 97, -26, 65, 66, 96)]
 y_goal_thresholds = [(64, 96, -36, -14, 46, 88)]
 b_goal_thresholds = [(23, 42, 16, 54, -72, -29)]
 

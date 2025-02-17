@@ -55,26 +55,28 @@ int calculate_average()
 {
   int sum = 0;
   int count = 0;
+  bool added360 = false;  // 360を加算したかどうかのフラグ
+  int originalVal = cam_data[0][0];  // cam_data[0][0] の元の値を保存
 
   for (int i = 0; i < 6; i++) 
   {
-    // cam_data[0][0] と cam_data[5][0] に特別な処理を適用
-    if (i == 0 && cam_data[i][0] != 500) 
-    {
-      sum += cam_data[i][0] + 360;  // cam_data[0][0] に 360 を足す
-      count++;
-    }
-    else if (i == 5 && cam_data[i][0] != 500) 
-    {
-      sum += cam_data[i][0];  // cam_data[5][0] はそのまま加算
-      count++;
-    }
-    else if (i != 0 && i != 5 && cam_data[i][0] != 500) 
-    {
-      sum += cam_data[i][0];  // その他のカメラはそのまま加算
-      count++;
-    }
+      // 1回目のループだけ cam_data[0][0] に 360 を加算
+      if (i == 0 && !added360 && cam_data[0][0] != 500 && cam_data[5][0] != 500)
+      {
+          cam_data[0][0] += 360;  // cam_data[0][0] に 360 を加算
+          added360 = true;  // 加算したことを記録
+      }
+
+      // cam_data[i][0] が 500 でない場合にのみ sum に加算
+      if (cam_data[i][0] != 500)
+      {
+          sum += cam_data[i][0];  // cam_data[i][0] を足す
+          count++;
+      }
   }
+
+  // ループ終了後、cam_data[0][0] の値を元に戻す
+  cam_data[0][0] = originalVal;
 
   if (count > 0) 
   {
@@ -82,18 +84,25 @@ int calculate_average()
     float average = (float)sum / count;
 
     // 360で割った余りを求める
-    if(average >= 360)
+    if (average >= 360)
     {
-      return (int)(average) % 360;
+      if (average >= 720)
+      {
+        return (((int)(average) % 720) + 315) % 360;
+      }
+      else
+      {
+        return (((int)(average) % 360) + 315) % 360;
+      }
     }
     else
     {
-      return(average);
+      return ((int)(average) + 315) % 360;  // 余りが360未満の場合、平均をそのまま整数で返す
     }
   } 
   else 
   {
-    return -1;
+    return -1;  // データがなければ -1 を返す
   }
 }
 
@@ -189,7 +198,7 @@ void loop() {
 
   //Serial.println(read_serial_type);
 
- 
-  float average = calculate_average();
+  int average = calculate_average();
   Serial.println(average);
+
 }
