@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "main_teensy40",
+			"path": "Software/main_teensy40"
+		},
+		{
+			"name": "cam_integration_teensy40",
+			"path": "Software/cam_integration_teensy40"
+		},
+		{
+			"name": "psu_rp2040",
+			"path": "Software/psu_rp2040"
+		},
+		{
+			"name": "motor_driver_rp2040",
+			"path": "Software/motor_driver_rp2040"
+		}
+	],
+	"settings": {}
+}
