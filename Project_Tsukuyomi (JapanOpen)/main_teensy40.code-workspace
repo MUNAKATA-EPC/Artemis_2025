@@ -15,7 +15,23 @@
 		{
 			"name": "motor_driver_rp2040",
 			"path": "Software/motor_driver_rp2040"
+		},
+		{
+			"name": "neopixel_test_seeedxiao",
+			"path": "Software/neopixel_test_seeedxiao"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"*.tcc": "cpp",
+			"deque": "cpp",
+			"forward_list": "cpp",
+			"list": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"system_error": "cpp"
+		}
+	}
 }
