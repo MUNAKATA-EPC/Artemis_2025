@@ -1460,7 +1460,7 @@
     (property "Value" "R" (at 74.93 64.135 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 74.93 65.913 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 74.93 65.913 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 74.93 64.135 0)
@@ -1480,7 +1480,7 @@
   (symbol (lib_id "power:+3.3V") (at 80.01 78.105 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0341d0ad-2be4-4713-b8f9-2d7eb480cfb1)
-    (property "Reference" "#PWR024" (at 76.2 78.105 0)
+    (property "Reference" "#PWR03" (at 76.2 78.105 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 83.185 78.105 90)
@@ -1496,7 +1496,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -1505,7 +1505,7 @@
   (symbol (lib_id "Sensor_Proximity:TSSP58P38") (at 60.96 140.335 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 047b46a8-190b-4a86-bb21-4e7173e9201d)
-    (property "Reference" "U8" (at 59.225 129.54 0)
+    (property "Reference" "U6" (at 59.225 129.54 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TSSP58P38" (at 59.225 132.08 0)
@@ -1523,7 +1523,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U8") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -1532,7 +1532,7 @@
   (symbol (lib_id "power:+12V") (at 229.235 129.54 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0f29be62-9782-4f14-b161-315b81da486f)
-    (property "Reference" "#PWR01" (at 233.045 129.54 0)
+    (property "Reference" "#PWR037" (at 233.045 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 225.425 129.54 90)
@@ -1548,7 +1548,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
     )
@@ -1563,7 +1563,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 101.6 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 99.06 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 99.06 0)
@@ -1585,7 +1585,7 @@
   (symbol (lib_id "power:+5V") (at 229.235 99.06 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1932acba-85ad-43cb-b937-5a1c61804481)
-    (property "Reference" "#PWR017" (at 233.045 99.06 0)
+    (property "Reference" "#PWR035" (at 233.045 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 225.425 99.06 90)
@@ -1601,7 +1601,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -1616,7 +1616,7 @@
     (property "Value" "R" (at 74.93 83.185 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 74.93 84.963 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 74.93 84.963 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 74.93 83.185 0)
@@ -1636,7 +1636,7 @@
   (symbol (lib_id "power:+5V") (at 229.235 48.26 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1d9a43e7-df6b-48b1-a1ac-308ef1837e1c)
-    (property "Reference" "#PWR013" (at 233.045 48.26 0)
+    (property "Reference" "#PWR027" (at 233.045 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 225.425 48.26 90)
@@ -1652,7 +1652,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -1661,7 +1661,7 @@
   (symbol (lib_id "power:+5V") (at 229.235 60.96 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 23332f99-d32e-4ffd-b6f3-86518d5871b1)
-    (property "Reference" "#PWR014" (at 233.045 60.96 0)
+    (property "Reference" "#PWR029" (at 233.045 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 225.425 60.96 90)
@@ -1677,7 +1677,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -1686,7 +1686,7 @@
   (symbol (lib_id "Sensor_Proximity:TSSP58P38") (at 60.96 102.235 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 28e731a4-e84f-421c-ae0c-a055372b0678)
-    (property "Reference" "U6" (at 59.225 91.44 0)
+    (property "Reference" "U4" (at 59.225 91.44 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TSSP58P38" (at 59.225 93.98 0)
@@ -1704,7 +1704,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U6") (unit 1)
+          (reference "U4") (unit 1)
         )
       )
     )
@@ -1713,7 +1713,7 @@
   (symbol (lib_id "power:+3.3V") (at 127.635 130.175 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 297f771d-c9e6-4fc8-840d-8756ce712ae1)
-    (property "Reference" "#PWR035" (at 131.445 130.175 0)
+    (property "Reference" "#PWR017" (at 131.445 130.175 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 124.46 130.175 90)
@@ -1729,7 +1729,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR017") (unit 1)
         )
       )
     )
@@ -1738,7 +1738,7 @@
   (symbol (lib_id "power:GND") (at 229.235 33.02 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2ae0d7ad-d8b4-49f2-9544-f1cb9bd29690)
-    (property "Reference" "#PWR06" (at 222.885 33.02 0)
+    (property "Reference" "#PWR024" (at 222.885 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 33.02 90)
@@ -1754,7 +1754,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -1763,7 +1763,7 @@
   (symbol (lib_id "Sensor_Proximity:TSSP58P38") (at 60.96 121.285 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b4b076e-af24-438b-846f-a2385e563e7d)
-    (property "Reference" "U7" (at 59.225 110.49 0)
+    (property "Reference" "U5" (at 59.225 110.49 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TSSP58P38" (at 59.225 113.03 0)
@@ -1781,7 +1781,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U7") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -1796,7 +1796,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 88.9 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 86.36 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 86.36 0)
@@ -1818,7 +1818,7 @@
   (symbol (lib_id "power:GND") (at 229.235 58.42 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 341d652c-7a8d-4f16-a8a5-401fc619070c)
-    (property "Reference" "#PWR08" (at 222.885 58.42 0)
+    (property "Reference" "#PWR028" (at 222.885 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 58.42 90)
@@ -1834,7 +1834,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )
@@ -1843,7 +1843,7 @@
   (symbol (lib_id "power:GND") (at 229.235 45.72 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 34c45abc-f73d-4169-acdf-27b3471b4187)
-    (property "Reference" "#PWR07" (at 222.885 45.72 0)
+    (property "Reference" "#PWR026" (at 222.885 45.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 45.72 90)
@@ -1859,7 +1859,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -1868,13 +1868,13 @@
   (symbol (lib_id "Device:C") (at 146.685 51.435 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3e4e477a-c701-4468-9cee-34109915644f)
-    (property "Reference" "C1" (at 144.145 49.53 0)
+    (property "Reference" "C7" (at 144.145 49.53 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 144.78 53.34 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 147.6502 55.245 0)
+    (property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" (at 147.6502 55.245 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 146.685 51.435 0)
@@ -1885,7 +1885,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C1") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -1894,7 +1894,7 @@
   (symbol (lib_id "power:+12V") (at 145.415 47.625 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3eb8eafe-a7ee-4e33-b648-a885a19dc152)
-    (property "Reference" "#PWR03" (at 149.225 47.625 0)
+    (property "Reference" "#PWR018" (at 149.225 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 141.605 47.625 90)
@@ -1910,7 +1910,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
     )
@@ -1919,7 +1919,7 @@
   (symbol (lib_id "power:+5V") (at 229.235 86.36 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 40c0e1e9-653c-416d-91a8-dbe6e4260acf)
-    (property "Reference" "#PWR016" (at 233.045 86.36 0)
+    (property "Reference" "#PWR033" (at 233.045 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 225.425 86.36 90)
@@ -1935,7 +1935,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
     )
@@ -1950,7 +1950,7 @@
     (property "Value" "R" (at 74.93 121.285 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 74.93 123.063 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 74.93 123.063 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 74.93 121.285 0)
@@ -1970,7 +1970,7 @@
   (symbol (lib_id "power:GND") (at 81.915 88.265 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5a95b85e-3128-439f-8679-d31c48e8bf5d)
-    (property "Reference" "#PWR025" (at 88.265 88.265 0)
+    (property "Reference" "#PWR09" (at 88.265 88.265 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.09 88.265 90)
@@ -1986,7 +1986,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
@@ -1995,7 +1995,7 @@
   (symbol (lib_id "power:GND") (at 127.635 125.095 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5b044ba8-d396-4c36-b96f-010325353ea4)
-    (property "Reference" "#PWR037" (at 121.285 125.095 0)
+    (property "Reference" "#PWR016" (at 121.285 125.095 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 124.46 125.095 90)
@@ -2011,7 +2011,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR037") (unit 1)
+          (reference "#PWR016") (unit 1)
         )
       )
     )
@@ -2026,7 +2026,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 76.2 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 73.66 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 73.66 0)
@@ -2048,7 +2048,7 @@
   (symbol (lib_id "power:GND") (at 81.915 145.415 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 61edc608-8ece-474c-b13e-1b167448d759)
-    (property "Reference" "#PWR031" (at 88.265 145.415 0)
+    (property "Reference" "#PWR012" (at 88.265 145.415 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.09 145.415 90)
@@ -2064,7 +2064,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR012") (unit 1)
         )
       )
     )
@@ -2073,7 +2073,7 @@
   (symbol (lib_id "power:+3.3V") (at 80.01 135.255 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 66007ffe-15db-454e-b623-9fb866f60f99)
-    (property "Reference" "#PWR030" (at 76.2 135.255 0)
+    (property "Reference" "#PWR06" (at 76.2 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 83.185 135.255 90)
@@ -2089,7 +2089,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR06") (unit 1)
         )
       )
     )
@@ -2098,7 +2098,7 @@
   (symbol (lib_id "Sensor_Proximity:TSSP58P38") (at 60.96 64.135 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 671ed3f9-d68d-4abf-813d-11d7712527dc)
-    (property "Reference" "U4" (at 59.225 53.34 0)
+    (property "Reference" "U2" (at 59.225 53.34 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TSSP58P38" (at 59.225 55.88 0)
@@ -2116,7 +2116,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U4") (unit 1)
+          (reference "U2") (unit 1)
         )
       )
     )
@@ -2125,7 +2125,7 @@
   (symbol (lib_id "power:+5V") (at 229.235 35.56 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6df492e6-2d5e-400d-9ad3-9e8b3042afc8)
-    (property "Reference" "#PWR012" (at 233.045 35.56 0)
+    (property "Reference" "#PWR025" (at 233.045 35.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 225.425 35.56 90)
@@ -2141,7 +2141,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -2150,13 +2150,13 @@
   (symbol (lib_id "Device:C_Small") (at 80.01 123.825 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7240962c-4b3d-49ab-a862-cb5de2bcb091)
-    (property "Reference" "C7" (at 81.915 123.825 0)
+    (property "Reference" "C5" (at 81.915 123.825 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (at 70.485 123.825 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 80.01 123.825 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 80.01 123.825 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 80.01 123.825 0)
@@ -2167,7 +2167,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C7") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -2176,7 +2176,7 @@
   (symbol (lib_id "power:GND") (at 183.515 102.235 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 740b87da-3ead-462f-9e90-2ba4ba283e63)
-    (property "Reference" "#PWR033" (at 189.865 102.235 0)
+    (property "Reference" "#PWR021" (at 189.865 102.235 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 186.69 102.235 90)
@@ -2192,7 +2192,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -2201,7 +2201,7 @@
   (symbol (lib_id "power:GND") (at 229.235 96.52 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 76719187-17a6-4ed1-996c-f25d5bf3a35f)
-    (property "Reference" "#PWR011" (at 222.885 96.52 0)
+    (property "Reference" "#PWR034" (at 222.885 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 96.52 90)
@@ -2217,7 +2217,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -2226,13 +2226,13 @@
   (symbol (lib_id "Regulator_Linear:AZ1084-5.0") (at 155.575 47.625 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 76c9ac00-c23d-4861-a960-76b2cbeee913)
-    (property "Reference" "U2" (at 155.575 41.275 0)
+    (property "Reference" "U7" (at 155.575 41.275 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AZ1084-5.0" (at 155.575 43.815 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 155.575 41.275 0)
+    (property "Footprint" "Package_TO_SOT_SMD:TO-252-2" (at 155.575 41.275 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://www.diodes.com/assets/Datasheets/AZ1084.pdf" (at 155.575 47.625 0)
@@ -2244,7 +2244,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U2") (unit 1)
+          (reference "U7") (unit 1)
         )
       )
     )
@@ -2253,13 +2253,13 @@
   (symbol (lib_id "Device:C_Small") (at 80.01 47.625 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 79c0b5f0-f615-47f3-8b25-7562026c8cae)
-    (property "Reference" "C3" (at 81.915 47.625 0)
+    (property "Reference" "C1" (at 81.915 47.625 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (at 70.485 47.625 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 80.01 47.625 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 80.01 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 80.01 47.625 0)
@@ -2270,7 +2270,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C3") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -2285,7 +2285,7 @@
     (property "Value" "R" (at 74.93 45.085 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 74.93 46.863 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 74.93 46.863 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 74.93 45.085 0)
@@ -2305,7 +2305,7 @@
   (symbol (lib_id "power:GND") (at 81.915 107.315 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7db05cb5-8c99-4b77-95d1-cd96a8e6cbd2)
-    (property "Reference" "#PWR027" (at 88.265 107.315 0)
+    (property "Reference" "#PWR010" (at 88.265 107.315 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.09 107.315 90)
@@ -2321,7 +2321,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -2330,7 +2330,7 @@
   (symbol (lib_id "power:GND") (at 127.635 81.915 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7ed63a33-2986-4d8d-bcbc-b7c116f89e7e)
-    (property "Reference" "#PWR019" (at 121.285 81.915 0)
+    (property "Reference" "#PWR014" (at 121.285 81.915 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 123.825 81.915 90)
@@ -2346,7 +2346,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR014") (unit 1)
         )
       )
     )
@@ -2355,7 +2355,7 @@
   (symbol (lib_id "power:GND") (at 155.575 55.245 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7f16bccb-6d7d-448b-8f7b-54bf68bdb204)
-    (property "Reference" "#PWR05" (at 155.575 61.595 0)
+    (property "Reference" "#PWR019" (at 155.575 61.595 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 155.575 59.69 0)
@@ -2371,7 +2371,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -2386,7 +2386,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 50.8 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 48.26 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 48.26 0)
@@ -2408,7 +2408,7 @@
   (symbol (lib_id "power:GND") (at 81.915 126.365 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 886ef6ba-062b-4f4a-8f1e-0eabe62c96f8)
-    (property "Reference" "#PWR029" (at 88.265 126.365 0)
+    (property "Reference" "#PWR011" (at 88.265 126.365 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.09 126.365 90)
@@ -2424,7 +2424,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR011") (unit 1)
         )
       )
     )
@@ -2433,7 +2433,7 @@
   (symbol (lib_id "power:GND") (at 183.515 142.875 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8a0b23c8-713b-4899-91b0-e9ed8c5785f7)
-    (property "Reference" "#PWR032" (at 189.865 142.875 0)
+    (property "Reference" "#PWR023" (at 189.865 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 187.325 142.875 90)
@@ -2449,7 +2449,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -2458,7 +2458,7 @@
   (symbol (lib_id "power:+3.3V") (at 183.515 104.775 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8ef47a7b-ef3b-48b9-bad8-640362fe7fce)
-    (property "Reference" "#PWR036" (at 179.705 104.775 0)
+    (property "Reference" "#PWR022" (at 179.705 104.775 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 186.69 104.775 90)
@@ -2474,7 +2474,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -2483,7 +2483,7 @@
   (symbol (lib_id "power:+5V") (at 165.735 47.625 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 954ef92b-c042-4a68-975a-5a722a329359)
-    (property "Reference" "#PWR04" (at 161.925 47.625 0)
+    (property "Reference" "#PWR020" (at 161.925 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 169.545 47.625 90)
@@ -2499,7 +2499,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -2508,13 +2508,13 @@
   (symbol (lib_id "teensy:Teensy4.0") (at 155.575 108.585 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9802dcdf-ec55-472a-ae02-e93388574d83)
-    (property "Reference" "U1" (at 155.575 66.675 0)
+    (property "Reference" "U8" (at 155.575 66.675 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Teensy4.0" (at 155.575 69.215 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 165.735 113.665 0)
+    (property "Footprint" "Teensy_Breakout:Teensy_Brakeout" (at 165.735 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 165.735 113.665 0)
@@ -2577,7 +2577,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U1") (unit 1)
+          (reference "U8") (unit 1)
         )
       )
     )
@@ -2586,7 +2586,7 @@
   (symbol (lib_id "power:GND") (at 81.915 69.215 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9c7c2169-d204-4055-a5ed-566cb272ea28)
-    (property "Reference" "#PWR023" (at 88.265 69.215 0)
+    (property "Reference" "#PWR08" (at 88.265 69.215 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.09 69.215 90)
@@ -2602,7 +2602,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -2611,7 +2611,7 @@
   (symbol (lib_id "power:GND") (at 229.235 83.82 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a274d6c4-edd4-4e7c-b76e-80155a582ade)
-    (property "Reference" "#PWR010" (at 222.885 83.82 0)
+    (property "Reference" "#PWR032" (at 222.885 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 83.82 90)
@@ -2627,7 +2627,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -2642,7 +2642,7 @@
     (property "Value" "R" (at 74.93 102.235 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 74.93 104.013 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 74.93 104.013 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 74.93 102.235 0)
@@ -2662,13 +2662,13 @@
   (symbol (lib_id "Device:C_Small") (at 80.01 85.725 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a34f64c7-790d-42a1-8278-0390bb5e1a8a)
-    (property "Reference" "C5" (at 81.915 85.725 0)
+    (property "Reference" "C3" (at 81.915 85.725 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (at 70.485 85.725 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 80.01 85.725 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 80.01 85.725 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 80.01 85.725 0)
@@ -2679,7 +2679,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C5") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -2694,7 +2694,7 @@
     (property "Value" "R" (at 74.93 140.335 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 74.93 142.113 90)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 74.93 142.113 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 74.93 140.335 0)
@@ -2714,13 +2714,13 @@
   (symbol (lib_id "Device:C") (at 164.465 51.435 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b978da2d-07c8-4f86-81c0-4ec965816360)
-    (property "Reference" "C2" (at 164.465 49.53 0)
+    (property "Reference" "C8" (at 164.465 49.53 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 164.465 53.34 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 165.4302 55.245 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 165.4302 55.245 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 164.465 51.435 0)
@@ -2731,7 +2731,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C2") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -2740,7 +2740,7 @@
   (symbol (lib_id "power:GND") (at 81.915 50.165 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b98b463f-bf49-42a9-9484-c6d85ab8bab1)
-    (property "Reference" "#PWR021" (at 88.265 50.165 0)
+    (property "Reference" "#PWR07" (at 88.265 50.165 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.09 50.165 90)
@@ -2756,7 +2756,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -2765,7 +2765,7 @@
   (symbol (lib_id "Sensor_Proximity:TSSP58P38") (at 60.96 45.085 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bd2e3495-040c-4023-a3c6-76a32bce8043)
-    (property "Reference" "U3" (at 59.225 34.29 0)
+    (property "Reference" "U1" (at 59.225 34.29 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TSSP58P38" (at 59.225 36.83 0)
@@ -2783,7 +2783,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U3") (unit 1)
+          (reference "U1") (unit 1)
         )
       )
     )
@@ -2798,7 +2798,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 63.5 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 60.96 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 60.96 0)
@@ -2820,7 +2820,7 @@
   (symbol (lib_id "power:+5V") (at 127.635 84.455 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c55500d4-ec1d-4c03-81fb-0e5bbb233f1f)
-    (property "Reference" "#PWR018" (at 131.445 84.455 0)
+    (property "Reference" "#PWR015" (at 131.445 84.455 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 123.825 84.455 90)
@@ -2836,7 +2836,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR015") (unit 1)
         )
       )
     )
@@ -2845,13 +2845,13 @@
   (symbol (lib_id "Device:C_Small") (at 80.01 104.775 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c57dd53a-64bb-4f4d-91d3-befd6d5f3278)
-    (property "Reference" "C6" (at 81.915 104.775 0)
+    (property "Reference" "C4" (at 81.915 104.775 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (at 70.485 104.775 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 80.01 104.775 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 80.01 104.775 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 80.01 104.775 0)
@@ -2862,7 +2862,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C6") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -2871,7 +2871,7 @@
   (symbol (lib_id "power:+3.3V") (at 80.01 97.155 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cae52c28-f9bd-4e89-a5ad-042b7fe0bc29)
-    (property "Reference" "#PWR026" (at 76.2 97.155 0)
+    (property "Reference" "#PWR04" (at 76.2 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 83.185 97.155 90)
@@ -2887,7 +2887,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -2902,7 +2902,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 38.1 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 35.56 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 35.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 35.56 0)
@@ -2924,7 +2924,7 @@
   (symbol (lib_id "power:+3.3V") (at 80.01 116.205 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d55f18ec-9fbb-457d-988f-4de6540f09d5)
-    (property "Reference" "#PWR028" (at 76.2 116.205 0)
+    (property "Reference" "#PWR05" (at 76.2 116.205 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 83.185 116.205 90)
@@ -2940,7 +2940,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -2949,7 +2949,7 @@
   (symbol (lib_id "power:+3.3V") (at 127.635 79.375 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d57fb576-291d-4dd4-979f-80849f925759)
-    (property "Reference" "#PWR034" (at 131.445 79.375 0)
+    (property "Reference" "#PWR013" (at 131.445 79.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 124.46 79.375 90)
@@ -2965,7 +2965,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR013") (unit 1)
         )
       )
     )
@@ -2980,7 +2980,7 @@
     (property "Value" "Conn_01x04_Socket" (at 236.22 127 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 234.315 124.46 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (at 234.315 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.315 124.46 0)
@@ -3002,7 +3002,7 @@
   (symbol (lib_id "power:+3.3V") (at 80.01 59.055 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e2f0919e-f6f0-4463-8ef1-676c392ff3e1)
-    (property "Reference" "#PWR022" (at 76.2 59.055 0)
+    (property "Reference" "#PWR02" (at 76.2 59.055 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 83.185 59.055 90)
@@ -3018,7 +3018,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -3027,7 +3027,7 @@
   (symbol (lib_id "Sensor_Proximity:TSSP58P38") (at 60.96 83.185 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e7113d33-85ba-42c0-90df-5c5dfd11d764)
-    (property "Reference" "U5" (at 59.225 72.39 0)
+    (property "Reference" "U3" (at 59.225 72.39 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TSSP58P38" (at 59.225 74.93 0)
@@ -3045,7 +3045,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "U5") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -3054,7 +3054,7 @@
   (symbol (lib_id "power:+3.3V") (at 80.01 40.005 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e78e5e92-8cf0-47d5-96fe-89af0afa2433)
-    (property "Reference" "#PWR020" (at 76.2 40.005 0)
+    (property "Reference" "#PWR01" (at 76.2 40.005 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 83.185 40.005 90)
@@ -3070,7 +3070,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -3079,13 +3079,13 @@
   (symbol (lib_id "Device:C_Small") (at 80.01 142.875 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ea956010-40cc-4577-8873-e73ed75ae9fd)
-    (property "Reference" "C8" (at 81.915 142.875 0)
+    (property "Reference" "C6" (at 81.915 142.875 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (at 70.485 142.875 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 80.01 142.875 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 80.01 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 80.01 142.875 0)
@@ -3096,7 +3096,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C8") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -3105,7 +3105,7 @@
   (symbol (lib_id "power:GND") (at 229.235 127 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eab12010-9f3e-495c-a2d4-66219ac6ae5e)
-    (property "Reference" "#PWR02" (at 222.885 127 0)
+    (property "Reference" "#PWR036" (at 222.885 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 127 90)
@@ -3121,7 +3121,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -3130,7 +3130,7 @@
   (symbol (lib_id "power:+5V") (at 229.235 73.66 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ed31a094-3539-41d7-9a06-e90d7b15015e)
-    (property "Reference" "#PWR015" (at 233.045 73.66 0)
+    (property "Reference" "#PWR031" (at 233.045 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 225.425 73.66 90)
@@ -3146,7 +3146,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -3155,7 +3155,7 @@
   (symbol (lib_id "power:GND") (at 229.235 71.12 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f72be88e-9eb1-4552-86cc-8d39a15171e8)
-    (property "Reference" "#PWR09" (at 222.885 71.12 0)
+    (property "Reference" "#PWR030" (at 222.885 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 225.425 71.12 90)
@@ -3171,7 +3171,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
@@ -3180,13 +3180,13 @@
   (symbol (lib_id "Device:C_Small") (at 80.01 66.675 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f7d7c6e8-c39e-4686-9813-4a50b6eaf238)
-    (property "Reference" "C4" (at 81.915 66.675 0)
+    (property "Reference" "C2" (at 81.915 66.675 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (at 70.485 66.675 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 80.01 66.675 0)
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" (at 80.01 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 80.01 66.675 0)
@@ -3197,7 +3197,7 @@
     (instances
       (project "CAM"
         (path "/b1991f86-e46f-46b2-b74b-4d831e2f7f2a"
-          (reference "C4") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )

@@ -1,0 +1,12 @@
+Designator,Val,Package,MidX,MidY,Rotation,Layer
+J2,Conn_01x05_Socket,JST_XH_S5B-XH-A_1x05_P2.50mm_Horizontal,144.192,-97.134,180,bottom
+J9,Conn_01x04_Socket,JST_XH_S4B-XH-A_1x04_P2.50mm_Horizontal,172.466,-97.028,180,bottom
+J1,UJ32-C-V-G-TH-5-P24-TR,USB_C_Receptacle_GCT_USB4115-03-C,152.4,-82.55,0,top
+J3,Conn_01x02_Socket,AMASS_XT30PW-M_1x02_P2.50mm_Horizontal,173.769,-83.106,-90,top
+J4,Conn_01x02_Socket,AMASS_XT30PW-M_1x02_P2.50mm_Horizontal,130.897,-78.145,90,top
+J5,Conn_01x03_Socket,JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,149.9,-102.853,0,top
+J6,Conn_01x03_Socket,JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,154.9,-95.902,180,top
+J7,Conn_01x04_Socket,PinSocket_1x04_P2.54mm_Horizontal,176.956,-97.195,180,top
+J8,Conn_01x08_Socket,PinSocket_2x06_P2.54mm_Horizontal,130.212,-89.408,0,top
+U1,~,ESC_20A,140.081,-106.934,180,top
+U2,~,ESC_20A,164.592,-106.926,180,top

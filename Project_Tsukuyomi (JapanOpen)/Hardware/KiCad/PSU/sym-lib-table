@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "seeeduino_xiao")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi (JapanOpen)/Hardware/KiCad/KiCad_Library/Seeeduino_Xiao/seeeduino_xiao.kicad_sym")(options "")(descr ""))
+)

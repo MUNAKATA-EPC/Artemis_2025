@@ -1,0 +1,9 @@
+Comment,Designator,Footprint,LCSC
+"UJ32-C-V-G-TH-5-P24-TR","J1","UJ32-C-V-G-TH-5-P24-TR:SAMESKY_UJ32-C-V-G-TH-5-P24-TR","C5342428"
+"Conn_01x05_Socket","J2","Connector_JST:JST_XH_S5B-XH-A_1x05_P2.50mm_Horizontal",""
+"Conn_01x02_Socket","J3,J4","Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal",""
+"Conn_01x03_Socket","J5,J6","Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical",""
+"Conn_01x04_Socket","J7","Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Horizontal",""
+"Conn_01x08_Socket","J8","Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Horizontal",""
+"Conn_01x04_Socket","J9","Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",""
+"~","U1,U2","ESC:ESC_20A",""

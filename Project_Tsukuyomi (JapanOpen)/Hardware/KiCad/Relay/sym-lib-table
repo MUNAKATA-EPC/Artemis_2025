@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "esc")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi/Hardware/KiCad/KiCad_Library/ESC/esc.kicad_sym")(options "")(descr ""))
-  (lib (name "UJ32-C-V-G-TH-5-P24-TR")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi/Hardware/KiCad/KiCad_Library/UJ32-C-V-G-TH-5-P24-TR/UJ32-C-V-G-TH-5-P24-TR.kicad_sym")(options "")(descr ""))
-)

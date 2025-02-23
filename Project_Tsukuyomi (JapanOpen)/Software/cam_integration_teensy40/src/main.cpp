@@ -92,12 +92,12 @@ int calculate_average()
       }
       else
       {
-        return (((int)(average) % 360) + 315) % 360;
+        return (((int)(average) % 360) + 315 + 180) % 360;
       }
     }
     else
     {
-      return ((int)(average) + 315) % 360;  // 余りが360未満の場合、平均をそのまま整数で返す
+      return ((int)(average) + 315 + 180) % 360;  // 余りが360未満の場合、平均をそのまま整数で返す
     }
   } 
   else 
