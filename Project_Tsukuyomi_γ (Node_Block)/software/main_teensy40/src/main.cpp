@@ -52,7 +52,6 @@ void setup() {
   serials_init();
   line_init();
   motor_init();
-  dribbler_init();
   kicker.init(12, 27);
   bno_imu.init(9);
   attacker_init();
@@ -70,8 +69,6 @@ void loop() {
  
   gyro_deg = bno_imu.get_degrees();
 
-  kicker.loop();
-
   bt_start.loop();
   if(bt_start.is_pushed())
   {
@@ -83,21 +80,11 @@ void loop() {
   
   if(is_running)
   {
-    dribbler.writeMicroseconds(1000);
     //defender_process(50);
-    if(process_type == 0)
-    {
-      //defender_process(50);
-      attacker_process(70, true);
-    }
-    else if(process_type == 1)
-    {
-      attacker_process(70, false);
-    }
+    defender_process(50);
   }
   else
   {
-    dribbler.writeMicroseconds(1000);
     motor_direct_drive(0, 0, 0, 0);
   }
 }

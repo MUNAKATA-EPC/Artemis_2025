@@ -7,7 +7,7 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(10, 5, NEO_GRB + NEO_KHZ800);
 void setup() {
   pixels.setBrightness(100);
   pixels.begin();
-
++
   Serial.begin(9600);
 }
 

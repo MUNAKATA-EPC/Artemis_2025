@@ -63,7 +63,7 @@ void defender_process(int speed)
                     }
                     else
                     { 
-                        line_detected_groups[count_of_detected_line_group].start_index = i;
+                        line_detected_groups[count_of_detected_line_group].start_index = 15 - i;
                         line_detected_groups[count_of_detected_line_group].end_index = i;
                         line_detected_groups[count_of_detected_line_group].count = 1;
                         count_of_detected_line_group++; //次の群に移動
@@ -72,7 +72,7 @@ void defender_process(int speed)
                 //一つ前が反応していないのであれば、それは反応ラインの群の最初である。
                 else if(line_data[(i - 1 + 16) % 16] == 0)
                 {
-                    line_detected_groups[count_of_detected_line_group].start_index = i;
+                    line_detected_groups[count_of_detected_line_group].start_index = 15 - i;
                     line_detected_groups[count_of_detected_line_group].count = 0;
                     int temp_line_count = i;
 
@@ -135,7 +135,7 @@ void defender_process(int speed)
             if(count_of_detected_line_group == 1)
             {
                 int move_deg = (line_detected_groups[0].start_index + line_detected_groups[0].end_index) / 2.0 * 22.5;
-                motor_move((move_deg + 180) % 360, 50);
+                motor_move((move_deg) % 360, 50);
             }
             //群が2つだったら
             else if(count_of_detected_line_group == 2)
@@ -143,86 +143,37 @@ void defender_process(int speed)
                 //取り合えず2つの線分を対称に割る線分を作る
                 int degrees_of_two_lines[2] = { ((line_detected_groups[0].start_index + line_detected_groups[0].count / 2) % 16) * 22.5,
                                                 ((line_detected_groups[1].start_index + line_detected_groups[1].count / 2) % 16) * 22.5 };
-                int tan_of_two_lines[2]     = { (degrees_of_two_lines[0] + degrees_of_two_lines[1]) / 2, 
-                                                ((degrees_of_two_lines[0] + degrees_of_two_lines[1]) / 2 + 180) % 360 };
 
-                //それに対して垂直な線分を作ると、それが範囲検知の角度になる。
-                int ball_detection_degrees[2]   =   {(tan_of_two_lines[0] + 90) % 360, (tan_of_two_lines[0] + 270) % 360};
-                
-                //全カメラのボールの角度を考慮した角度を取得
-                int ball_deg_from_allcam = -1;
-
-                if(fcam_ball_deg != 500)
+                int speed = sin(radians(cam_ball_deg)) * 50;
+                    
+                if(cam_ball_deg != -1)
                 {
-                    ball_deg_from_allcam = fcam_ball_deg;
-                }
-                else if(bcam_ball_deg != 500)
-                {
-                    ball_deg_from_allcam = bcam_ball_deg;
-                }
-                else if(cam_ball_deg != 500)
-                {
-                    ball_deg_from_allcam = cam_ball_deg;
-                } 
-
-                Serial.print(ball_detection_degrees[0]);
-                Serial.print(",");
-                Serial.print(ball_detection_degrees[1]);
-                Serial.print(",");
-                Serial.print(degrees_of_two_lines[0]);
-                Serial.print(",");
-                Serial.print(degrees_of_two_lines[1]);
-                Serial.print(",");
-                Serial.print(ball_deg_from_allcam);
-                Serial.print(",");
-
-                int speed = (ball_deg_from_allcam <= 20 || ball_deg_from_allcam >= 340) ? 40 : 80;
-            
-                if(ball_deg_from_allcam != -1)
-                {
-                    if(bcam_goal_yellow_deg <= 160)
+                    if(is_exist_deg_value_in_range(cam_ball_deg, 90, 85))
                     {
-                        motor_move(270, 40);
+                        if(is_exist_deg_value_in_range(degrees_of_two_lines[0], 90, 90))
+                        {
+                            motor_move(degrees_of_two_lines[0], speed);
+                        }
+                        else if(is_exist_deg_value_in_range(degrees_of_two_lines[1], 90, 90))
+                        {
+                            motor_move(degrees_of_two_lines[1], speed);
+                        }
                     }
-                    else if(bcam_goal_yellow_deg >= 200)
+                    else if(is_exist_deg_value_in_range(cam_ball_deg, 270, 85))
                     {
-                        motor_move(90, 40);
-                    }
-                    else if(is_exist_deg_value_in_range(ball_deg_from_allcam, ball_detection_degrees[0], 88))
-                    {
-                        Serial.print("A");
-                        if(is_exist_deg_value_in_range(degrees_of_two_lines[0], ball_detection_degrees[0], 90))
+                        if(is_exist_deg_value_in_range(degrees_of_two_lines[0], 270, 90))
                         {
-                            motor_move((degrees_of_two_lines[1] + 180) % 360, speed);
-                            Serial.print("A");
+                            motor_move(degrees_of_two_lines[0], speed);
                         }
-                        else if(is_exist_deg_value_in_range(degrees_of_two_lines[1], ball_detection_degrees[0], 90))
+                        else if(is_exist_deg_value_in_range(degrees_of_two_lines[1], 270, 90))
                         {
-                            motor_move((degrees_of_two_lines[0] + 180) % 360, speed);
-                            Serial.print("B");
+                            motor_move(degrees_of_two_lines[1], speed);
                         }
-                        Serial.println("");
-                    }
-                    else if(is_exist_deg_value_in_range(ball_deg_from_allcam, ball_detection_degrees[1], 88))
-                    {
-                        Serial.print("B");
-                        if(is_exist_deg_value_in_range(degrees_of_two_lines[0], ball_detection_degrees[1], 90))
-                        {
-                            motor_move((degrees_of_two_lines[1] + 180) % 360, speed);
-                            Serial.print("A");
-                        }
-                        else if(is_exist_deg_value_in_range(degrees_of_two_lines[1], ball_detection_degrees[1], 90))
-                        {
-                            motor_move((degrees_of_two_lines[0] + 180) % 360, speed);
-                            Serial.print("B");
-                        }
-                        Serial.println("");
                     }
                     else
                     {
                         motor_move(0, 0);
                     }
-                    Serial.println("");
                 }
                 else
                 {

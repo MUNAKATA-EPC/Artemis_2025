@@ -15,10 +15,44 @@
 
 #include <Arduino.h>
 
+#include "common/sensors_variables.hpp"
 #include "common/serial.hpp"
+#include "common/motor.hpp"
+
+#include "modules/BNO055.hpp"
+
+BNO055 bno055;
+
+void play_startup_sound()
+{
+    tone(2, 3500, 90);
+    delay(110);
+    tone(2, 3500, 90);
+    delay(440);
+    tone(2, 2700, 90);
+    delay(110);
+    tone(2, 3500, 90);
+    delay(110);
+    tone(2, 4500, 90);
+    delay(110);
+}
 
 void setup() {
+    Serial.println(9600);
+
+    motor_init();
+
+    bno055.init(6);
+
+    play_startup_sound();
 }
 
 void loop() {
+    bno055.process();
+
+    gyro_deg = bno055.get_degrees();
+
+    pid_gyro();
+
+    motor_move(0, 0);
 }

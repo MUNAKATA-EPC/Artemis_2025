@@ -71,37 +71,6 @@ void serials_process()
         cam_goal_blue_distance      = Serial2.readStringUntil('f').toInt();
     }
 
-    //Front Camera
-    if(Serial3.available() > 0)
-    {
-        fcam_ball_deg               = Serial3.readStringUntil('a').toInt();
-        fcam_ball_distance          = Serial3.readStringUntil('b').toInt();
-        fcam_goal_yellow_deg        = Serial3.readStringUntil('c').toInt();
-        fcam_goal_yellow_distance   = Serial3.readStringUntil('d').toInt();
-        fcam_goal_blue_deg          = Serial3.readStringUntil('e').toInt();
-        fcam_goal_blue_distance     = Serial3.readStringUntil('f').toInt();
-
-        fcam_ball_deg               = fcam_ball_deg == 500          ? 500 : (fcam_ball_deg - 45 + 360) % 360;
-        fcam_goal_yellow_deg        = fcam_goal_yellow_deg == 500   ? 500 : (-fcam_goal_yellow_deg + 360) % 360;
-        fcam_goal_blue_deg          = fcam_goal_blue_deg == 500     ? 500 : (-fcam_goal_blue_deg + 360) % 360;
-    }
-    
-    //Back camera
-    if(Serial4.available() > 0)
-    {
-        bcam_ball_deg               = Serial4.readStringUntil('a').toInt();
-        bcam_ball_distance          = Serial4.readStringUntil('b').toInt();
-        bcam_goal_yellow_deg        = Serial4.readStringUntil('c').toInt();
-        bcam_goal_yellow_distance   = Serial4.readStringUntil('d').toInt();
-        bcam_goal_blue_deg          = Serial4.readStringUntil('e').toInt();
-        bcam_goal_blue_distance     = Serial4.readStringUntil('f').toInt();
-
-        bcam_ball_deg               = bcam_ball_deg == 500          ? 500 : (bcam_ball_deg + 135) % 360;
-        bcam_goal_yellow_deg        = bcam_goal_yellow_deg == 500   ? 500 : (-bcam_goal_yellow_deg + 180) % 360;
-        bcam_goal_blue_deg          = bcam_goal_blue_deg == 500     ? 500 : (-bcam_goal_blue_deg + 180) % 360;
-
-    }
-
     //Line
     while(Serial5.available() > 0)
     {
