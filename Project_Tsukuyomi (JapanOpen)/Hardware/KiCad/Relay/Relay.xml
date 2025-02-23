@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi (JapanOpen)/Hardware/KiCad/Relay/Relay.kicad_sch</source>
+    <date>Monday, January 20, 2025 at 01:43:30 AM</date>
+    <tool>Eeschema 7.0.11</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Relay.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>UJ32-C-V-G-TH-5-P24-TR</value>
+      <footprint>UJ32-C-V-G-TH-5-P24-TR:SAMESKY_UJ32-C-V-G-TH-5-P24-TR</footprint>
+      <fields>
+        <field name="Availability">In Stock</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/UJ32-C-V-G-TH-5-P24-TR/Same+Sky/view-part/?ref=eda</field>
+        <field name="Description">
+                        
+                            Type C, USB 3.2, 5 Gbps, 48 Vac, 5 A, Vertical, Gold plated 3u, Through Hole,9.2mm, 24 pin
+                        
+</field>
+        <field name="LCSC">C5342428</field>
+        <field name="MANUFACTURER">Same Sky</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">9.35mm</field>
+        <field name="MF">Same Sky</field>
+        <field name="MP">UJ32-C-V-G-TH-5-P24-TR</field>
+        <field name="PARTREV">1.0</field>
+        <field name="Package">None</field>
+        <field name="Price">None</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/UJ32-C-V-G-TH-5-P24-TR/Same+Sky/view-part/?ref=snap</field>
+      </fields>
+      <libsource lib="UJ32-C-V-G-TH-5-P24-TR" part="UJ32-C-V-G-TH-5-P24-TR" description=""/>
+      <property name="MF" value="Same Sky"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="9.35mm"/>
+      <property name="Package" value="None"/>
+      <property name="Price" value="None"/>
+      <property name="Check_prices" value="https://www.snapeda.com/parts/UJ32-C-V-G-TH-5-P24-TR/Same+Sky/view-part/?ref=eda"/>
+      <property name="STANDARD" value="Manufacturer Recommendations"/>
+      <property name="PARTREV" value="1.0"/>
+      <property name="SnapEDA_Link" value="https://www.snapeda.com/parts/UJ32-C-V-G-TH-5-P24-TR/Same+Sky/view-part/?ref=snap"/>
+      <property name="MP" value="UJ32-C-V-G-TH-5-P24-TR"/>
+      <property name="Description" value="&#xA;                        &#xA;                            Type C, USB 3.2, 5 Gbps, 48 Vac, 5 A, Vertical, Gold plated 3u, Through Hole,9.2mm, 24 pin&#xA;                        &#xA;"/>
+      <property name="Availability" value="In Stock"/>
+      <property name="MANUFACTURER" value="Same Sky"/>
+      <property name="LCSC" value="C5342428"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>77bfe34b-a5ea-4e39-9daf-ddf705a6d0d6</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x05_Socket</value>
+      <footprint>Connector_JST:JST_XH_S5B-XH-A_1x05_P2.50mm_Horizontal</footprint>
+      <libsource lib="Connector" part="Conn_01x05_Socket" description="Generic connector, single row, 01x05, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x05, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8e3c1d76-c639-4cc9-adb0-edf6bed53002</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x02_Socket</value>
+      <footprint>Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Socket" description="Generic connector, single row, 01x02, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x02, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d0eca9a6-5425-4efe-a5d7-a46db539d908</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x02_Socket</value>
+      <footprint>Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Socket" description="Generic connector, single row, 01x02, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x02, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>28f05319-9c51-4978-9c97-70521e404633</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>Conn_01x03_Socket</value>
+      <footprint>Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x03_Socket" description="Generic connector, single row, 01x03, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x03, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8b0d79a0-59a6-4e13-88da-46d6b2dec1d4</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>Conn_01x03_Socket</value>
+      <footprint>Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x03_Socket" description="Generic connector, single row, 01x03, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x03, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4dbf2ab5-e4a2-4f9c-81ce-0cfde9cf5370</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>Conn_01x04_Socket</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Horizontal</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Socket" description="Generic connector, single row, 01x04, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x04, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>961004fa-7d48-4b2c-80d7-5be8077fcc2b</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>Conn_01x08_Socket</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Horizontal</footprint>
+      <libsource lib="Connector" part="Conn_01x08_Socket" description="Generic connector, single row, 01x08, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x08, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>03af2d34-006a-4150-80d8-b3174933b49d</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>Conn_01x04_Socket</value>
+      <footprint>Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Socket" description="Generic connector, single row, 01x04, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x04, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>575e9b8b-0a8d-4692-8e91-043cf2e9e135</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>~</value>
+      <footprint>ESC:ESC_20A</footprint>
+      <libsource lib="ESC" part="ESC" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ac0640a0-f1d7-49c7-ba58-4a138bbead87</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>~</value>
+      <footprint>ESC:ESC_20A</footprint>
+      <libsource lib="ESC" part="ESC" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Relay.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4e063c3f-baff-420a-ae48-3e6bd57d62aa</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x02_Socket">
+      <description>Generic connector, single row, 01x02, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x03_Socket">
+      <description>Generic connector, single row, 01x03, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x04_Socket">
+      <description>Generic connector, single row, 01x04, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x05_Socket">
+      <description>Generic connector, single row, 01x05, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x08_Socket">
+      <description>Generic connector, single row, 01x08, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x08_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ESC" part="ESC">
+      <fields>
+        <field name="Reference">U</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDDM" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="PWM" type="input"/>
+        <pin num="4" name="VDD" type="power_in"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="OUT_A" type="output"/>
+        <pin num="7" name="OUT_B" type="output"/>
+        <pin num="8" name="OUT_C" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="UJ32-C-V-G-TH-5-P24-TR" part="UJ32-C-V-G-TH-5-P24-TR">
+      <fields>
+        <field name="Reference">J2</field>
+        <field name="Value">UJ32-C-V-G-TH-5-P24-TR</field>
+        <field name="Footprint">UJ32-C-V-G-TH-5-P24-TR:SAMESKY_UJ32-C-V-G-TH-5-P24-TR</field>
+        <field name="MF">Same Sky</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">9.35mm</field>
+        <field name="Package">None</field>
+        <field name="Price">None</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/UJ32-C-V-G-TH-5-P24-TR/Same+Sky/view-part/?ref=eda</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="PARTREV">1.0</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/UJ32-C-V-G-TH-5-P24-TR/Same+Sky/view-part/?ref=snap</field>
+        <field name="MP">UJ32-C-V-G-TH-5-P24-TR</field>
+        <field name="Description">
+                        
+                            Type C, USB 3.2, 5 Gbps, 48 Vac, 5 A, Vertical, Gold plated 3u, Through Hole,9.2mm, 24 pin
+                        
+</field>
+        <field name="Availability">In Stock</field>
+        <field name="MANUFACTURER">Same Sky</field>
+      </fields>
+      <pins>
+        <pin num="A1" name="GND" type="passive"/>
+        <pin num="A2" name="SSTXP1" type="passive"/>
+        <pin num="A3" name="SSTXN1" type="passive"/>
+        <pin num="A4" name="VBUS" type="passive"/>
+        <pin num="A5" name="CC1" type="passive"/>
+        <pin num="A6" name="DP1" type="passive"/>
+        <pin num="A7" name="DN1" type="passive"/>
+        <pin num="A8" name="SBU1" type="passive"/>
+        <pin num="A9" name="VBUS" type="passive"/>
+        <pin num="A10" name="SSRXN2" type="passive"/>
+        <pin num="A11" name="SSRXP2" type="passive"/>
+        <pin num="A12" name="GND" type="passive"/>
+        <pin num="B1" name="GND" type="passive"/>
+        <pin num="B2" name="SSTXP2" type="passive"/>
+        <pin num="B3" name="SSTXN2" type="passive"/>
+        <pin num="B4" name="VBUS" type="passive"/>
+        <pin num="B5" name="CC2" type="passive"/>
+        <pin num="B6" name="DP2" type="passive"/>
+        <pin num="B7" name="DN2" type="passive"/>
+        <pin num="B8" name="SBU2" type="passive"/>
+        <pin num="B9" name="VBUS" type="passive"/>
+        <pin num="B10" name="SSRXN1" type="passive"/>
+        <pin num="B11" name="SSRXP1" type="passive"/>
+        <pin num="B12" name="GND" type="passive"/>
+        <pin num="SH1" name="SHIELD" type="passive"/>
+        <pin num="SH2" name="SHIELD" type="passive"/>
+        <pin num="SH3" name="SHIELD" type="passive"/>
+        <pin num="SH4" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="ESC">
+      <uri>/Users/kyle.matsuda/GitHub/Artemis_2024/Project_OHKA/Hardware/KiCad_Library/ESC.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+12V">
+      <node ref="J1" pin="A4" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="A9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="B4" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="B9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="VDDM" pintype="power_in"/>
+      <node ref="U2" pin="1" pinfunction="VDDM" pintype="power_in"/>
+    </net>
+    <net code="2" name="+48V">
+      <node ref="J7" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J7" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J8" pin="7" pinfunction="Pin_7" pintype="passive"/>
+    </net>
+    <net code="3" name="/BLDC1">
+      <node ref="J8" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="PWM" pintype="input"/>
+    </net>
+    <net code="4" name="/BLDC2">
+      <node ref="J8" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="PWM" pintype="input"/>
+    </net>
+    <net code="5" name="/FET1">
+      <node ref="J1" pin="A6" pinfunction="DP1" pintype="passive"/>
+      <node ref="J8" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="6" name="/FET2">
+      <node ref="J1" pin="A7" pinfunction="DN1" pintype="passive"/>
+      <node ref="J8" pin="4" pinfunction="Pin_4" pintype="passive"/>
+    </net>
+    <net code="7" name="/FET3">
+      <node ref="J1" pin="A5" pinfunction="CC1" pintype="passive"/>
+      <node ref="J8" pin="5" pinfunction="Pin_5" pintype="passive"/>
+    </net>
+    <net code="8" name="/LineRX">
+      <node ref="J1" pin="B6" pinfunction="DP2" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="9" name="/LineTX">
+      <node ref="J1" pin="B7" pinfunction="DN2" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
+    </net>
+    <net code="10" name="/Line_NeoPixel">
+      <node ref="J1" pin="B8" pinfunction="SBU2" pintype="passive"/>
+    </net>
+    <net code="11" name="/MDRX">
+      <node ref="J1" pin="A3" pinfunction="SSTXN1" pintype="passive"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="12" name="/MDTX">
+      <node ref="J1" pin="A2" pinfunction="SSTXP1" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="13" name="/MouseRX">
+      <node ref="J1" pin="B3" pinfunction="SSTXN2" pintype="passive"/>
+      <node ref="J9" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="14" name="/MouseTX">
+      <node ref="J1" pin="B5" pinfunction="CC2" pintype="passive"/>
+      <node ref="J9" pin="4" pinfunction="Pin_4" pintype="passive"/>
+    </net>
+    <net code="15" name="/NeoPixel">
+      <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
+    </net>
+    <net code="16" name="/OUT1A">
+      <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="OUT_A" pintype="output"/>
+    </net>
+    <net code="17" name="/OUT1B">
+      <node ref="J5" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="OUT_B" pintype="output"/>
+    </net>
+    <net code="18" name="/OUT1C">
+      <node ref="J5" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="OUT_C" pintype="output"/>
+    </net>
+    <net code="19" name="/OUT2A">
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="OUT_A" pintype="output"/>
+    </net>
+    <net code="20" name="/OUT2B">
+      <node ref="J6" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="OUT_B" pintype="output"/>
+    </net>
+    <net code="21" name="/OUT2C">
+      <node ref="J6" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="OUT_C" pintype="output"/>
+    </net>
+    <net code="22" name="/UART_RX">
+      <node ref="J1" pin="A8" pinfunction="SBU1" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="23" name="/UART_TX">
+      <node ref="J1" pin="A10" pinfunction="SSRXN2" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="24" name="GND">
+      <node ref="J1" pin="A1" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="A12" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="B1" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="B12" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="SH1" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="SH2" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="SH3" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="SH4" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J9" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="5" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="5" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="25" name="unconnected-(J1-SSRXN1-PadB10)">
+      <node ref="J1" pin="B10" pinfunction="SSRXN1" pintype="passive+no_connect"/>
+    </net>
+    <net code="26" name="unconnected-(J1-SSRXP1-PadB11)">
+      <node ref="J1" pin="B11" pinfunction="SSRXP1" pintype="passive+no_connect"/>
+    </net>
+    <net code="27" name="unconnected-(J1-SSRXP2-PadA11)">
+      <node ref="J1" pin="A11" pinfunction="SSRXP2" pintype="passive+no_connect"/>
+    </net>
+    <net code="28" name="unconnected-(J1-SSTXP2-PadB2)">
+      <node ref="J1" pin="B2" pinfunction="SSTXP2" pintype="passive+no_connect"/>
+    </net>
+    <net code="29" name="unconnected-(U1-VDD-Pad4)">
+      <node ref="U1" pin="4" pinfunction="VDD" pintype="power_in+no_connect"/>
+    </net>
+    <net code="30" name="unconnected-(U2-VDD-Pad4)">
+      <node ref="U2" pin="4" pinfunction="VDD" pintype="power_in+no_connect"/>
+    </net>
+  </nets>
+</export>

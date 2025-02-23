@@ -1,0 +1,52 @@
+(footprint "ESC_20A" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr smd)
+  (fp_text reference "REF**" (at 0 15.875 unlocked) (layer "F.SilkS")
+      (effects (font (size 1 1) (thickness 0.1)))
+    (tstamp f6c7de8c-413d-41d1-9020-02594f91204f)
+  )
+  (fp_text value "ESC_20A" (at 0 18.415 unlocked) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 32997c12-cf6f-4937-b25f-25b97aa5c085)
+  )
+  (fp_text user "${REFERENCE}" (at 0 20.955 unlocked) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp dc1f4020-879c-4e79-97a8-b6accaae98c7)
+  )
+  (fp_line (start -7.25 4.445) (end -7.25 31.345)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp 4a1ea8cd-611b-4d80-9213-2dee396538b9))
+  (fp_line (start -6.95 31.645) (end 6.95 31.645)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp 007e195f-7f90-4c2e-9530-8aba72f1c87a))
+  (fp_line (start 6.95 4.145) (end -6.95 4.145)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp c9107236-f7b0-4981-b286-d42ecf082104))
+  (fp_line (start 7.25 31.345) (end 7.25 4.445)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp 56a8d9c0-ab10-47d5-b16e-09fba2e1cae5))
+  (fp_arc (start -7.25 4.445) (mid -7.162132 4.232868) (end -6.95 4.145)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp 1e439c79-068a-48fb-b379-1d4835d63557))
+  (fp_arc (start -6.95 31.645) (mid -7.162132 31.557132) (end -7.25 31.345)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp 73d1f568-1275-495f-8c49-c44a846b50b9))
+  (fp_arc (start 6.95 4.145) (mid 7.162132 4.232868) (end 7.25 4.445)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp 4d650acb-30cb-430d-89e6-92ee66731ad5))
+  (fp_arc (start 7.25 31.345) (mid 7.162132 31.557132) (end 6.95 31.645)
+    (stroke (width 0.2) (type solid)) (layer "Edge.Cuts") (tstamp eb9655a1-773e-4c2a-9c91-5fb2178c5467))
+  (pad "1" thru_hole circle (at 5.715 33.02 90) (size 2.5 2.5) (drill 1.5) (layers "*.Cu" "*.Mask") (tstamp c32ad78c-3794-4808-86a5-ed4d969e4eb2))
+  (pad "2" thru_hole circle (at -5.715 33.02 90) (size 2.5 2.5) (drill 1.5) (layers "*.Cu" "*.Mask") (tstamp b5e3e9fc-3929-451c-9090-f4100e327368))
+  (pad "3" smd roundrect (at -1.905 33.02) (size 1.5 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp 84e361f2-29fb-4cc9-ae57-d9b7582b86cd))
+  (pad "4" smd roundrect (at 0 33.02) (size 1.5 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp 026d682b-6615-40ac-bb9f-8d99238189c3))
+  (pad "5" smd roundrect (at 1.905 33.02) (size 1.5 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp b9769dfd-51b6-4732-81ad-9ffd0a0afb01))
+  (pad "6" thru_hole circle (at -4.445 2.54) (size 2.5 2.5) (drill 1.5) (layers "*.Cu" "*.Mask") (tstamp de3c97fe-9986-4471-a0b0-bcb628dceeba))
+  (pad "7" thru_hole circle (at 0 2.54) (size 2.5 2.5) (drill 1.5) (layers "*.Cu" "*.Mask") (tstamp 61ab45f6-ab22-41ec-883b-dfeb0db39557))
+  (pad "8" thru_hole circle (at 4.445 2.54 90) (size 2.5 2.5) (drill 1.5) (layers "*.Cu" "*.Mask") (tstamp 14538f1a-a0ad-48d3-bc47-a324abbf97f4))
+  (group "" (id 7626d6be-5aac-497a-9985-01c1db5dceb0)
+    (members
+      007e195f-7f90-4c2e-9530-8aba72f1c87a
+      1e439c79-068a-48fb-b379-1d4835d63557
+      4a1ea8cd-611b-4d80-9213-2dee396538b9
+      4d650acb-30cb-430d-89e6-92ee66731ad5
+      56a8d9c0-ab10-47d5-b16e-09fba2e1cae5
+      73d1f568-1275-495f-8c49-c44a846b50b9
+      c9107236-f7b0-4981-b286-d42ecf082104
+      eb9655a1-773e-4c2a-9c91-5fb2178c5467
+    )
+  )
+)

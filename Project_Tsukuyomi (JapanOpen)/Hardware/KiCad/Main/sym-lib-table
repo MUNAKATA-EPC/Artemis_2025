@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "teensy")(type "Legacy")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi/Hardware/KiCad/KiCad_Library/Teensy/teensy.lib")(options "")(descr ""))
-  (lib (name "AE-BNO055-BO")(type "KiCad")(uri "/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi/Hardware/KiCad/KiCad_Library/_Others/AE-BNO055-BO.kicad_sym")(options "")(descr ""))
-)
