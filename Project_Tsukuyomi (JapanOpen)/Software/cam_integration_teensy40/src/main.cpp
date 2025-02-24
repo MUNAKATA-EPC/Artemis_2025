@@ -34,9 +34,10 @@ void setup() {
 
   Serial.begin(9600);
 
-  Serial1.begin(115200);
-  Serial1.setTimeout(10);
+  Serial1.begin(9600);
+  Serial1.setTimeout(115200);
 
+  /*
   Serial2.begin(9600);
   Serial2.setTimeout(10);
   Serial3.begin(9600);
@@ -48,35 +49,35 @@ void setup() {
   Serial6.begin(9600);
   Serial6.setTimeout(10);
   Serial7.begin(9600);
-  Serial7.setTimeout(10);
+  Serial7.setTimeout(10);*/
 }
 
-int calculate_average() 
+int calculate_average(int data_index) 
 {
   int sum = 0;
   int count = 0;
   bool added360 = false;  // 360を加算したかどうかのフラグ
-  int originalVal = cam_data[0][0];  // cam_data[0][0] の元の値を保存
+  int originalVal = cam_data[0][data_index];  // cam_data[0][0] の元の値を保存
 
   for (int i = 0; i < 6; i++) 
   {
       // 1回目のループだけ cam_data[0][0] に 360 を加算
-      if (i == 0 && !added360 && cam_data[0][0] != 500 && cam_data[5][0] != 500)
+      if (i == 0 && !added360 && cam_data[0][data_index] != 500 && cam_data[5][data_index] != 500)
       {
-          cam_data[0][0] += 360;  // cam_data[0][0] に 360 を加算
+          cam_data[0][data_index] += 360;  // cam_data[0][0] に 360 を加算
           added360 = true;  // 加算したことを記録
       }
 
       // cam_data[i][0] が 500 でない場合にのみ sum に加算
-      if (cam_data[i][0] != 500)
+      if (cam_data[i][data_index] != 500)
       {
-          sum += cam_data[i][0];  // cam_data[i][0] を足す
+          sum += cam_data[i][data_index];  // cam_data[i][0] を足す
           count++;
       }
   }
 
   // ループ終了後、cam_data[0][0] の値を元に戻す
-  cam_data[0][0] = originalVal;
+  cam_data[0][data_index] = originalVal;
 
   if (count > 0) 
   {
@@ -106,9 +107,11 @@ int calculate_average()
   }
 }
 
-void loop() {
+int test = 0;
 
-  if(Serial2.available() > 0 && (read_serial_type == 0 || read_serial_type == 1 || read_serial_type == 2))
+void loop() {
+  /*
+  if(Serial2.available() > 0 && (read_serial_type == 0 || read_serial_type == 1))
   {
     cam_data[0][0] = Serial2.readStringUntil('a').toInt();
     cam_data[0][1] = Serial2.readStringUntil('b').toInt();
@@ -118,7 +121,7 @@ void loop() {
     cam_data[0][5] = Serial2.readStringUntil('f').toInt();
   }
 
-  if(Serial3.available() > 0 && (read_serial_type == 1 || read_serial_type == 2 || read_serial_type == 3))
+  if(Serial3.available() > 0 && (read_serial_type == 1 || read_serial_type == 2))
   {
     cam_data[1][0] = Serial3.readStringUntil('a').toInt();
     cam_data[1][1] = Serial3.readStringUntil('b').toInt();
@@ -132,7 +135,7 @@ void loop() {
     cam_data[1][4] = cam_data[1][0] == 500 ? 500 : cam_data[1][4] + 60;
   }
 
-  if(Serial4.available() > 0 && (read_serial_type == 2 || read_serial_type == 3 || read_serial_type == 4))
+  if(Serial4.available() > 0 && (read_serial_type == 2 || read_serial_type == 3))
   {
     cam_data[2][0] = Serial4.readStringUntil('a').toInt();
     cam_data[2][1] = Serial4.readStringUntil('b').toInt();
@@ -146,7 +149,7 @@ void loop() {
     cam_data[2][4] = cam_data[2][0] == 500 ? 500 : cam_data[2][4] + 60 * 2;
   }
 
-  if(Serial5.available() > 0 && (read_serial_type == 3 || read_serial_type == 4 || read_serial_type == 5))
+  if(Serial5.available() > 0 && (read_serial_type == 3 || read_serial_type == 4))
   {
     cam_data[3][0] = Serial5.readStringUntil('a').toInt();
     cam_data[3][1] = Serial5.readStringUntil('b').toInt();
@@ -160,7 +163,7 @@ void loop() {
     cam_data[3][4] = cam_data[3][0] == 500 ? 500 : cam_data[3][4] + 60 * 3;
   }
 
-  if(Serial6.available() > 0 && (read_serial_type == 4 || read_serial_type == 5 || read_serial_type == 0))
+  if(Serial6.available() > 0 && (read_serial_type == 4 || read_serial_type == 5))
   {
     cam_data[4][0] = Serial6.readStringUntil('a').toInt();
     cam_data[4][1] = Serial6.readStringUntil('b').toInt();
@@ -174,7 +177,7 @@ void loop() {
     cam_data[4][4] = cam_data[4][0] == 500 ? 500 : cam_data[4][4] + 60 * 4;
   }
 
-  if(Serial7.available() > 0 && (read_serial_type == 5 || read_serial_type == 0 || read_serial_type == 1))
+  if(Serial7.available() > 0 && (read_serial_type == 5 || read_serial_type == 0))
   {
     cam_data[5][0] = Serial7.readStringUntil('a').toInt();
     cam_data[5][1] = Serial7.readStringUntil('b').toInt();
@@ -198,7 +201,19 @@ void loop() {
 
   //Serial.println(read_serial_type);
 
-  int average = calculate_average();
-  Serial.println(average);
+  int average_ball_deg = calculate_average(0);
+  int average_ball_dis = calculate_average(1);
+  int average_ygoal_deg = calculate_average(2);
+  int average_ygoal_dis = calculate_average(3);
+  int average_bgoal_deg = calculate_average(4);
+  int average_bgoal_dis = calculate_average(5);
+*/
 
+  test++;
+
+  Serial1.print(String(test));
+  Serial1.print(String('a'));
+  Serial1.flush();
+
+  Serial.println(test);
 }

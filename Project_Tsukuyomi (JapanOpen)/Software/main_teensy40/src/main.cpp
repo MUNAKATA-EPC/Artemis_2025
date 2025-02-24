@@ -19,9 +19,16 @@
 #include "common/serial.hpp"
 #include "common/motor.hpp"
 
+#include "modules/kicker.hpp"
 #include "modules/BNO055.hpp"
+#include "modules/button.hpp"
 
 BNO055 bno055;
+
+Button bt;
+
+Kicker f_kicker;
+Kicker b_kicker;
 
 void play_startup_sound()
 {
@@ -38,21 +45,39 @@ void play_startup_sound()
 }
 
 void setup() {
+    //nalogWriteResolution(10);
+
     Serial.println(9600);
 
+    init_serial();
     motor_init();
 
     bno055.init(6);
+    bt.init(6, Button::Button_Value_Type::PULLDOWN);
+    
+    f_kicker.init(30, 31);
+    b_kicker.init(30, 32);
 
     play_startup_sound();
 }
 
 void loop() {
+    process_serial();
+    /*
     bno055.process();
 
     gyro_deg = bno055.get_degrees();
 
+    f_kicker.loop();
+
+    bt.loop();
+    if(bt.is_pushed())
+    {
+        tone(2, 5000, 90);
+        f_kicker.kick();
+    }
+
     pid_gyro();
 
-    motor_move(0, 0);
+    motor_move(0, 0);*/
 }

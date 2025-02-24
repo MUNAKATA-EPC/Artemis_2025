@@ -127,8 +127,6 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b = false, bool b_b =
     String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d;
 
     Serial2.println(send_data);
-
-    Serial.println(send_data);
 }
 
 void motor_move(int deg, int power)
