@@ -37,7 +37,6 @@ void setup() {
   Serial1.begin(9600);
   Serial1.setTimeout(115200);
 
-  /*
   Serial2.begin(9600);
   Serial2.setTimeout(10);
   Serial3.begin(9600);
@@ -49,7 +48,7 @@ void setup() {
   Serial6.begin(9600);
   Serial6.setTimeout(10);
   Serial7.begin(9600);
-  Serial7.setTimeout(10);*/
+  Serial7.setTimeout(10);
 }
 
 int calculate_average(int data_index) 
@@ -93,12 +92,12 @@ int calculate_average(int data_index)
       }
       else
       {
-        return (((int)(average) % 360) + 315 + 180) % 360;
+        return (((int)(average) % 360) + 315) % 360;
       }
     }
     else
     {
-      return ((int)(average) + 315 + 180) % 360;  // 余りが360未満の場合、平均をそのまま整数で返す
+      return ((int)(average) + 315) % 360;  // 余りが360未満の場合、平均をそのまま整数で返す
     }
   } 
   else 
@@ -110,8 +109,7 @@ int calculate_average(int data_index)
 int test = 0;
 
 void loop() {
-  /*
-  if(Serial2.available() > 0 && (read_serial_type == 0 || read_serial_type == 1))
+  if(Serial2.available() > 0 && (read_serial_type == 0 || read_serial_type == 1 || read_serial_type == 2))
   {
     cam_data[0][0] = Serial2.readStringUntil('a').toInt();
     cam_data[0][1] = Serial2.readStringUntil('b').toInt();
@@ -121,7 +119,7 @@ void loop() {
     cam_data[0][5] = Serial2.readStringUntil('f').toInt();
   }
 
-  if(Serial3.available() > 0 && (read_serial_type == 1 || read_serial_type == 2))
+  if(Serial3.available() > 0 && (read_serial_type == 1 || read_serial_type == 2 || read_serial_type == 3))
   {
     cam_data[1][0] = Serial3.readStringUntil('a').toInt();
     cam_data[1][1] = Serial3.readStringUntil('b').toInt();
@@ -135,7 +133,7 @@ void loop() {
     cam_data[1][4] = cam_data[1][0] == 500 ? 500 : cam_data[1][4] + 60;
   }
 
-  if(Serial4.available() > 0 && (read_serial_type == 2 || read_serial_type == 3))
+  if(Serial4.available() > 0 && (read_serial_type == 2 || read_serial_type == 3 || read_serial_type == 4))
   {
     cam_data[2][0] = Serial4.readStringUntil('a').toInt();
     cam_data[2][1] = Serial4.readStringUntil('b').toInt();
@@ -149,7 +147,7 @@ void loop() {
     cam_data[2][4] = cam_data[2][0] == 500 ? 500 : cam_data[2][4] + 60 * 2;
   }
 
-  if(Serial5.available() > 0 && (read_serial_type == 3 || read_serial_type == 4))
+  if(Serial5.available() > 0 && (read_serial_type == 3 || read_serial_type == 4 || read_serial_type == 5))
   {
     cam_data[3][0] = Serial5.readStringUntil('a').toInt();
     cam_data[3][1] = Serial5.readStringUntil('b').toInt();
@@ -163,7 +161,7 @@ void loop() {
     cam_data[3][4] = cam_data[3][0] == 500 ? 500 : cam_data[3][4] + 60 * 3;
   }
 
-  if(Serial6.available() > 0 && (read_serial_type == 4 || read_serial_type == 5))
+  if(Serial6.available() > 0 && (read_serial_type == 4 || read_serial_type == 5 || read_serial_type == 0))
   {
     cam_data[4][0] = Serial6.readStringUntil('a').toInt();
     cam_data[4][1] = Serial6.readStringUntil('b').toInt();
@@ -177,7 +175,7 @@ void loop() {
     cam_data[4][4] = cam_data[4][0] == 500 ? 500 : cam_data[4][4] + 60 * 4;
   }
 
-  if(Serial7.available() > 0 && (read_serial_type == 5 || read_serial_type == 0))
+  if(Serial7.available() > 0 && (read_serial_type == 5 || read_serial_type == 0 || read_serial_type == 1))
   {
     cam_data[5][0] = Serial7.readStringUntil('a').toInt();
     cam_data[5][1] = Serial7.readStringUntil('b').toInt();
@@ -207,13 +205,20 @@ void loop() {
   int average_ygoal_dis = calculate_average(3);
   int average_bgoal_deg = calculate_average(4);
   int average_bgoal_dis = calculate_average(5);
-*/
 
-  test++;
-
-  Serial1.print(String(test));
+  Serial1.print(String(average_ball_deg));
   Serial1.print(String('a'));
+  Serial1.print(String(average_ball_dis));
+  Serial1.print(String('b'));
+  Serial1.print(String(average_ygoal_deg));
+  Serial1.print(String('c'));
+  Serial1.print(String(average_ygoal_dis));
+  Serial1.print(String('d'));
+  Serial1.print(String(average_bgoal_deg));
+  Serial1.print(String('e'));
+  Serial1.print(String(average_bgoal_dis));
+  Serial1.print(String('f'));
   Serial1.flush();
 
-  Serial.println(test);
+  Serial.println(average_ball_deg);
 }

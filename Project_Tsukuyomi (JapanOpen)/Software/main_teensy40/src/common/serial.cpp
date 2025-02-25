@@ -21,6 +21,13 @@ void process_serial()
 {
     if(Serial1.available() > 0)
     {
-        Serial.println(Serial1.readStringUntil('a').toInt());
+        ball_deg = Serial1.readStringUntil('a').toInt();
+        ball_dis = Serial1.readStringUntil('b').toInt();
+        ygoal_deg = Serial1.readStringUntil('c').toInt();
+        ygoal_dis = Serial1.readStringUntil('d').toInt();
+        bgoal_deg = Serial1.readStringUntil('e').toInt();
+        bgoal_dis = Serial1.readStringUntil('f').toInt();
     }
+
+    Serial.println(ball_deg);
 }

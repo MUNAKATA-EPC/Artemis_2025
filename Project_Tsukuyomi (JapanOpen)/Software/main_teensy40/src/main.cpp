@@ -30,6 +30,8 @@ Button bt;
 Kicker f_kicker;
 Kicker b_kicker;
 
+bool is_running;
+
 void play_startup_sound()
 {
     tone(2, 3500, 90);
@@ -63,7 +65,6 @@ void setup() {
 
 void loop() {
     process_serial();
-    /*
     bno055.process();
 
     gyro_deg = bno055.get_degrees();
@@ -73,11 +74,40 @@ void loop() {
     bt.loop();
     if(bt.is_pushed())
     {
-        tone(2, 5000, 90);
-        f_kicker.kick();
+        is_running = !is_running;
     }
 
-    pid_gyro();
+    if(is_running)
+    {
+        tone(2, 4500, 90);
 
-    motor_move(0, 0);*/
+        pid_gyro();
+        
+        if(ball_deg == -1)
+        {
+            motor_move(0, 0);
+        }
+        else
+        {
+            if(ball_deg <= 10 || ball_deg >= 350)
+            {
+                motor_move(0, 70);
+            }
+            else
+            {
+                if(ball_deg <= 180)
+                {
+                    motor_move(ball_deg + 70, 70);
+                }
+                else
+                {
+                    motor_move(ball_deg - 70, 70);
+                }
+            }
+        }
+    }
+    else
+    {
+        motor_direct_drive(0, 0, 0, 0);
+    }
 }

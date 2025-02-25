@@ -3,10 +3,12 @@
 #include "sensors_variables.hpp"
 #include "motor.hpp"
 
-#define GYRO_PGAIN 0.6
-#define GYRO_DGAIN 2.5
+#define GYRO_PGAIN 0.7
+#define GYRO_DGAIN 20
 #define GOAL_PGAIN 0.8
 #define GOAL_DGAIN 1.0
+
+#define PID_MAX 80
 
 int pid_value;
 
@@ -25,7 +27,6 @@ void pid_gyro()
     int gyro_value = gyro_deg;
     gyro_value = gyro_value > 180 ? gyro_value - 360 : gyro_value;
     
-    
     p_value = gyro_value;
 
     pid_deviation = gyro_value;
@@ -33,6 +34,21 @@ void pid_gyro()
     pid_previous_deviation = gyro_value;
 
     pid_value = p_value * GYRO_PGAIN + d_value * GYRO_DGAIN;
+
+    if(pid_value < 0)
+    {
+        if(pid_value < -PID_MAX)
+        {
+            pid_value = -PID_MAX;
+        }
+    }
+    else
+    {
+        if(pid_value > PID_MAX)
+        {
+            pid_value = PID_MAX;
+        }
+    }
 }
 
 void pid_camera(int value)
