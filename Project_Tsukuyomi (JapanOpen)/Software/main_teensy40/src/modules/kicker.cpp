@@ -33,7 +33,7 @@ void Kicker::loop()
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, 0);
         }
-        else if(_kick_timer.get_value() <= 300)
+        else if(_kick_timer.get_value() <= _delay_time)
         {
             digitalWrite(_charge_pin, HIGH);
             digitalWrite(_kick_pin, 0);
@@ -51,10 +51,11 @@ void Kicker::loop()
     }
 }
 
-void Kicker::kick()
+void Kicker::kick(int delay = 300)
 {
     if(!_is_kicking)
     {
+        _delay_time = delay;
         _kick_timer.start();
         _is_kicking = true;
     }

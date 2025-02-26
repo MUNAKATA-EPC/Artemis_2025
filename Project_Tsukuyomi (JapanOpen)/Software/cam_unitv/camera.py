@@ -16,7 +16,7 @@ PROXIMITY_CNT_NUM = const(10)
 fm.register(34, fm.fpioa.UART1_TX, force=True)
 fm.register(35, fm.fpioa.UART1_RX, force=True)
 
-uart = UART(UART.UART1, 9600, 8, None, 1, timeout= 1000)
+uart = UART(UART.UART1, 115200, 8, None, 1, timeout= 1000)
 
 clock = time.clock()
 
@@ -44,7 +44,7 @@ sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(50, 97, -26, 65, 66, 96)]
+ball_thresholds = [(53, 76, 26, 69, 64, 77)]
 y_goal_thresholds = [(64, 96, -36, -14, 46, 88)]
 b_goal_thresholds = [(23, 42, 16, 54, -72, -29)]
 

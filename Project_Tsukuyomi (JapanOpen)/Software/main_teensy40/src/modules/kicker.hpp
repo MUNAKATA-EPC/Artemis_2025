@@ -7,10 +7,11 @@ class Kicker{
 public:
     void init(int charge, int kick);
     void loop();
-    void kick();
+    void kick(int delay);
     bool is_kicking();
 
 private:
+    int _delay_time;
     int _charge_pin;
     int _kick_pin;
     bool _is_kicking;
