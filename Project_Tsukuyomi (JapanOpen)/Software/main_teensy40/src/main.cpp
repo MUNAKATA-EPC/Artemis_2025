@@ -26,6 +26,8 @@
 #include "process/attacker.hpp"
 
 BNO055 bno055;
+Kicker f_kicker;
+Kicker b_kicker;
 
 Button bt;
 
@@ -78,7 +80,7 @@ void loop() {
 
     if(is_running)
     {
-        process_attacker();
+        process_attacker(100);
     }
     else
     {

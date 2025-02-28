@@ -3,10 +3,10 @@
 #include "sensors_variables.hpp"
 #include "motor.hpp"
 
-#define GYRO_PGAIN 0.85
+#define GYRO_PGAIN 0.95
 #define GYRO_DGAIN 3.5
 #define GOAL_PGAIN 0.8
-#define GOAL_DGAIN 1.0
+#define GOAL_DGAIN 3.0
 
 #define PID_MAX 80
 
@@ -64,6 +64,21 @@ void pid_camera(int value)
     pid_previous_deviation = gyro_value;
 
     pid_value = p_value * GOAL_PGAIN + d_value * GOAL_DGAIN;
+}
+
+float get_max_value_in_array(float* ar, int ar_cnt)
+{
+    float ret;
+
+    for(int i = 0; i < ar_cnt; i++)
+    {
+        if(abs(ar[i]) > ret)
+        {
+            ret = abs(ar[i]);
+        }
+    }   
+
+    return ret;
 }
 
 void motor_break()
@@ -159,7 +174,7 @@ void motor_move(int deg, int power)
 
     float strongest_power = 0;
 
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < 4; i++)
     {
         if(abs(powers[i]) > strongest_power)
         {
@@ -171,7 +186,7 @@ void motor_move(int deg, int power)
     {
         float ratio_of_max_power = power / strongest_power;
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 4; i++)
         {
             powers[i] = (powers[i] * ratio_of_max_power);
         }
@@ -180,7 +195,33 @@ void motor_move(int deg, int power)
     for(int i = 0; i < 4; i++)
     {
         powers[i] -= pid_value;
-        powers[i] = max(min(powers[i], 100), -100);
+    }
+
+    //PIDの値によって値が100より大きくなったとき補正する
+    strongest_power = get_max_value_in_array(powers, 4);
+
+    if(strongest_power > 100)
+    {
+        int diff_val = strongest_power - 100;
+
+        for(int i = 0; i < 4; i++)
+        {
+            if(powers[i] > 0)
+            {
+                powers[i] = powers[i] - diff_val;
+            }
+            else
+            {
+                powers[i] = powers[i] + diff_val;
+            }
+        }
+    }
+    else
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            powers[i] = max(min(powers[i], 100), -100);
+        }
     }
 
     motor_direct_drive((int)powers[0], (int)powers[1], (int)powers[2], (int)powers[3]);

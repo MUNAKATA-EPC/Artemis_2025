@@ -84,11 +84,6 @@ void loop() {
 
   get_motor_data();
 
-  motors[0].set(30, 0);
-  motors[1].set(30, 1);
-  motors[2].set(30, 1);
-  motors[3].set(30, 0);
-
   for(int i = 0; i < 4; i++)
   {
     if(motors[i].get_rotate() == 0)

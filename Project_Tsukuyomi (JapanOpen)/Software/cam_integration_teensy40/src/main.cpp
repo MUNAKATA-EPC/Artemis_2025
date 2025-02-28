@@ -51,6 +51,26 @@ void setup() {
   Serial7.setTimeout(5);
 }
 
+int calculate_average_dis(int data_index) 
+{
+  int sum = 0;
+  int count = 0;
+  bool added360 = false;  // 360を加算したかどうかのフラグ
+  int originalVal = cam_data[0][data_index];  // cam_data[0][0] の元の値を保存
+
+  for (int i = 0; i < 6; i++) 
+  {
+      // cam_data[i][0] が 500 でない場合にのみ sum に加算
+      if (cam_data[i][data_index] != 500)
+      {
+          sum += cam_data[i][data_index];  // cam_data[i][0] を足す
+          count++;
+      }
+  }
+
+  return sum / count;
+}
+
 int calculate_average(int data_index) 
 {
   int sum = 0;
@@ -105,6 +125,8 @@ int calculate_average(int data_index)
     return -1;  // データがなければ -1 を返す
   }
 }
+
+
 
 int test = 0;
 
@@ -200,11 +222,11 @@ void loop() {
   //Serial.println(read_serial_type);
 
   int average_ball_deg = calculate_average(0);
-  int average_ball_dis = calculate_average(1);
+  int average_ball_dis = calculate_average_dis(1);
   int average_ygoal_deg = calculate_average(2);
-  int average_ygoal_dis = calculate_average(3);
+  int average_ygoal_dis = calculate_average_dis(3);
   int average_bgoal_deg = calculate_average(4);
-  int average_bgoal_dis = calculate_average(5);
+  int average_bgoal_dis = calculate_average_dis(5);
 
   Serial1.print(String(average_ball_deg));
   Serial1.print(String('a'));

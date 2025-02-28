@@ -9,48 +9,51 @@ void init_attacker()
 
 }
 
-void process_attacker()
+void process_attacker(int speed)
 {
-    pid_gyro();
     
-    if(ball_deg == -1)
+    /*if(ball_deg >= 330 || ball_deg <= 30)
+    {
+        pid_camera(ygoal_deg);
+    }
+    else
+    {
+        pid_gyro();
+    }*/
+
+    pid_camera(ygoal_deg);
+
+    
+    /*if(ball_deg == -1)
     {
         motor_move(0, 0);
     }
     else
     {
-        if(ball_deg <= 10 || ball_deg >= 350)
+        if(ball_deg <= 8 || ball_deg >= 350)
         {
-            motor_move(0, 80);
-
-            f_kicker.kick(1000);
+            motor_move(0, speed);
         }
-        else if(ball_deg <= 20)
+        else 
         {
-            motor_move(20, 70);
-        }
-        else if(ball_deg >= 340)
-        {
-            motor_move(320, 70);
-        }
-        else
-        {
-            if(ball_deg <= 60)
+            if(ball_deg <= 45)
             {
-                motor_move(ball_deg + 50, 70);
+                motor_move(ball_deg + 20, speed * 0.8);
             }
             else if(ball_deg <= 180)
             {
-                motor_move(ball_deg + 50, 90);
+                motor_move(ball_deg + 45, speed );
             }
-            else if(ball_deg <= 300)
+            else if(ball_deg <= 315)
             {
-                motor_move(ball_deg + 50, 90);
+                motor_move(ball_deg - 45, speed );
             }
             else
             {
-                motor_move(ball_deg - 50, 70);
+                motor_move(ball_deg - 20, speed * 0.8);
             }
+            
         }
-    }
+    }*/
+    motor_move(0, 0);
 }

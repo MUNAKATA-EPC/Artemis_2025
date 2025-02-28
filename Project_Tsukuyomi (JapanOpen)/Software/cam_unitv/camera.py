@@ -44,8 +44,8 @@ sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(53, 76, 26, 69, 64, 77)]
-y_goal_thresholds = [(64, 96, -36, -14, 46, 88)]
+ball_thresholds = [(51, 70, 33, 81, 23, 70)]
+y_goal_thresholds = [(63, 94, -34, -14, 32, 80)]
 b_goal_thresholds = [(23, 42, 16, 54, -72, -29)]
 
 
@@ -119,7 +119,7 @@ while True:
         ball_x = 0
         ball_y = 0
 
-        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 4, area_threshold = 4, merge = True, margin = 4):
+        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 1, area_threshold = 1):
             if blob[2] < 150:
                 ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
@@ -193,26 +193,26 @@ while True:
 
     if(check_ball == 1):
         ball_dir = int(ball_x * ANGLE_CONVERSION) #ボールの角度を求める
-        ball_dis = int(math.sqrt((world_ball_vector[0][0] - (ball_x - WIDTH) * 0.0625) ** 2 + world_ball_vector[1][0] ** 2) * 2) * (1.0 / (abs(math.cos(math.radians(ball_dir - 45))) ** 0.5))
+        ball_dis = ball_y
     else:
         ball_dir = 500
         ball_dis = 500
 
     if(check_y_goal == 1):
-        y_goal_dir = (int(y_goal_x ) / WIDTH * 90) - 45
-        y_goal_dis = int(math.sqrt((world_y_goal_vector[0][0] - (y_goal_x - WIDTH) * 0.0625) ** 2 + world_y_goal_vector[1][0] ** 2) * 2) * (1.0 / (abs(math.cos(math.radians(y_goal_dir - 45))) ** 0.5))
+        y_goal_dir = (int(y_goal_x ) / WIDTH * 90)
+        y_goal_dis = int(math.sqrt((world_y_goal_vector[0][0] - (y_goal_x - WIDTH) * 0.0625) ** 2 + world_y_goal_vector[1][0] ))
     else:
         y_goal_dir = 500
         y_goal_dis = 500
 
     if(check_b_goal == 1):
         b_goal_dir = (int(b_goal_x) / WIDTH * 90) - 45
-        b_goal_dis = int(math.sqrt((world_b_goal_vector[0][0] - (b_goal_x - WIDTH) * 0.0625) ** 2 + world_b_goal_vector[1][0] ** 2) * 2) * (1.0 / (abs(math.cos(math.radians(b_goal_dir - 45))) ** 0.5))
+        b_goal_dis = int(math.sqrt((world_b_goal_vector[0][0] - (b_goal_x - WIDTH) * 0.0625) ** 2 + world_b_goal_vector[1][0] ))
     else:
         b_goal_dir = 500
         b_goal_dis = 500
 
-    print(str(int(clock.fps())) + ":" + str(ball_dir))
+    print(str(int(clock.fps())) + ":" + str(y_goal_dir))
 
     #uart送信
     uart.write(str(ball_dir))
