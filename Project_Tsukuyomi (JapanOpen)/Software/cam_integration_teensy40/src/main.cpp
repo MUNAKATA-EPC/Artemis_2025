@@ -55,8 +55,7 @@ int calculate_average_dis(int data_index)
 {
   int sum = 0;
   int count = 0;
-  bool added360 = false;  // 360を加算したかどうかのフラグ
-  int originalVal = cam_data[0][data_index];  // cam_data[0][0] の元の値を保存
+
 
   for (int i = 0; i < 6; i++) 
   {
@@ -74,19 +73,11 @@ int calculate_average_dis(int data_index)
 int calculate_average(int data_index) 
 {
   int sum = 0;
+
   int count = 0;
-  bool added360 = false;  // 360を加算したかどうかのフラグ
-  int originalVal = cam_data[0][data_index];  // cam_data[0][0] の元の値を保存
 
   for (int i = 0; i < 6; i++) 
   {
-      // 1回目のループだけ cam_data[0][0] に 360 を加算
-      if (i == 0 && !added360 && cam_data[0][data_index] != 500 && cam_data[5][data_index] != 500)
-      {
-          cam_data[0][data_index] += 360;  // cam_data[0][0] に 360 を加算
-          added360 = true;  // 加算したことを記録
-      }
-
       // cam_data[i][0] が 500 でない場合にのみ sum に加算
       if (cam_data[i][data_index] != 500)
       {
@@ -95,29 +86,18 @@ int calculate_average(int data_index)
       }
   }
 
-  // ループ終了後、cam_data[0][0] の値を元に戻す
-  cam_data[0][data_index] = originalVal;
-
   if (count > 0) 
   {
     // 平均を計算
-    float average = (float)sum / count;
+    float average = (float)sum / count ;
 
-    // 360で割った余りを求める
-    if (average >= 360)
+    if((cam_data[0][data_index] != 500 && cam_data[5][data_index] != 500)||((cam_data[1][data_index] != 500 && cam_data[5][data_index] != 500)))
     {
-      if (average >= 720)
-      {
-        return (((int)(average) % 720) + 315) % 360;
-      }
-      else
-      {
-        return (((int)(average) % 360) + 315) % 360;
-      }
+      return ((((((int)(average))) + 180) % 360) + 315) % 360;
     }
     else
     {
-      return ((int)(average) + 315) % 360;  // 余りが360未満の場合、平均をそのまま整数で返す
+      return ((int)(average) + 315) % 360 ;  // 余りが360未満の場合、平均をそのまま整数で返す
     }
   } 
   else 
@@ -125,6 +105,7 @@ int calculate_average(int data_index)
     return -1;  // データがなければ -1 を返す
   }
 }
+
 
 
 
@@ -151,8 +132,8 @@ void loop() {
     cam_data[1][5] = Serial3.readStringUntil('f').toInt();
 
     cam_data[1][0] = cam_data[1][0] == 500 ? 500 : cam_data[1][0] + 60;
-    cam_data[1][2] = cam_data[1][0] == 500 ? 500 : cam_data[1][2] + 60;
-    cam_data[1][4] = cam_data[1][0] == 500 ? 500 : cam_data[1][4] + 60;
+    cam_data[1][2] = cam_data[1][2] == 500 ? 500 : cam_data[1][2] + 60;
+    cam_data[1][4] = cam_data[1][4] == 500 ? 500 : cam_data[1][4] + 60;
   }
 
   if(Serial4.available() > 0)
@@ -165,8 +146,8 @@ void loop() {
     cam_data[2][5] = Serial4.readStringUntil('f').toInt();
 
     cam_data[2][0] = cam_data[2][0] == 500 ? 500 : cam_data[2][0] + 60 * 2;
-    cam_data[2][2] = cam_data[2][0] == 500 ? 500 : cam_data[2][2] + 60 * 2;
-    cam_data[2][4] = cam_data[2][0] == 500 ? 500 : cam_data[2][4] + 60 * 2;
+    cam_data[2][2] = cam_data[2][2] == 500 ? 500 : cam_data[2][2] + 60 * 2;
+    cam_data[2][4] = cam_data[2][4] == 500 ? 500 : cam_data[2][4] + 60 * 2;
   }
 
   if(Serial5.available() > 0)
@@ -179,8 +160,8 @@ void loop() {
     cam_data[3][5] = Serial5.readStringUntil('f').toInt();
 
     cam_data[3][0] = cam_data[3][0] == 500 ? 500 : cam_data[3][0] + 60 * 3;
-    cam_data[3][2] = cam_data[3][0] == 500 ? 500 : cam_data[3][2] + 60 * 3;
-    cam_data[3][4] = cam_data[3][0] == 500 ? 500 : cam_data[3][4] + 60 * 3;
+    cam_data[3][2] = cam_data[3][2] == 500 ? 500 : cam_data[3][2] + 60 * 3;
+    cam_data[3][4] = cam_data[3][4] == 500 ? 500 : cam_data[3][4] + 60 * 3;
   }
 
   if(Serial6.available() > 0)
@@ -193,8 +174,8 @@ void loop() {
     cam_data[4][5] = Serial6.readStringUntil('f').toInt();
 
     cam_data[4][0] = cam_data[4][0] == 500 ? 500 : cam_data[4][0] + 60 * 4;
-    cam_data[4][2] = cam_data[4][0] == 500 ? 500 : cam_data[4][2] + 60 * 4;
-    cam_data[4][4] = cam_data[4][0] == 500 ? 500 : cam_data[4][4] + 60 * 4;
+    cam_data[4][2] = cam_data[4][2] == 500 ? 500 : cam_data[4][2] + 60 * 4;
+    cam_data[4][4] = cam_data[4][4] == 500 ? 500 : cam_data[4][4] + 60 * 4;
   }
 
   if(Serial7.available() > 0)
@@ -207,15 +188,15 @@ void loop() {
     cam_data[5][5] = Serial7.readStringUntil('f').toInt();
 
     cam_data[5][0] = cam_data[5][0] == 500 ? 500 : cam_data[5][0] + 60 * 5;
-    cam_data[5][2] = cam_data[5][0] == 500 ? 500 : cam_data[5][2] + 60 * 5;
-    cam_data[5][4] = cam_data[5][0] == 500 ? 500 : cam_data[5][4] + 60 * 5;
+    cam_data[5][2] = cam_data[5][2] == 500 ? 500 : cam_data[5][2] + 60 * 5;
+    cam_data[5][4] = cam_data[5][4] == 500 ? 500 : cam_data[5][4] + 60 * 5;
   }
 
   read_serial_type = (read_serial_type + 1) % 6;
 
   for(int i = 0; i < 6; i++)
   {
-    Serial.print(cam_data[i][0]);
+    Serial.print(cam_data[i][2]);
     Serial.print("\t");
   }
 
@@ -242,5 +223,5 @@ void loop() {
   Serial1.print(String('f'));
   Serial1.flush();
 
-  Serial.println(average_ball_deg);
+  Serial.println(average_ygoal_deg);
 }

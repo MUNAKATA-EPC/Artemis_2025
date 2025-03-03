@@ -5,8 +5,8 @@
 
 #define GYRO_PGAIN 0.95
 #define GYRO_DGAIN 3.5
-#define GOAL_PGAIN 0.8
-#define GOAL_DGAIN 3.0
+#define GOAL_PGAIN 0.9
+#define GOAL_DGAIN 5.0
 
 #define PID_MAX 80
 
@@ -55,7 +55,7 @@ void pid_camera(int value)
 {
     int p_value = 0, d_value = 0;
     int gyro_value = value;
-    gyro_value = gyro_value > 180 ? gyro_value - 360 : gyro_value;
+    gyro_value = gyro_value > 180 ? -(gyro_value - 360) : -gyro_value;
     
     p_value = gyro_value;
 
@@ -64,6 +64,21 @@ void pid_camera(int value)
     pid_previous_deviation = gyro_value;
 
     pid_value = p_value * GOAL_PGAIN + d_value * GOAL_DGAIN;
+    
+    if(pid_value < 0)
+    {
+        if(pid_value < -PID_MAX)
+        {
+            pid_value = -PID_MAX;
+        }
+    }
+    else
+    {
+        if(pid_value > PID_MAX)
+        {
+            pid_value = PID_MAX;
+        }
+    }
 }
 
 float get_max_value_in_array(float* ar, int ar_cnt)

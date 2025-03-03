@@ -12,16 +12,16 @@ void init_attacker()
 void process_attacker(int speed)
 {
     
-    /*if(ball_deg >= 330 || ball_deg <= 30)
+    if(ygoal_deg != -1)
     {
         pid_camera(ygoal_deg);
     }
     else
     {
         pid_gyro();
-    }*/
+    }
 
-    pid_camera(ygoal_deg);
+    
 
     
     /*if(ball_deg == -1)

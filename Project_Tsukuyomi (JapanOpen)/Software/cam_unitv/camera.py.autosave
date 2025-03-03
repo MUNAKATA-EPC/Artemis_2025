@@ -206,7 +206,7 @@ while True:
         y_goal_dis = 500
 
     if(check_b_goal == 1):
-        b_goal_dir = (int(b_goal_x) / WIDTH * 90) - 45
+        b_goal_dir = (int(b_goal_x) / WIDTH * 90)
         b_goal_dis = int(math.sqrt((world_b_goal_vector[0][0] - (b_goal_x - WIDTH) * 0.0625) ** 2 + world_b_goal_vector[1][0] ))
     else:
         b_goal_dir = 500
