@@ -1,5 +1,10 @@
+#include <Servo.h>
+
 const int PIN_MOTOR_INA[4] = {2, 4, 6, 8};
 const int PIN_MOTOR_INB[4] = {3, 5, 7, 9};
+
+const int PIN_FRONT_DRIBBLER = 10;
+const int PIN_BACK_DRIBBLER = 11;
 
 class Motor{
   private:
@@ -32,6 +37,11 @@ class Motor{
 };
   
 Motor motors[4];
+int f_bldc_power = 1000;
+int b_bldc_power = 1000;
+
+Servo front_bldc;
+Servo back_bldc;
 
 void get_motor_data()
 {
@@ -53,6 +63,9 @@ void get_motor_data()
     int motor_b_power = ((String)data[5] + (String)data[6] + (String)data[7]).toInt();
     int motor_c_power = ((String)data[9] + (String)data[10] + (String)data[11]).toInt();
     int motor_d_power = ((String)data[13] + (String)data[14] + (String)data[15]).toInt();
+
+    f_bldc_power = 1000 + (((String)data[16] + (String)data[17] + (String)data[18]).toInt()) / 100.0 * 300.0;
+    b_bldc_power = 1000 + (((String)data[19] + (String)data[20] + (String)data[21]).toInt()) / 100.0 * 300.0;
 
 
     motors[0].set(motor_a_power, motor_a_rotate);
@@ -77,10 +90,27 @@ void setup() {
 
   Serial1.begin(115200);
   Serial1.setTimeout(10);
+
+  front_bldc.attach(PIN_FRONT_DRIBBLER);
+  back_bldc.attach(PIN_BACK_DRIBBLER);
+
+  front_bldc.writeMicroseconds(2000);
+  back_bldc.writeMicroseconds(2000);
+  delay(500);
+  front_bldc.writeMicroseconds(1000);
+  back_bldc.writeMicroseconds(1000);
+  delay(500);
+  
+  front_bldc.writeMicroseconds(1000);
+  back_bldc.writeMicroseconds(1000);
+  delay(3000);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+  front_bldc.writeMicroseconds(1300);
+  back_bldc.writeMicroseconds(1300);
 
   get_motor_data();
 

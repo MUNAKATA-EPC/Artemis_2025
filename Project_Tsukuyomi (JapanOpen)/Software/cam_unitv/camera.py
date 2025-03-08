@@ -30,23 +30,23 @@ sensor.reset(dual_buff=True)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.skip_frames(time = 400)
-sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(2)#明るさ
+sensor.set_contrast(-3)#コントラスト
+sensor.set_brightness(-3)#明るさ
 sensor.set_saturation(3)#彩3~-3
 sensor.skip_frames(time = 250)
-sensor.set_auto_gain(False) # must be turned off for color tracking
-#sensor.set_auto_exposure(False, exposure_us = 1750)
+sensor.set_auto_gain(False, gain_db=23, gain_db_ceiling=0) # must be turned off for color tracking
+sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-#sensor.set_auto_whitebal(False, rgb_gain_db = (25,  32, 55))
+sensor.set_auto_whitebal(False, rgb_gain_db = (18, 16, 28))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(37, 63, 43, 84, 25, 77)]
-y_goal_thresholds = [(39, 77, -45, 4, 19, 70)]
-b_goal_thresholds = [(23, 42, 16, 54, -72, -29)]
+ball_thresholds = [(50, 71, 38, 91, 38, 78)]
+y_goal_thresholds = [(48, 81, -74, -42, 41, 81)]
+b_goal_thresholds = [(9, 23, 14, 67, -72, -35)]
 
 
 
@@ -113,18 +113,20 @@ while True:
     clock.tick()                    # Update the FPS clock.
     img = sensor.snapshot() #映像の取得
 
+    img.gamma_corr(gamma=1.0, contrast=1.5, brightness=0)
+
     if color_tracking_mode == 0 or color_tracking_mode == 1:
         #ボールを見つける
         ball_rectarray = []
         ball_x = 0
         ball_y = 0
 
-        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 1, area_threshold = 1):
+        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 10, area_threshold = 10):
             if blob[2] < 150:
                 ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
         try:
-            ball_maxrect = max(ball_rectarray, key = lambda x: x[1])    #配列の中から一番画面の下にあるものを選定
+            ball_maxrect = max(ball_rectarray, key = lambda x: x[2] * x[3])    #配列の中から一番画面の下にあるものを選定
             ball_x = ball_maxrect[0] + (ball_maxrect[2] * 0.5)  #中心のx座標の算出
             ball_y = ball_maxrect[1] + (ball_maxrect[3] * 0.5)  #中心のy座標の算出
             img.draw_circle(int(ball_x), int(ball_y), int((ball_maxrect[2] * 0.5 + ball_maxrect[3] * 0.5) * 0.5))

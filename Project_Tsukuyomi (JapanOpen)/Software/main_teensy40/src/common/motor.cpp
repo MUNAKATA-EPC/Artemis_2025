@@ -15,6 +15,15 @@ int pid_value;
 int pid_deviation;
 int pid_previous_deviation;
 
+int power_f_bldc;
+int power_b_bldc;
+
+void set_bldc(int f_power, int b_power)
+{
+    power_f_bldc = f_power;
+    power_b_bldc = b_power;
+}
+
 void motor_init()
 {
     Serial2.begin(115200);
@@ -107,6 +116,8 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b = false, bool b_b =
     String power_b = String(min(max(abs(b), 0), 100));
     String power_c = String(min(max(abs(c), 0), 100));
     String power_d = String(min(max(abs(d), 0), 100));
+    String power_b_f = String(min(max(abs(power_f_bldc), 0), 100));
+    String power_b_b = String(min(max(abs(power_b_bldc), 0), 100));
 
     if(abs(a) <= 9)
     {
@@ -144,6 +155,24 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b = false, bool b_b =
         power_d = "0" + power_d;
     }
 
+    if(abs(power_f_bldc) <= 9)
+    {
+        power_b_f = "00" + power_b_f;
+    }
+    else if(abs(power_f_bldc) <= 99)
+    {
+        power_b_f = "0" + power_b_f;
+    }
+
+    if(abs(power_b_bldc) <= 9)
+    {
+        power_b_b = "00" + power_b_b;
+    }
+    else if(abs(power_b_bldc) <= 99)
+    {
+        power_b_b = "0" + power_b_b;
+    }
+
     String rotate_a = a < 0 ? "1" : "0";
     String rotate_b = b < 0 ? "1" : "0";
     String rotate_c = c < 0 ? "1" : "0";
@@ -170,7 +199,7 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b = false, bool b_b =
         power_d = "000";
     }
 
-    String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d;
+    String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d + power_b_f + power_b_b;
 
     Serial2.println(send_data);
 }

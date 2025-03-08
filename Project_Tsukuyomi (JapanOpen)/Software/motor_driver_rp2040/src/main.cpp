@@ -1,6 +1,11 @@
 #include <Arduino.h>
+#include <Servo.h>
+
 const int PIN_MOTOR_INA[4] = {2, 4, 6, 8};
 const int PIN_MOTOR_INB[4] = {3, 5, 7, 9};
+
+const int PIN_FRONT_DRIBBLER = 10;
+const int PIN_BACK_DRIBBLER = 11;
 
 class Motor{
   private:
@@ -33,6 +38,9 @@ class Motor{
 };
   
 Motor motors[4];
+
+Servo front_bldc;
+Servo back_bldc;
 
 void get_motor_data()
 {
@@ -73,6 +81,9 @@ void setup() {
     motors[i].set(0, 0);
   }
 
+  front_bldc.attach(PIN_FRONT_DRIBBLER);
+  back_bldc.attach(PIN_BACK_DRIBBLER);
+
   Serial.begin(9600);
 
   Serial1.begin(115200);
@@ -83,6 +94,8 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   get_motor_data();
+
+  front_bldc.writeMicroseconds(1100);
 
   for(int i = 0; i < 4; i++)
   {

@@ -112,6 +112,7 @@ int calculate_average(int data_index)
 int test = 0;
 
 void loop() {
+  
   if(Serial2.available() > 0)
   {
     cam_data[0][0] = Serial2.readStringUntil('a').toInt();

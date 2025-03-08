@@ -84,6 +84,7 @@ void loop() {
     }
     else
     {
+        motor_set_bldc(0, 0);
         motor_direct_drive(0, 0, 0, 0);
     }
 }
