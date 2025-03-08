@@ -89,14 +89,40 @@ int calculate_average(int data_index)
   if (count > 0) 
   {
     // 平均を計算
-    float average = (float)sum / count ;
-
     if((cam_data[0][data_index] != 500 && cam_data[5][data_index] != 500)||((cam_data[1][data_index] != 500 && cam_data[5][data_index] != 500)))
     {
-      return ((((((int)(average))) + 180) % 360) + 315) % 360;
+      if((cam_data[0][data_index] != 500 && cam_data[1][data_index] != 500 && cam_data[5][data_index] != 500))
+      {
+        float average = (float)(sum + 360 + 360) / count ;
+       
+          if(average > 720)
+          {
+            return ((((((int)(average))))) + 315) % 720;
+          }
+          else
+          {
+            return ((((((int)(average))))) + 315) % 360;
+          }
+        
+      }
+      else
+      {
+        float average = (float)(sum + 360) / count ;
+        return ((((((int)(average))))) + 315) % 360;
+      }
+  
+      
+    }
+    else if(((cam_data[0][data_index] != 500 && cam_data[1][data_index] != 500) && cam_data[5][data_index] != 500)||((cam_data[0][data_index] != 500 && cam_data[1][data_index] != 500) && cam_data[5][data_index] != 500))
+    {
+      float average = (float)(sum + 360 * 2) / count ;
+  
+      return ((((((int)(average))))) + 315) % 360;
     }
     else
     {
+      float average = (float)sum / count ;
+  
       return ((int)(average) + 315) % 360 ;  // 余りが360未満の場合、平均をそのまま整数で返す
     }
   } 
@@ -112,7 +138,6 @@ int calculate_average(int data_index)
 int test = 0;
 
 void loop() {
-  
   if(Serial2.available() > 0)
   {
     cam_data[0][0] = Serial2.readStringUntil('a').toInt();
@@ -197,7 +222,7 @@ void loop() {
 
   for(int i = 0; i < 6; i++)
   {
-    Serial.print(cam_data[i][2]);
+    Serial.print(cam_data[i][4]);
     Serial.print("\t");
   }
 
@@ -224,5 +249,5 @@ void loop() {
   Serial1.print(String('f'));
   Serial1.flush();
 
-  Serial.println(average_ygoal_deg);
+  Serial.println(average_bgoal_deg);
 }
