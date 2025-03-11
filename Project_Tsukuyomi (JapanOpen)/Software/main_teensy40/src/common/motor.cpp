@@ -6,9 +6,11 @@
 #define GYRO_PGAIN 0.95
 #define GYRO_DGAIN 3.5
 #define GOAL_PGAIN 0.9
-#define GOAL_DGAIN 5.0
+#define GOAL_DGAIN 3.8
 
 #define PID_MAX 80
+#define PID_MOVING_MAX 20
+#define PID_DIFF_MAX 85
 
 int pid_value;
 
@@ -18,7 +20,7 @@ int pid_previous_deviation;
 int power_f_bldc;
 int power_b_bldc;
 
-void set_bldc(int f_power, int b_power)
+void motor_set_bldc(int f_power, int b_power)
 {
     power_f_bldc = f_power;
     power_b_bldc = b_power;
@@ -238,7 +240,30 @@ void motor_move(int deg, int power)
 
     for(int i = 0; i < 4; i++)
     {
-        powers[i] -= pid_value;
+        if(powers[i] <= 50)
+        {
+            powers[i] -= pid_value;
+        }
+        else
+        {
+            if(pid_value < 0)
+            {
+                if(pid_value < -PID_MOVING_MAX)
+                {
+                    pid_value = -PID_MOVING_MAX;
+                }
+            }
+            else
+            {
+                
+                if(pid_value > PID_MOVING_MAX)
+                {
+                    pid_value = PID_MOVING_MAX;
+                }
+            }
+
+            powers[i] -= pid_value;
+        }
     }
 
     //PIDの値によって値が100より大きくなったとき補正する

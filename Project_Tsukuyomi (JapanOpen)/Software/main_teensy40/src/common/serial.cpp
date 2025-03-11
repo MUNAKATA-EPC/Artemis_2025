@@ -29,5 +29,5 @@ void process_serial()
         bgoal_dis = Serial1.readStringUntil('f').toInt();
     }
 
-    Serial.println(ygoal_deg);
+    Serial.println(ball_deg);
 }

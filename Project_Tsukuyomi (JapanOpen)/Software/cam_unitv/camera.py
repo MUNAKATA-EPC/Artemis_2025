@@ -34,18 +34,18 @@ sensor.set_contrast(-3)#コントラスト
 sensor.set_brightness(-3)#明るさ
 sensor.set_saturation(3)#彩3~-3
 sensor.skip_frames(time = 250)
-sensor.set_auto_gain(False, gain_db=23, gain_db_ceiling=0) # must be turned off for color tracking
+sensor.set_auto_gain(False, gain_db=20, gain_db_ceiling=0) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (18, 16, 28))
+sensor.set_auto_whitebal(False, rgb_gain_db = (15, 14, 28))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [(50, 71, 38, 91, 38, 78)]
-y_goal_thresholds = [(48, 81, -74, -42, 41, 81)]
+ball_thresholds = [(38, 65, 44, 84, 34, 73)]
+y_goal_thresholds = [(43, 77, -78, -52, 40, 87)]
 b_goal_thresholds = [(9, 23, 14, 67, -72, -35)]
 
 
@@ -208,7 +208,7 @@ while True:
         y_goal_dis = 500
 
     if(check_b_goal == 1):
-        b_goal_dir = (int(b_goal_x) / WIDTH * 90) - 45
+        b_goal_dir = (int(b_goal_x) / WIDTH * 90)
         b_goal_dis = int(math.sqrt((world_b_goal_vector[0][0] - (b_goal_x - WIDTH) * 0.0625) ** 2 + world_b_goal_vector[1][0] ))
     else:
         b_goal_dir = 500

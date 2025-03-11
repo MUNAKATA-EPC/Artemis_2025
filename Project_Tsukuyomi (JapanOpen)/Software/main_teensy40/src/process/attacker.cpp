@@ -12,48 +12,41 @@ void init_attacker()
 void process_attacker(int speed)
 {
     
-    if(ygoal_deg != -1)
-    {
-        pid_camera(ygoal_deg);
-    }
-    else
-    {
-        pid_gyro();
-    }
+
+
+    pid_gyro();
 
     
-
-    
-    /*if(ball_deg == -1)
+    if(ball_deg == -1)
     {
         motor_move(0, 0);
     }
     else
     {
-        if(ball_deg <= 8 || ball_deg >= 350)
+        if(ball_deg <= 5 || ball_deg >= 345)
         {
             motor_move(0, speed);
+            f_kicker.kick(1000);
         }
         else 
         {
-            if(ball_deg <= 45)
+            if(ball_deg <= 60)
             {
-                motor_move(ball_deg + 20, speed * 0.8);
+                motor_move(ball_deg + 30, 90);
             }
             else if(ball_deg <= 180)
             {
-                motor_move(ball_deg + 45, speed );
+                motor_move(ball_deg + 60, speed );
             }
-            else if(ball_deg <= 315)
+            else if(ball_deg <= 300)
             {
-                motor_move(ball_deg - 45, speed );
+                motor_move(ball_deg - 60, speed );
             }
             else
             {
-                motor_move(ball_deg - 20, speed * 0.8);
+                motor_move(ball_deg - 30, 90);
             }
             
         }
-    }*/
-    motor_move(0, 0);
+    }
 }

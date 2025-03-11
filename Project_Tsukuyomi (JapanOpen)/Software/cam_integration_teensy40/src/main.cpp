@@ -222,7 +222,7 @@ void loop() {
 
   for(int i = 0; i < 6; i++)
   {
-    Serial.print(cam_data[i][4]);
+    Serial.print(cam_data[i][2]);
     Serial.print("\t");
   }
 
@@ -249,5 +249,5 @@ void loop() {
   Serial1.print(String('f'));
   Serial1.flush();
 
-  Serial.println(average_bgoal_deg);
+  Serial.println(average_ygoal_deg);
 }

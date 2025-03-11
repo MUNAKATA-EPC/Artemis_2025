@@ -18,17 +18,17 @@ void Kicker::loop()
     {
         Serial.println("kicker");
 
-        if(_kick_timer.get_value() <= 5)
+        if(_kick_timer.get_value() <= 20)
         {
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, 0);
         }
-        else if(_kick_timer.get_value() <= 55)
+        else if(_kick_timer.get_value() <= 100)
         {
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, HIGH);
         }
-        else if(_kick_timer.get_value() <= 60)
+        else if(_kick_timer.get_value() <= 150)
         {
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, 0);
