@@ -18,22 +18,22 @@ void Kicker::loop()
     {
         Serial.println("kicker");
 
-        if(_kick_timer.get_value() <= 20)
+        if(_kick_timer.get_value() <= 20 + _start_delay_time)
         {
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, 0);
         }
-        else if(_kick_timer.get_value() <= 100)
+        else if(_kick_timer.get_value() <= 100 + _start_delay_time)
         {
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, HIGH);
         }
-        else if(_kick_timer.get_value() <= 150)
+        else if(_kick_timer.get_value() <= 150 + _start_delay_time)
         {
             digitalWrite(_charge_pin, 0);
             digitalWrite(_kick_pin, 0);
         }
-        else if(_kick_timer.get_value() <= _delay_time)
+        else if(_kick_timer.get_value() <= _delay_time + _start_delay_time)
         {
             digitalWrite(_charge_pin, HIGH);
             digitalWrite(_kick_pin, 0);
@@ -51,11 +51,12 @@ void Kicker::loop()
     }
 }
 
-void Kicker::kick(int delay = 300)
+void Kicker::kick(int delay = 300, int start_delay = 0)
 {
     if(!_is_kicking)
     {
         _delay_time = delay;
+        _start_delay_time = start_delay;
         _kick_timer.start();
         _is_kicking = true;
     }

@@ -3,6 +3,19 @@
 
 #include "common/sensors_variables.hpp"
 #include "common/motor.hpp"
+#include "common/vector.hpp"
+
+int ball_front[2] = {7, 353};
+
+bool is_ball_front()
+{
+    return ball_deg <= ball_front[0] || ball_deg >= ball_front[1];
+}
+
+bool is_ball_hold()
+{
+    return is_ball_front() && ball_dis >= 220;
+}
 
 void init_attacker()
 {
@@ -11,109 +24,80 @@ void init_attacker()
 
 void process_attacker(int speed)
 {
-    
+    if(is_ball_hold())
+    {
+        pid_camera(ygoal_deg);
+    }
+    else
+    {
+        pid_gyro();
+    }
 
-
-    pid_gyro();
-
-    
     if(ball_deg == -1)
     {
         motor_move(0, 0);
     }
     else
     {
-        if(ball_deg <= 25 || ball_deg >= 335)
+        //ボール中心角度のずれを修正
+        ball_deg = (ball_deg + 3) % 360;
+    
+        if(is_ball_front())
         {
-            int ball_front[2] = {4, 350};
-            if(ball_dis >= 220)
+            if(ball_dis >= 220) //近距離
             {
-                if(ball_deg <= 4 || ball_deg >= 350)
-                {
-                    motor_move(0, 80);
-                    f_kicker.kick(500);
-                }
-                else
-                {
-                    if(ball_deg <= 25)
-                    {
-                        int ball_deg_diff = ball_deg * 1.7;
-                        float move_scale = (ball_deg_diff - ball_front[0]) / 20.0;
-                        float move_deg = pow(move_scale, 1.5) * ball_deg_diff;
-                        motor_move(move_deg, 65);
-                    }
-                    else if(ball_deg >= 335)
-                    {
-                        int ball_deg_diff = (360 - ball_deg) * 1.7;
-                        float move_scale = (ball_deg_diff - (360 - ball_front[1])) / 20.0;
-                        float move_deg = pow(move_scale, 1.5) * ball_deg_diff;
-                        motor_move(360 - move_deg, 65);
-                    }
-                }
+                motor_move(0, 90);
+                f_kicker.kick(500, 200);
             }
             else if(ball_dis >= 30)
-            {
-                if(ball_deg <= 25)
-                {
-                    int ball_deg_diff = ball_deg * 1.7;
-                    float move_scale = (ball_deg_diff - ball_front[0]) / 20.0;
-                    float move_deg = pow(move_scale, 2.0) * ball_deg_diff;
-                    motor_move(move_deg, 65);
-                }
-                else if(ball_deg >= 335)
-                {
-                    int ball_deg_diff = (360 - ball_deg) * 1.7;
-                    float move_scale = (ball_deg_diff - (360 - ball_front[1])) / 25.0;
-                    float move_deg = pow(move_scale, 2.0) * ball_deg_diff;
-                    motor_move(360 - move_deg, 65);
-                }
-                else
-                {
-                    motor_move(ball_deg, 65);
-                }
+            { 
+                motor_move(ball_deg, 70);
             }
             else
             {
-                motor_move(ball_deg, 80);
+                motor_move(ball_deg, 90);
+            }
+        }
+        else if(ball_deg <= ball_front[0] + 20 || ball_deg >= ball_front[1] - 20)
+        {
+            if(ball_deg <= ball_front[0] + 20)
+            {
+                int ball_deg_diff = (ball_deg) * 1.6;
+                float move_scale = (ball_deg_diff - ball_front[0]) / 20.0;
+                float move_deg = move_scale * move_scale * ball_deg_diff;
+                motor_move(move_deg, 65);
+            }
+            else if(ball_deg >= ball_front[1] - 20)
+            {
+                int ball_deg_diff = (360 - ball_deg) * 1.6;
+                float move_scale = (ball_deg_diff - (360 - ball_front[1])) / 20.0;
+                float move_deg = move_scale * move_scale * ball_deg_diff;
+                motor_move(360 - move_deg, 65);
             }
         }
         else 
         {
-            if(ball_dis <= 70 && ball_deg != 0)
+            //ベクトルを用いて処理
+            Vector vec_to_ball(radians(ball_deg), ball_dis >= 160 ? -1 : 1);
+            Vector vec_to_tan_ball(radians(ball_deg <= 180 ? (ball_deg + 90) : (ball_deg - 90)), ball_dis / 95.0);
+
+            vec_to_ball.add(vec_to_tan_ball);
+
+            int motor_speed = 95;
+            int move_speed = motor_speed;
+
+            if(ball_deg <= 90)
             {
-                motor_move(ball_deg, 80);
-
+                float speed_scale = (ball_deg + 160) / 250.0;
+                move_speed = pow(speed_scale, 2) * motor_speed;
             }
-            else
+            else if(ball_deg >= 270)
             {
-                if(ball_deg <= 60)
-                {
-                    motor_move(ball_deg + 40, 65);
-
-                }
-                else if(ball_deg <= 160)
-                {
-
-                    motor_move(ball_deg + 55, 70);
-                }
-                else if(ball_deg <= 180)
-                {
-                    motor_move(ball_deg + 70, 75);
-                }
-                else if(ball_deg <= 200)
-                {
-                    motor_move(ball_deg - 70, 75);
-                }
-                else if(ball_deg <= 300)
-                {
-                    motor_move(ball_deg - 55, 70);
-                }
-                else
-                {
-                    motor_move(ball_deg - 40, 65);
-
-                }
+                float speed_scale = (360 - ball_deg + 160) / 250.0 ;
+                move_speed = pow(speed_scale, 2) * motor_speed;
             }
+
+            motor_move(vec_to_ball.get_deg(), move_speed);            
         }
     }
 }

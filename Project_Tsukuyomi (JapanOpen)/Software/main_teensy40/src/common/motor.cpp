@@ -5,8 +5,8 @@
 
 #define GYRO_PGAIN 0.95
 #define GYRO_DGAIN 3.5
-#define GOAL_PGAIN 0.9
-#define GOAL_DGAIN 3.8
+#define GOAL_PGAIN 0.4
+#define GOAL_DGAIN 2.0
 
 #define PID_MAX 80
 #define PID_MOVING_MAX 20
