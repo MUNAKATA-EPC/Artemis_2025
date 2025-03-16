@@ -23,6 +23,7 @@
 #include "modules/BNO055.hpp"
 #include "modules/button.hpp"
 
+#include "process/engelline.hpp"
 #include "process/attacker.hpp"
 
 BNO055 bno055;
@@ -52,6 +53,7 @@ void setup() {
 
     init_serial();
     motor_init();
+    init_engelline();
 
     bno055.init(6);
     bt.init(6, Button::Button_Value_Type::PULLDOWN);
@@ -64,6 +66,7 @@ void setup() {
 
 void loop() {
     process_serial();
+    process_engelline();
     bno055.process();
 
     gyro_deg = bno055.get_degrees();

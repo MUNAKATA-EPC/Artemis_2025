@@ -27,6 +27,8 @@ void process_serial()
         ygoal_dis = Serial1.readStringUntil('d').toInt();
         bgoal_deg = Serial1.readStringUntil('e').toInt();
         bgoal_dis = Serial1.readStringUntil('f').toInt();
+
+        ball_deg = ball_deg != -1 ? (ball_deg + 7) % 360 : -1;
     }
 
     Serial.print(ball_deg);
