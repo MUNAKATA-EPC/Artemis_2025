@@ -15,6 +15,9 @@ void init_serial()
 {
     Serial1.begin(9600);
     Serial1.setTimeout(10);
+
+    Serial3.begin(115200);
+    Serial3.setTimeout(10);
 }
 
 void process_serial()
@@ -31,7 +34,14 @@ void process_serial()
         ball_deg = ball_deg != -1 ? (ball_deg + 7) % 360 : -1;
     }
 
-    Serial.print(ball_deg);
+    String _line_data;
+
+    if(Serial3.available() > 0)
+    {
+        _line_data = Serial3.readString();
+    }
+
+    Serial.print(_line_data);
     Serial.print(" ");
     Serial.println(ball_dis);
 }

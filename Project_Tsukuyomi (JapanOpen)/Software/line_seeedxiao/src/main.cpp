@@ -16,7 +16,7 @@ int output_value;
 /// @brief デバッグ出力をする関数です。
 void print_debug_value()
 {
-  for(int i = 0; i < 19; i++)
+  for(int i = 0; i < 16; i++)
   {
     Serial.print(line_circle_values[i]);
     Serial.print(", ");
@@ -84,6 +84,8 @@ void loop() {
   } 
 
   print_debug_value();
+
+  output_value = line_circle_values[0];
 
   Serial1.println(output_value);
   Serial1.flush();

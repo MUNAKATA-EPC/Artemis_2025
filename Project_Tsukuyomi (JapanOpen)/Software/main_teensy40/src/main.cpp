@@ -66,7 +66,8 @@ void setup() {
 
 void loop() {
     process_serial();
-    process_engelline();
+    process_engelline(is_running);
+
     bno055.process();
 
     gyro_deg = bno055.get_degrees();
