@@ -14,7 +14,7 @@ void setup() {
 int step_num = 0;
 
 void loop() {
-  for(int i = 0; i < 10; i++)
+  for(int i = 0; i < 64; i++)
   {
     pixels.clear();
     pixels.setPixelColor(i, pixels.Color(0, 255, 255));

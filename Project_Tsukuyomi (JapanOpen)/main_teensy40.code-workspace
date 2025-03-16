@@ -19,6 +19,10 @@
 		{
 			"name": "neopixel_test_seeedxiao",
 			"path": "Software/neopixel_test_seeedxiao"
+		},
+		{
+			"name": "line_seeedxiao",
+			"path": "Software/line_seeedxiao"
 		}
 	],
 	"settings": {
