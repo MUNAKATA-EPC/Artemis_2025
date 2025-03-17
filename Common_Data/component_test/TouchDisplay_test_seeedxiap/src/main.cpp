@@ -78,7 +78,6 @@ void setup() {
 }
 
 void loop() {
-
   if (ts.touched()) {    
     getTouchPoint(&Touch_Point);
 

@@ -37,6 +37,24 @@ void process_serial()
     while(Serial3.available() > 0)
     {
         int _line_data = Serial3.readStringUntil('\n').toInt();
+        
+        if(_line_data > pow(2, 16))
+        {
+            return;
+        }
+
+        for(int i = 15; i >= 0; i--)
+        {
+            if(_line_data - pow(2, i) >= 0)
+            {
+                _line_data -= pow(2, i);
+                line_data[i] = 1;
+            }
+            else
+            {
+                line_data[i] = 0;
+            }
+        }
 
         Serial.println(_line_data);
     }

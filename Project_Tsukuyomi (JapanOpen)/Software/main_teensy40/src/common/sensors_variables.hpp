@@ -10,5 +10,7 @@ extern int ygoal_dis;
 extern int bgoal_deg;
 extern int bgoal_dis;
 
+extern int line_data[16];
+
 extern Kicker f_kicker;
 extern Kicker b_kicker;

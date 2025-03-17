@@ -23,6 +23,9 @@
 		{
 			"name": "line_seeedxiao",
 			"path": "Software/line_seeedxiao"
+		},
+		{
+			"path": "../Common_Data/component_test/TouchDisplay_test_seeedxiap"
 		}
 	],
 	"settings": {
@@ -36,7 +39,9 @@
 			"unordered_set": "cpp",
 			"vector": "cpp",
 			"system_error": "cpp",
-			"cmath": "cpp"
+			"cmath": "cpp",
+			"ios": "cpp",
+			"ostream": "cpp"
 		}
 	}
 }

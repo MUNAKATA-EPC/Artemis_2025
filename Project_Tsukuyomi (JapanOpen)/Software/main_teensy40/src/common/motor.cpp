@@ -26,7 +26,7 @@ void motor_set_bldc(int f_power, int b_power)
     power_b_bldc = b_power;
 }
 
-void motor_init()
+void init_motor()
 {
     Serial2.begin(115200);
     Serial2.setTimeout(10);
@@ -94,7 +94,7 @@ void pid_camera(int value)
 
 float get_max_value_in_array(float* ar, int ar_cnt)
 {
-    float ret;
+    float ret = 0;
 
     for(int i = 0; i < ar_cnt; i++)
     {
@@ -112,7 +112,7 @@ void motor_break()
     Serial1.println("1000100010001000");
 }
 
-void motor_direct_drive(int a, int b, int c, int d, bool a_b = false, bool b_b = false, bool c_b = false, bool d_b = false)
+void motor_direct_drive(int a, int b, int c, int d, bool a_b, bool b_b , bool c_b, bool d_b)
 {
     String power_a = String(min(max(abs(a), 0), 100));
     String power_b = String(min(max(abs(b), 0), 100));

@@ -51,7 +51,7 @@ void Kicker::loop()
     }
 }
 
-void Kicker::kick(int delay = 300, int start_delay = 0)
+void Kicker::kick(int delay, int start_delay)
 {
     if(!_is_kicking)
     {

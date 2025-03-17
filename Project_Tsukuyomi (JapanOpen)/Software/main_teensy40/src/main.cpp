@@ -26,13 +26,13 @@
 #include "process/engelline.hpp"
 #include "process/attacker.hpp"
 
+#include "ui/ui.hpp"
+
 BNO055 bno055;
 Kicker f_kicker;
 Kicker b_kicker;
 
-Button bt;
-
-bool is_running;
+Button debug_bt;
 
 void play_startup_sound()
 {
@@ -51,12 +51,13 @@ void play_startup_sound()
 void setup() {
     Serial.println(9600);
 
+    init_ui();
     init_serial();
-    motor_init();
-    //init_engelline();
+    init_motor();
+    init_engelline();
 
     bno055.init(6);
-    bt.init(6, Button::Button_Value_Type::PULLDOWN);
+    debug_bt.init(6, Button::Button_Value_Type::PULLDOWN);
     
     f_kicker.init(30, 31);
     b_kicker.init(30, 32);
@@ -65,26 +66,42 @@ void setup() {
 }
 
 void loop() {
+    process_ui();
     process_serial();
-    //process_engelline(is_running);
+    process_engelline(is_running);
 
     bno055.process();
-
     gyro_deg = bno055.get_degrees();
 
     f_kicker.loop();
     b_kicker.loop();
 
+    debug_bt.loop();
+
     //メインルーチンの実行
-    bt.loop();
-    if(bt.is_pushed())
+    if(debug_bt.is_pushed())
     {
         is_running = !is_running;
     }
 
     if(is_running)
     {
-        process_attacker(100);
+        if(process_mode == 0)       //黄色ゴール・アタッカー
+        {
+            process_attacker(100);
+        }
+        else if(process_mode == 1)  //青色ゴール・アタッカー
+        {
+
+        }
+        else if(process_mode == 2)  //黄色ゴール・ディフェンダー
+        {
+            
+        }
+        else if(process_mode == 3)  //青色ゴール・ディフェンダー
+        {
+            
+        }
     }
     else
     {
