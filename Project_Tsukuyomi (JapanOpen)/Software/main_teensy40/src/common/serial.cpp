@@ -34,14 +34,10 @@ void process_serial()
         ball_deg = ball_deg != -1 ? (ball_deg + 7) % 360 : -1;
     }
 
-    String _line_data;
-
-    if(Serial3.available() > 0)
+    while(Serial3.available() > 0)
     {
-        _line_data = Serial3.readString();
-    }
+        int _line_data = Serial3.readStringUntil('\n').toInt();
 
-    Serial.print(_line_data);
-    Serial.print(" ");
-    Serial.println(ball_dis);
+        Serial.println(_line_data);
+    }
 }

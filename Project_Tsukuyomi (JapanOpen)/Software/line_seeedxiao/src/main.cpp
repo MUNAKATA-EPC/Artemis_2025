@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Adafruit_NeoPixel.h>
 
 #define PIN_DATA 0
 
@@ -9,9 +10,48 @@
 
 #define PIN_E 5
 
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(32, 8, NEO_GRB + NEO_KHZ800);
 
 int line_circle_values[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int output_value;
+
+void init_engelline()
+{
+    pixels.setBrightness(100);
+    pixels.begin();  
+
+    for(int i = 0; i < 32; i++)
+    {
+      //pixels.setPixelColor(i, pixels.Color(30, 245, 80));
+      //pixels.setPixelColor(i, pixels.Color(180, 40, 255));
+      pixels.rainbow(i);
+      for(int j = 0; j < 32; j++)
+      {
+        if(j > i)
+        {
+            pixels.setPixelColor(j, pixels.Color(0, 0, 0));
+        }
+      }
+      pixels.show();
+
+      delay(10);
+    }
+}
+
+void process_engelline(bool running)
+{
+  pixels.clear();
+
+  for(int i = 0; i < 32; i++)
+  {
+    pixels.setPixelColor(i, pixels.Color(180, 40, 255));    //パープル
+    //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
+    //pixels.setPixelColor(i, pixels.Color(255, 0, 0));       //レッド
+    //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
+  }
+
+  pixels.show();
+}
 
 /// @brief デバッグ出力をする関数です。
 void print_debug_value()
@@ -47,10 +87,12 @@ int get_from_multiplexer(int idx)
 
     delayMicroseconds(10);
 
-    return analogRead(PIN_DATA);
+    return analogRead(PIN_DATA) >= 150 ? 1 : 0;
 }
 
 void setup() {
+  init_engelline();
+  
   Serial.begin(9600);
 
   pinMode(PIN_DATA, INPUT_PULLUP);
@@ -62,9 +104,12 @@ void setup() {
   pinMode(PIN_E, OUTPUT);
 
   Serial1.begin(115200);
+  Serial1.setTimeout(10);
 }
 
 void loop() {
+  process_engelline(true);
+
   //出力時は常にPIN_EはLOWにする必要がある
   digitalWrite(PIN_E, LOW);
 
@@ -85,10 +130,6 @@ void loop() {
 
   print_debug_value();
 
-  output_value = line_circle_values[0];
-
   Serial1.println(output_value);
   Serial1.flush();
-
-  delay(10);
 }

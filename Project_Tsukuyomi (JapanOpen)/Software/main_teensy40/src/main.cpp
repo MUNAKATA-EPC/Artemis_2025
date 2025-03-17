@@ -53,7 +53,7 @@ void setup() {
 
     init_serial();
     motor_init();
-    init_engelline();
+    //init_engelline();
 
     bno055.init(6);
     bt.init(6, Button::Button_Value_Type::PULLDOWN);
@@ -66,7 +66,7 @@ void setup() {
 
 void loop() {
     process_serial();
-    process_engelline(is_running);
+    //process_engelline(is_running);
 
     bno055.process();
 
