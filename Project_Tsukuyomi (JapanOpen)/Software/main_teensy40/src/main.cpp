@@ -51,7 +51,7 @@ void play_startup_sound()
 void setup() {
     Serial.println(9600);
 
-    init_ui();
+    //init_ui();
     init_serial();
     init_motor();
     init_engelline();
@@ -66,7 +66,7 @@ void setup() {
 }
 
 void loop() {
-    process_ui();
+    //process_ui();
     process_serial();
     process_engelline(is_running);
 

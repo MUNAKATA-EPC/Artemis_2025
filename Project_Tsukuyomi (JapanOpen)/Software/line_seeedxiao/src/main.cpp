@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <Adafruit_NeoPixel.h>
 
 #define PIN_DATA 0
 
@@ -14,47 +13,52 @@
 int line_circle_values[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int output_value;
 
-
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(32, 8, NEO_GRB + NEO_KHZ800);
-
-void init_engelline()
+class average
 {
-    pixels.setBrightness(255);
-    pixels.begin();  
+private:
+  int stock_rotation_term = 15; // 移動平均の期間（標本数）
+  int stock_rotation_number = 0; // 輪番用のカウント
+  float stock_data[50];         // データをストックする配列
+  float new_data;                // センサから取得した最新のデータ
 
-    for(int i = 0; i < 32; i++)
+  bool ave = false;
+  float result;
+public:
+  float moving_average(float data)
+  { // IMUデータの移動平均値の取得
+  // 二次元配列の0番から輪番で最新のデータを入れていく。指定個数を上回ったら0番に戻す
+    if (stock_rotation_number >= stock_rotation_term)
     {
-      //pixels.setPixelColor(i, pixels.Color(30, 245, 80));
-      //pixels.setPixelColor(i, pixels.Color(180, 40, 255));
-      pixels.rainbow(i);
-      for(int j = 0; j < 32; j++)
-      {
-        if(j > i)
-        {
-            pixels.setPixelColor(j, pixels.Color(0, 0, 0));
-        }
-      }
-      pixels.show();
-
-      delay(10);
+      stock_rotation_number = 0;
+      ave = true;
     }
-}
 
-void process_engelline(bool running)
-{
-  pixels.clear();
+    stock_data[stock_rotation_number] = data; // ストックの輪番箇所にデータ上書き
 
-  for(int i = 0; i < 32; i++)
-  {
-    //pixels.setPixelColor(i, pixels.Color(255, 0, 255));    //パープル
-    //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
-    pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //レッド
-    //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
+    result = 0; // 結果を初期化
+    if(ave == true){
+      for (int i = 0; i < stock_rotation_term-1; i++)
+      { // ストックした値を合計する
+        result += stock_data[i];
+      }
+
+      result = result / stock_rotation_term; // 合計値を標本数でを割る
+
+    }else{
+      for (int i = 0; i <= stock_rotation_number; i++)
+      { // ストックした値を合計する
+        result += stock_data[i];
+      }
+
+      result = result / (stock_rotation_number + 1); // 合計値を標本数でを割る
+
+    }
+
+    stock_rotation_number += 1;
+
+    return result;
   }
-
-  pixels.show();
-}
-
+};
 
 /// @brief デバッグ出力をする関数です。
 void print_debug_value()
@@ -94,11 +98,9 @@ int get_from_multiplexer(int idx)
 }
 
 void setup() {
-  init_engelline();
-
   Serial.begin(9600);
 
-  pinMode(PIN_DATA, INPUT_PULLDOWN);
+  pinMode(PIN_DATA, INPUT_PULLUP);
   pinMode(PIN_S0, OUTPUT);
   pinMode(PIN_S1, OUTPUT);
   pinMode(PIN_S2, OUTPUT);
@@ -107,19 +109,19 @@ void setup() {
   pinMode(PIN_E, OUTPUT);
 
   Serial1.begin(115200);
-
+  Serial1.setTimeout(10);
 }
 
-void loop() {
+average line_data[16];
 
-  process_engelline(true);
+void loop() {
   //出力時は常にPIN_EはLOWにする必要がある
   digitalWrite(PIN_E, LOW);
 
   //16ピン分のセンサーの値をマルチプレクサから取得する
   for(int i = 0; i < 16; i++)
   {
-    line_circle_values[i] = get_from_multiplexer(i);
+    line_circle_values[i] = line_data[i].moving_average(get_from_multiplexer(i)) >= 40 ? 1 : 0;
   }
   output_value = 0;
   
@@ -133,10 +135,8 @@ void loop() {
 
   print_debug_value();
 
-  output_value = line_circle_values[0];
-
   Serial1.println(output_value);
   Serial1.flush();
 
-  delay(10);
+  //delay(10);
 }

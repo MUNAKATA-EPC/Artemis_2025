@@ -11,6 +11,8 @@ int ygoal_dis;
 int bgoal_deg;
 int bgoal_dis;
 
+int line_data[16];
+
 void init_serial()
 {
     Serial1.begin(9600);
@@ -34,9 +36,11 @@ void process_serial()
         ball_deg = ball_deg != -1 ? (ball_deg + 7) % 360 : -1;
     }
 
+    int _line_data = -1;
+    
     while(Serial3.available() > 0)
     {
-        int _line_data = Serial3.readStringUntil('\n').toInt();
+        _line_data = Serial3.readStringUntil('\n').toInt();
         
         if(_line_data > pow(2, 16))
         {
@@ -55,7 +59,12 @@ void process_serial()
                 line_data[i] = 0;
             }
         }
-
-        Serial.println(_line_data);
     }
+
+    for(int i = 0; i < 16; i++)
+    {
+        Serial.print(line_data[i]);
+        Serial.print(",");
+    }
+    Serial.print("\n");
 }

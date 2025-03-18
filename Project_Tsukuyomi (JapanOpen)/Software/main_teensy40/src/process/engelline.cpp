@@ -103,7 +103,7 @@ bool is_previous_line_detected()
 
 void init_engelline()
 {
-    pixels.setBrightness(255);
+    pixels.setBrightness(110);
     pixels.begin();  
 
     for(int i = 0; i < 32; i++)
@@ -124,26 +124,22 @@ void init_engelline()
 
       delay(10);
     }
+    //LEDの発光
+    pixels.clear();
+  
+    for(int i = 0; i < 32; i++)
+    {
+      pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //グリーン
+      //pixels.setPixelColor(i, pixels.Color(255, 0, 255));    //パープル
+      //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
+      //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
+    }
+  
+    pixels.show();
 }
 
 void process_engelline(bool running)
 {
-  //LEDの発光
-  pixels.clear();
-
-  for(int i = 0; i < 32; i++)
-  {
-    pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //グリーン
-    //pixels.setPixelColor(i, pixels.Color(180, 40, 255));    //パープル
-    //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
-    //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
-  }
-
-  pixels.show();
-
-  //一旦はここの処理を閉じておく。エンジェルラインの動作確認ができたらreturnを消せば角度処理が復活します
-  return;
-
   if(get_count_of_detected_sensor() > 14)
   {
       return;
