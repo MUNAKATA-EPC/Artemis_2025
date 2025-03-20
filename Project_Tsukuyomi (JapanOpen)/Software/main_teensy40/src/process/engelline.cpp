@@ -101,6 +101,7 @@ bool is_previous_line_detected()
 }
 
 
+Timer send_timer_line;
 void init_engelline()
 {
     pixels.setBrightness(110);
@@ -124,102 +125,119 @@ void init_engelline()
 
       delay(10);
     }
-    //LEDの発光
-    pixels.clear();
-  
-    for(int i = 0; i < 32; i++)
-    {
-      pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //グリーン
-      //pixels.setPixelColor(i, pixels.Color(255, 0, 255));    //パープル
-      //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
-      //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
-    }
-  
-    pixels.show();
 }
 
 void process_engelline(bool running)
 {
-  if(get_count_of_detected_sensor() > 14)
-  {
-      return;
-  }
+    send_timer_line.tick();
+    send_timer_line.start();
 
-  if(is_line_detected())
-  {
-    //tone(3, 4000, 100);
-    
-    double line_vec_x = 0, line_vec_y = 0;
-
-    for(int i = 0; i < 16; i++)
+    if(get_count_of_detected_sensor() > 14)
     {
-        if(line_data[i] == 1)
-        {
-            line_vec_x += cos(radians(line_sensors_deg[i]));
-            line_vec_y += sin(radians(line_sensors_deg[i]));
-        }
+        return;
     }
 
-    //********************************************************ここ処理怪しいかもだから作り直した方がいい
-    line_deg = 360 - degrees(atan2(line_vec_y, line_vec_x));
-
-    if(line_deg <= 360)
+    if(send_timer_line.get_value() >= 500)
     {
-        line_deg = 360 - line_deg;
+        if(running)
+        {
+            //LEDの発光
+            pixels.clear();
+            
+            for(int i = 0; i < 32; i++)
+            {
+                pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //グリーン
+                //pixels.setPixelColor(i, pixels.Color(255, 0, 255));    //パープル
+                //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
+                //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
+            }
+            
+            pixels.show();
+        }
+        else
+        {
+            pixels.clear();
+            pixels.show();
+        }
+
+        send_timer_line.reset();
+    }
+
+    if(is_line_detected())
+    {
+        //tone(3, 4000, 100);
+        
+        double line_vec_x = 0, line_vec_y = 0;
+
+        for(int i = 0; i < 16; i++)
+        {
+            if(line_data[i] == 1)
+            {
+                line_vec_x += cos(radians(line_sensors_deg[i]));
+                line_vec_y += sin(radians(line_sensors_deg[i]));
+            }
+        }
+
+        //********************************************************ここ処理怪しいかもだから作り直した方がいい
+        line_deg = 360 - degrees(atan2(line_vec_y, line_vec_x));
+
+        if(line_deg <= 360)
+        {
+            line_deg = 360 - line_deg;
+        }
+        else
+        {
+            line_deg = 360 - (line_deg - 180) + 180;
+        }
     }
     else
     {
-        line_deg = 360 - (line_deg - 180) + 180;
+        line_deg = -1;
     }
-  }
-  else
-  {
-      line_deg = -1;
-  }
 
-  //今回初めてラインが反応したら
-  if( is_line_detected() && !is_previous_line_detected())
-  {
-      if(!is_halfout)
-      {
-          line_first_deg = line_deg;
-          previous_line_deg = line_deg;
-          line_evacuation_deg = line_first_deg;
+    //今回初めてラインが反応したら
+    if( is_line_detected() && !is_previous_line_detected())
+    {
+        if(!is_halfout)
+        {
+            line_first_deg = line_deg;
+            previous_line_deg = line_deg;
+            line_evacuation_deg = line_first_deg;
 
-          return;
-      }
-  }
+            return;
+        }
+    }
 
-  //さっきまでラインが反応していたら
-  if( !is_line_detected() && is_previous_line_detected())
-  {
-      if(!is_halfout)
-      {
-          line_first_deg = -1;
-      }
-  }
+    //さっきまでラインが反応していたら
+    if( !is_line_detected() && is_previous_line_detected())
+    {
+        if(!is_halfout)
+        {
+            line_first_deg = -1;
+        }
+    }
 
-  //継続してラインが反応していたら
-  if( is_line_detected() && is_previous_line_detected())
-  {
-      //前回とのラインの角度を比較して、もし大きく値がずれていたら「ハーフアウト」判定にする
-      if(!is_exist_deg_value_in_range(line_deg, line_first_deg, 130))
-      {
-          is_halfout = true;
-      }
-      else
-      {
-          is_halfout = false;
+    //継続してラインが反応していたら
+    if( is_line_detected() && is_previous_line_detected())
+    {
+        //前回とのラインの角度を比較して、もし大きく値がずれていたら「ハーフアウト」判定にする
+        if(!is_exist_deg_value_in_range(line_deg, line_first_deg, 130))
+        {
+            is_halfout = true;
+        }
+        else
+        {
+            is_halfout = false;
 
-          //基準角度と大きくずれていなかったら、基準角度を現在の角度に置き換え
-          if(is_exist_deg_value_in_range(line_deg, line_first_deg, 80))
-          {
-              line_first_deg = line_deg;
-          }
-      }
-  }
+            //基準角度と大きくずれていなかったら、基準角度を現在の角度に置き換え
+            if(is_exist_deg_value_in_range(line_deg, line_first_deg, 80))
+            {
+                line_first_deg = line_deg;
+            }
+        }
+    }
 
-  previous_line_deg = line_deg;
+    previous_line_deg = line_deg;
 
-  line_evacuation_deg = line_first_deg;
+    line_evacuation_deg = line_first_deg;
 }

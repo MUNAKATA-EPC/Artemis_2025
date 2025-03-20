@@ -2,6 +2,7 @@
 #include <XPT2046_Touchscreen.h>
 #include <SPI.h>
 #include <Adafruit_ILI9341.h>
+#include <Adafruit_NeoPixel.h>
 
 #include "ui.hpp"
 
@@ -13,15 +14,18 @@
 #define TOUCH_SCREEN_BOTTOM_Y 3680.0
 #define UI_SEND_DELAY 100
 
-#define CS_PIN  4
-#define TIRQ_PIN  2
+#define CS_PIN  9
+#define TIRQ_PIN  -1
 // MOSI=11, MISO=12, SCK=13
 
 //XPT2046_Touchscreen ts(CS_PIN);
 //XPT2046_Touchscreen ts(CS_PIN);  // Param 2 - NULL - No interrupts
 //XPT2046_Touchscreen ts(CS_PIN, 255);  // Param 2 - 255 - No interrupts
-XPT2046_Touchscreen ts(CS_PIN, TIRQ_PIN);           //タッチIC用
-Adafruit_ILI9341 tft = Adafruit_ILI9341(6, 5, 3);   //ディスプレイ用
+XPT2046_Touchscreen ts(CS_PIN);               //タッチIC用
+Adafruit_ILI9341 tft = Adafruit_ILI9341(&SPI, 27, 10, 26);    //ディスプレイ用
+//Adafruit_ILI9341 tft = Adafruit_ILI9341(1, 1, 1);    //ディスプレイ用
+
+Adafruit_NeoPixel pixels_ui = Adafruit_NeoPixel(64, 3, NEO_GRB + NEO_KHZ800);
 
 //**************************************************************************
 //タッチ座標変換部分
@@ -144,11 +148,17 @@ int process_mode = 0;
 
 void init_ui()
 {
+    SPI.setMISO(12);
+    SPI.setMOSI(11);
+    SPI.setSCK(13);
+
     ts.begin();
     ts.setRotation(2);
   
     tft.begin();
     tft.setRotation(0);
+
+    tft.fillScreen(ILI9341_BLACK);
 }
 
 void process_ui()
@@ -156,11 +166,28 @@ void process_ui()
     send_timer.start();
     send_timer.tick();
 
+    //tft.fillScreen(ILI9341_BLACK); 
+
     //背景の初期化
     if(is_sending())
-    {
-        tft.fillScreen(ILI9341_WHITE);  
+    { 
+        if (ts.touched()) {    
+            getTouchPoint(&Touch_Point);
+        
+            Serial.print("Pressure = ");
+            Serial.print(Touch_Point.z);
+            Serial.print(", x = ");
+            Serial.print(Touch_Point.x);
+            Serial.print(", y = ");
+            Serial.print(Touch_Point.y);
+        
+            tft.drawPixel(Touch_Point.x, Touch_Point.y, ILI9341_BLUE);
+        
+            Serial.println();
+        }
     }
+
+    return;
 
     if(now_menu == UI_MENU::MAIN)
     {

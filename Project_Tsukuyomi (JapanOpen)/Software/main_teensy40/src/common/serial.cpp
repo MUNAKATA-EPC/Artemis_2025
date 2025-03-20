@@ -61,10 +61,14 @@ void process_serial()
         }
     }
 
-    for(int i = 0; i < 16; i++)
-    {
-        Serial.print(line_data[i]);
-        Serial.print(",");
-    }
-    Serial.print("\n");
+    Serial.print(ball_deg);
+    Serial.print(",");
+    Serial.println(ball_dis);
+        
+    // for(int i = 0; i < 16; i++)
+    // {
+    //     Serial.print(line_data[i]);
+    //     Serial.print(",");
+    // }
+    // Serial.print("\n");
 }

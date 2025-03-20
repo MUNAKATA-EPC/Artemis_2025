@@ -45,6 +45,8 @@ void process_attacker(int speed)
 
     if(is_line_evacuation())
     {
+        tone(2, 4000, 10);
+
         motor_move(line_evacuation_deg + 180, 100);
     }
     else
@@ -77,8 +79,8 @@ void process_attacker(int speed)
                 int ball_vec_dir = ball_deg;
                 int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
                 int ball_y = sin(radians(ball_vec_dir)) * ball_vec_dis;
-                int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 100));
-                int move_speed = ball_x - 90 < 0 ? 70 : 80;
+                int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 90));
+                int move_speed = 80;
                 motor_move(ball_deg_from_front, move_speed);
             }
             else 

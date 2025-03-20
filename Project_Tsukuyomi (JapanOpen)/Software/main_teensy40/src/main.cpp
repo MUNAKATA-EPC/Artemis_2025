@@ -33,6 +33,7 @@ Kicker f_kicker;
 Kicker b_kicker;
 
 Button debug_bt;
+Button start_bt;
 
 void play_startup_sound()
 {
@@ -51,13 +52,14 @@ void play_startup_sound()
 void setup() {
     Serial.println(9600);
 
-    //init_ui();
+    init_ui();
     init_serial();
     init_motor();
     init_engelline();
 
     bno055.init(6);
     debug_bt.init(6, Button::Button_Value_Type::PULLDOWN);
+    start_bt.init(5, Button::Button_Value_Type::PULLDOWN);
     
     f_kicker.init(30, 31);
     b_kicker.init(30, 32);
@@ -66,7 +68,7 @@ void setup() {
 }
 
 void loop() {
-    //process_ui();
+    process_ui();
     process_serial();
     process_engelline(is_running);
 
@@ -77,9 +79,10 @@ void loop() {
     b_kicker.loop();
 
     debug_bt.loop();
+    start_bt.loop();
 
     //メインルーチンの実行
-    if(debug_bt.is_pushed())
+    if(start_bt.is_pushed())
     {
         is_running = !is_running;
     }
