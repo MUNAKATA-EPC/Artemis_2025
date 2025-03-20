@@ -34,7 +34,7 @@ void setup() {
 
   Serial.begin(9600);
 
-  Serial1.begin(9600);
+  Serial1.begin(115200);
   Serial1.setTimeout(10);
 
   Serial2.begin(115200);
@@ -249,5 +249,5 @@ void loop() {
   Serial1.print(String('f'));
   Serial1.flush();
 
-  Serial.println(average_ygoal_deg);
+  Serial.println(average_ball_deg);
 }

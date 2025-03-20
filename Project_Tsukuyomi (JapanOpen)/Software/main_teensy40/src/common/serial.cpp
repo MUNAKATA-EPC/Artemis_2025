@@ -15,7 +15,7 @@ int line_data[16];
 
 void init_serial()
 {
-    Serial1.begin(9600);
+    Serial1.begin(115200);
     Serial1.setTimeout(10);
 
     Serial3.begin(115200);
@@ -33,7 +33,7 @@ void process_serial()
         bgoal_deg = Serial1.readStringUntil('e').toInt();
         bgoal_dis = Serial1.readStringUntil('f').toInt();
 
-        ball_deg = ball_deg != -1 ? (ball_deg + 7) % 360 : -1;
+        ball_deg = ball_deg != -1 ? (ball_deg + 5) % 360 : -1;
     }
 
     int _line_data = -1;

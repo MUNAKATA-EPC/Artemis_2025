@@ -7,13 +7,15 @@
 
 #include "process/engelline.hpp"
 
-int ball_front[2] = {10, 350};
+int ball_front_near[2] = {15, 345};
+int ball_front[2] = {8, 352};
 int ball_front_far[2] = {5, 355};
-float front_diff = 50;
+float front_diff = 40;
 
 bool is_ball_front()
 {
-    return ball_dis > 30 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1]);
+    return (ball_dis > 30 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
+            ( ball_dis > 190 && (ball_deg <= ball_front_near[0] || ball_deg >= ball_front_near[1]));
 }
 bool is_ball_front_far()
 {
@@ -43,7 +45,7 @@ void process_attacker(int speed)
 
     if(is_line_evacuation())
     {
-        motor_move(line_evacuation_deg + 180, 90);
+        motor_move(line_evacuation_deg + 180, 100);
     }
     else
     {
@@ -62,32 +64,22 @@ void process_attacker(int speed)
                 }
                 else if(ball_dis >= 100)
                 { 
-                    motor_move(0, 70);
+                    motor_move(0, 80);
                 }
                 else
                 {
-                    motor_move(0, 80);
+                    motor_move(ball_deg, 80);
                 }
             }
             else if((ball_deg <= ball_front[0] + front_diff || ball_deg >= ball_front[1] - front_diff) && (ball_dis >= 100))
             {
-                if(ball_dis >= 140)
-                {
-                    if(ball_deg <= ball_front[0] + front_diff)
-                    {
-                        int ball_deg_diff = ball_deg * pow(abs(sin(radians(ball_deg))), 0.9) * 4.0;
-                        motor_move(ball_deg_diff, 70);
-                    }
-                    else if(ball_deg >= ball_front[1] - front_diff)
-                    {
-                        int ball_deg_diff = (360 - ball_deg) * pow(abs(sin(radians(ball_deg))), 0.9) * 4.0;
-                        motor_move(360 - ball_deg_diff, 70);
-                    }
-                }
-                else
-                {
-                    motor_move(ball_deg, 75);
-                }
+                int ball_vec_dis = 240 - ball_dis;
+                int ball_vec_dir = ball_deg;
+                int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
+                int ball_y = sin(radians(ball_vec_dir)) * ball_vec_dis;
+                int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 100));
+                int move_speed = ball_x - 90 < 0 ? 70 : 80;
+                motor_move(ball_deg_from_front, move_speed);
             }
             else 
             {
