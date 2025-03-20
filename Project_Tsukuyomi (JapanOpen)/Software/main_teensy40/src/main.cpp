@@ -25,6 +25,7 @@
 
 #include "process/engelline.hpp"
 #include "process/attacker.hpp"
+#include "process/defender.hpp"
 
 #include "ui/ui.hpp"
 
@@ -95,11 +96,11 @@ void loop() {
         }
         else if(process_mode == 1)  //青色ゴール・アタッカー
         {
-
+            
         }
         else if(process_mode == 2)  //黄色ゴール・ディフェンダー
         {
-            
+            process_defender();
         }
         else if(process_mode == 3)  //青色ゴール・ディフェンダー
         {

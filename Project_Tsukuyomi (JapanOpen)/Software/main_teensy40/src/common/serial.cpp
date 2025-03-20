@@ -24,7 +24,7 @@ void init_serial()
 
 void process_serial()
 {
-    if(Serial1.available() > 0)
+    while(Serial1.available() > 0)
     {
         ball_deg = Serial1.readStringUntil('a').toInt();
         ball_dis = Serial1.readStringUntil('b').toInt();
@@ -61,9 +61,9 @@ void process_serial()
         }
     }
 
-    Serial.print(ball_deg);
-    Serial.print(",");
-    Serial.println(ball_dis);
+    // Serial.print(ball_deg);
+    // Serial.print(",");
+    // Serial.println(ball_dis);
         
     // for(int i = 0; i < 16; i++)
     // {

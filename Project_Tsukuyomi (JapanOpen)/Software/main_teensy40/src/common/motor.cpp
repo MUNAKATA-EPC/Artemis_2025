@@ -208,10 +208,11 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b, bool b_b , bool c_
 
 void motor_move(int deg, int power)
 {
+    
     //角度による計算
     float powers[4] = {0, 0, 0, 0};
 
-    deg = 360 - deg;
+    deg = 360 - deg - 5;
 
     powers[0] = sin(radians(deg - 45)) * -power;
     powers[1] = sin(radians(deg + 45)) * -power;

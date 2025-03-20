@@ -30,22 +30,22 @@ sensor.reset(dual_buff=True)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.skip_frames(time = 400)
-sensor.set_contrast(-3)#コントラスト
-sensor.set_brightness(-3)#明るさ
-sensor.set_saturation(3)#彩3~-3
+sensor.set_contrast(0)#コントラスト
+sensor.set_brightness(3)#明るさ
+sensor.set_saturation(0)#彩3~-3
 sensor.skip_frames(time = 250)
-sensor.set_auto_gain(False, gain_db=20, gain_db_ceiling=0) # must be turned off for color tracking
+sensor.set_auto_gain(False)#, gain_db=20, gain_db_ceiling=0) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (13, 14, 28))
+#sensor.set_auto_whitebal(False, rgb_gain_db = (13, 14, 28))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [             (35, 68, 38, 82, 30, 73)        ]
-y_goal_thresholds = [       (59, 80, -79, -53, 59, 82)     ]
+ball_thresholds = [            (36, 78, 28, 87, 29, 80)       ]
+y_goal_thresholds = [      (22, 52, -5, 24, 24, 61)    ]
 b_goal_thresholds = [       (9, 23, 14, 67, -72, -35)       ]
 
 
@@ -113,7 +113,7 @@ while True:
     clock.tick()                    # Update the FPS clock.
     img = sensor.snapshot() #映像の取得
 
-    img.gamma_corr(gamma=1.0, contrast=1.5, brightness=0)
+    img.gamma_corr(gamma=1.0, contrast=1.0, brightness=0)
 
     if color_tracking_mode == 0 or color_tracking_mode == 1:
         #ボールを見つける

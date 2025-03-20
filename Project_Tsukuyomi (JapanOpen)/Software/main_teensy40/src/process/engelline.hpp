@@ -9,6 +9,7 @@ extern void process_engelline(bool running);
 extern bool is_line_detected();
 extern bool is_line_evacuation();
 extern bool is_previous_line_detected();
+extern bool is_exist_deg_value_in_range(int check_value, int base_value, int check_range);
 
 extern int line_deg;
 extern int line_first_deg;

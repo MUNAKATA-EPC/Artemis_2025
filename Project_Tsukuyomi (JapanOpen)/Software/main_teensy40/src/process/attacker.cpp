@@ -10,21 +10,21 @@
 int ball_front_near[2] = {15, 345};
 int ball_front[2] = {8, 352};
 int ball_front_far[2] = {5, 355};
-float front_diff = 40;
+float front_diff = 50;
 
 bool is_ball_front()
 {
-    return (ball_dis > 30 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
+    return (ball_dis > 60 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
             ( ball_dis > 190 && (ball_deg <= ball_front_near[0] || ball_deg >= ball_front_near[1]));
 }
 bool is_ball_front_far()
 {
-    return ball_dis <= 30 && (ball_deg <= ball_front_far[0] || ball_deg >= ball_front_far[1]);
+    return ball_dis <= 60 && (ball_deg <= ball_front_far[0] || ball_deg >= ball_front_far[1]);
 }
 
 bool is_ball_hold()
 {
-    return is_ball_front() && ball_dis >= 216;
+    return is_ball_front() && ball_dis >= 220;
 }
 
 void init_attacker()
@@ -65,7 +65,7 @@ void process_attacker(int speed)
                     f_kicker.kick(500, 200);
                 }
                 else if(ball_dis >= 100)
-                { 
+                {
                     motor_move(0, 80);
                 }
                 else
@@ -79,8 +79,8 @@ void process_attacker(int speed)
                 int ball_vec_dir = ball_deg;
                 int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
                 int ball_y = sin(radians(ball_vec_dir)) * ball_vec_dis;
-                int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 90));
-                int move_speed = 80;
+                int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 80));
+                int move_speed = ball_dis >= 160 ? 65 : 75;
                 motor_move(ball_deg_from_front, move_speed);
             }
             else 
