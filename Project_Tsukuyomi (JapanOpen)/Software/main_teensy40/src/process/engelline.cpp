@@ -137,10 +137,10 @@ void process_engelline(bool running)
         return;
     }
 
-    if(send_timer_line.get_value() >= 100)
+    if(send_timer_line.get_value() >= 500)
     {
-        // if(running)
-        // {
+        if(running)
+        {
             //LEDの発光
             pixels.clear();
             
@@ -153,12 +153,12 @@ void process_engelline(bool running)
             }
             
             pixels.show();
-        // }
-        // else
-        // {
-        //     pixels.clear();
-        //     pixels.show();
-        // }
+        }
+        else
+        {
+            pixels.clear();
+            pixels.show();
+        }
 
         send_timer_line.reset();
     }

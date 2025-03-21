@@ -7,7 +7,6 @@ class Vector{
 public:
     Vector(float rad, float size);
 
-    void set(float rad, float size);
     void add(Vector a);
     void sub(Vector a);
     int get_deg();
