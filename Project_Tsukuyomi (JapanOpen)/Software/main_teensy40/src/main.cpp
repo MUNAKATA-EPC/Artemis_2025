@@ -26,6 +26,7 @@
 #include "process/engelline.hpp"
 #include "process/attacker.hpp"
 #include "process/defender.hpp"
+#include "process/ball_process.hpp"
 
 #include "ui/ui.hpp"
 
@@ -57,6 +58,7 @@ void setup() {
     init_serial();
     init_motor();
     init_engelline();
+    init_ball_process();
 
     bno055.init(6);
     debug_bt.init(6, Button::Button_Value_Type::PULLDOWN);
@@ -72,6 +74,7 @@ void loop() {
     process_ui();
     process_serial();
     process_engelline(is_running);
+    process_ball_process();
 
     bno055.process();
     gyro_deg = bno055.get_degrees();
@@ -96,7 +99,9 @@ void loop() {
         }
         else if(process_mode == 1)  //青色ゴール・アタッカー
         {
-            
+            pid_gyro();
+
+            motor_move(0, 0);
         }
         else if(process_mode == 2)  //黄色ゴール・ディフェンダー
         {
@@ -104,7 +109,9 @@ void loop() {
         }
         else if(process_mode == 3)  //青色ゴール・ディフェンダー
         {
-            
+            pid_gyro();
+
+            motor_move(0, 0);
         }
     }
     else
