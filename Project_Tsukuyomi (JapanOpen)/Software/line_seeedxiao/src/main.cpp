@@ -16,7 +16,7 @@ int output_value;
 class average
 {
 private:
-  int stock_rotation_term = 15; // 移動平均の期間（標本数）
+  int stock_rotation_term = 20; // 移動平均の期間（標本数）
   int stock_rotation_number = 0; // 輪番用のカウント
   float stock_data[50];         // データをストックする配列
   float new_data;                // センサから取得した最新のデータ
@@ -92,7 +92,7 @@ int get_from_multiplexer(int idx)
       }
     }
 
-    delayMicroseconds(10);
+    delayMicroseconds(50);
 
     return analogRead(PIN_DATA);
 }
@@ -100,7 +100,7 @@ int get_from_multiplexer(int idx)
 void setup() {
   Serial.begin(9600);
 
-  pinMode(PIN_DATA, INPUT_PULLUP);
+  pinMode(PIN_DATA, INPUT_PULLDOWN);
   pinMode(PIN_S0, OUTPUT);
   pinMode(PIN_S1, OUTPUT);
   pinMode(PIN_S2, OUTPUT);
@@ -121,7 +121,7 @@ void loop() {
   //16ピン分のセンサーの値をマルチプレクサから取得する
   for(int i = 0; i < 16; i++)
   {
-    line_circle_values[i] = line_data[i].moving_average(get_from_multiplexer(i)) >= 40 ? 1 : 0;
+    line_circle_values[i] = line_data[i].moving_average(get_from_multiplexer(i)) >= 50 ? 1 : 0;
   }
   output_value = 0;
   

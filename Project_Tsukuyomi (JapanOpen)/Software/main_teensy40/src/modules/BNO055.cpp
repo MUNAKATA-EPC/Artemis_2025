@@ -39,6 +39,11 @@ void BNO055::process()
     }
 }
 
+void BNO055::reset_degree()
+{
+    reset_deg = raw_deg;
+}
+
 int BNO055::get_degrees()
 {
     return degrees;

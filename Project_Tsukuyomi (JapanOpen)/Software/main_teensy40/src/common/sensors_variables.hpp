@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "modules/kicker.hpp"
+#include "modules/BNO055.hpp"
 
 extern int gyro_deg;
 
@@ -14,3 +15,5 @@ extern int line_data[16];
 
 extern Kicker f_kicker;
 extern Kicker b_kicker;
+
+extern BNO055 bno055;

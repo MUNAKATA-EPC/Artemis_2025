@@ -71,9 +71,9 @@ void setup() {
 }
 
 void loop() {
-    process_ui();
     process_serial();
-    process_engelline(is_running);
+    process_engelline(true);
+    process_ui();
     process_ball_process();
 
     bno055.process();

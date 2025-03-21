@@ -165,7 +165,7 @@ void process_defender()
                         if( is_coming && ((ball_dis <= 130 && get_ball_speed().get_size() >= 200.0) || 
                             (ball_dis > 130 && get_ball_speed().get_size() >= 200.0)))
                         {
-                            //is_fast_coming = true;
+                            is_fast_coming = true;
                         }
 
                         if(is_fast_coming)

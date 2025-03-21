@@ -11,6 +11,7 @@ class BNO055{
 public:
     void init(int reset_pin, int sub_pin = -1);
     void process();
+    void reset_degree();
     int get_degrees();
 
 private:

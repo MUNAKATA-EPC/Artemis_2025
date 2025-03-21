@@ -38,7 +38,7 @@ void process_serial()
 
     int _line_data = -1;
     
-    while(Serial3.available() > 0)
+    if(Serial3.available() > 0)
     {
         _line_data = Serial3.readStringUntil('\n').toInt();
         
@@ -72,11 +72,15 @@ void process_serial()
     // Serial.print(bgoal_deg);
     // Serial.print(",");
     // Serial.println(bgoal_dis);
-        
-    for(int i = 0; i < 16; i++)
+      
+    if(_line_data != -1)
     {
-        Serial.print(line_data[i]);
-        Serial.print(",");
+        // Serial.print(_line_data);
+        // Serial.print(",");
+        for(int i = 0; i < 16; i++)
+        {
+            Serial.print(line_data[i]);
+        }
+        Serial.print("\n");
     }
-    Serial.print("\n");
 }
