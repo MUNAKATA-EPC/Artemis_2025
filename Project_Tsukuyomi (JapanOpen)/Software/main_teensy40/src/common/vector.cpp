@@ -7,6 +7,12 @@ Vector::Vector(float rad, float size)
     this->_size = size;
 }
 
+void Vector::set(float rad, float size)
+{
+    this->_rad = rad;
+    this->_size = size;
+}
+
 void Vector::add(Vector a)
 {
     float origin_vec_x = cos(this->_rad) * this->_size;

@@ -21,32 +21,32 @@ uart = UART(UART.UART1, 115200, 8, None, 1, timeout= 1000)
 clock = time.clock()
 
 #ホモグラフィー変換行列
-homegraphy_matrix = [   [ 1.68984476e-02,  1.28072445e-01,  5.30789133e+01],
-                        [ 4.05562743e-01,  3.41283959e-01, -1.70181113e+01],
-                        [ 2.70375162e-02, -1.99385511e-02,  1.00000000e+00]]
+homegraphy_matrix = [ [ 1.68984476e-02,  1.28072445e-01,  5.30789133e+01],
+                                [ 4.05562743e-01,  3.41283959e-01, -1.70181113e+01],
+                                [ 2.70375162e-02, -1.99385511e-02,  1.00000000e+00]]
 #センサーの設定
 
 sensor.reset(dual_buff=True)
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.skip_frames(time = 400)
-sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(3)#明るさ
-sensor.set_saturation(0)#彩3~-3
+sensor.set_contrast(-3)#コントラスト
+sensor.set_brightness(-3)#明るさ
+sensor.set_saturation(3)#彩3~-3
 sensor.skip_frames(time = 250)
-sensor.set_auto_gain(False)#, gain_db=20, gain_db_ceiling=0) # must be turned off for color tracking
+sensor.set_auto_gain(False, gain_db=20, gain_db_ceiling=0) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-#sensor.set_auto_whitebal(False, rgb_gain_db = (13, 14, 28))
+sensor.set_auto_whitebal(False, rgb_gain_db = (13, 14, 28))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [            (36, 78, 28, 87, 29, 80)       ]
-y_goal_thresholds = [      (22, 52, -5, 24, 24, 61)    ]
-b_goal_thresholds = [       (9, 23, 14, 67, -72, -35)       ]
+ball_thresholds = [             (35, 68, 38, 82, 30, 73)        ]
+y_goal_thresholds = [       (60, 71, -77, -17, 22, 84)     ]
+b_goal_thresholds = [       (13, 35, 20, 73, -99, -44)      ]
 
 
 
@@ -113,7 +113,7 @@ while True:
     clock.tick()                    # Update the FPS clock.
     img = sensor.snapshot() #映像の取得
 
-    img.gamma_corr(gamma=1.0, contrast=1.0, brightness=0)
+    img.gamma_corr(gamma=1.0, contrast=1.5, brightness=0)
 
     if color_tracking_mode == 0 or color_tracking_mode == 1:
         #ボールを見つける
@@ -202,14 +202,14 @@ while True:
 
     if(check_y_goal == 1):
         y_goal_dir = (int(y_goal_x ) / WIDTH * 90)
-        y_goal_dis = int(math.sqrt((world_y_goal_vector[0][0] - (y_goal_x - WIDTH) * 0.0625) ** 2 + world_y_goal_vector[1][0] ))
+        y_goal_dis = y_goal_y
     else:
         y_goal_dir = 500
         y_goal_dis = 500
 
     if(check_b_goal == 1):
         b_goal_dir = (int(b_goal_x) / WIDTH * 90)
-        b_goal_dis = int(math.sqrt((world_b_goal_vector[0][0] - (b_goal_x - WIDTH) * 0.0625) ** 2 + world_b_goal_vector[1][0] ))
+        b_goal_dis = b_goal_y
     else:
         b_goal_dir = 500
         b_goal_dis = 500

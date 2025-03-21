@@ -3,7 +3,7 @@
 #include "sensors_variables.hpp"
 #include "motor.hpp"
 
-#define GYRO_PGAIN 0.95
+#define GYRO_PGAIN 0.98
 #define GYRO_DGAIN 3.5
 #define GOAL_PGAIN 0.4
 #define GOAL_DGAIN 2.0
