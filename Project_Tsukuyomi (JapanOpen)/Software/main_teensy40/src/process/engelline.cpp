@@ -146,8 +146,8 @@ void process_engelline(bool running)
             
             for(int i = 0; i < 32; i++)
             {
-                pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //グリーン
-                //pixels.setPixelColor(i, pixels.Color(255, 0, 255));    //パープル
+                //pixels.setPixelColor(i, pixels.Color(0, 255, 0));       //グリーン
+                pixels.setPixelColor(i, pixels.Color(255, 0, 0));    //パープル
                 //pixels.setPixelColor(i, pixels.Color(255, 255, 255));   //ホワイト
                 //pixels.setPixelColor(i, pixels.Color(50, 255, 100));    //エメラルドグリーン
             }
