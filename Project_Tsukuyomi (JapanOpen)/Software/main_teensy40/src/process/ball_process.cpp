@@ -28,7 +28,7 @@ void process_ball_process()
     measuring_timer.tick();
     measuring_timer.start();
 
-    if(previous_ball_deg == -1)
+    if((previous_ball_deg == -1 && ball_deg != -1) || (previous_ball_deg != -1 && ball_deg == -1))
     {
         previous_ball_deg = ball_deg;
         previous_ball_dis = 240 - ball_dis;
@@ -68,9 +68,9 @@ void process_ball_process()
             vec_ball_speed.set(vec_rad, vec_size);
         }
         
-        Serial.print(vec_ball_speed.get_deg());
-        Serial.print(":");
-        Serial.println(vec_ball_speed.get_size());
+        // Serial.print(vec_ball_speed.get_deg());
+        // Serial.print(":");
+        // Serial.println(vec_ball_speed.get_size());
     
         moving_diff_ball_x = 0.00;
         moving_diff_ball_y = 0.00;

@@ -26,14 +26,25 @@ void process_serial()
 {
     while(Serial1.available() > 0)
     {
-        ball_deg = Serial1.readStringUntil('a').toInt();
-        ball_dis = Serial1.readStringUntil('b').toInt();
-        ygoal_deg = Serial1.readStringUntil('c').toInt();
-        ygoal_dis = Serial1.readStringUntil('d').toInt();
-        bgoal_deg = Serial1.readStringUntil('e').toInt();
-        bgoal_dis = Serial1.readStringUntil('f').toInt();
+        int temp = Serial1.readStringUntil('a').toInt();
+        ball_deg = temp <= 360 ? temp : ball_deg;
 
-        ball_deg = ball_deg != -1 ? (ball_deg + 5) % 360 : -1;
+        temp = Serial1.readStringUntil('b').toInt();
+        ball_dis = temp <= 240 ? temp : ball_dis;
+
+        temp = Serial1.readStringUntil('c').toInt();
+        ygoal_deg = temp <= 360 ? temp : ygoal_deg;
+
+        temp = Serial1.readStringUntil('d').toInt();
+        ygoal_dis = temp <= 240 ? temp : ygoal_dis;
+        
+        temp = Serial1.readStringUntil('e').toInt();
+        bgoal_deg = temp <= 360 ? temp : bgoal_deg;
+
+        temp = Serial1.readStringUntil('f').toInt();
+        bgoal_dis = temp <= 240 ? temp : bgoal_dis;
+
+        ball_deg = ball_deg != -1 ? (ball_deg) % 360 : -1;
     }
 
     int _line_data = -1;
@@ -61,26 +72,26 @@ void process_serial()
         }
     }
 
-    // Serial.print(ball_deg);
-    // Serial.print(",");
-    // Serial.print(ball_dis);
-    // Serial.print(",");
-    // Serial.print(ygoal_deg);
-    // Serial.print(",");
-    // Serial.print(ygoal_dis);
-    // Serial.print(",");
-    // Serial.print(bgoal_deg);
-    // Serial.print(",");
-    // Serial.println(bgoal_dis);
+    Serial.print(ball_deg);
+    Serial.print(",");
+    Serial.print(ball_dis);
+    Serial.print(",");
+    Serial.print(ygoal_deg);
+    Serial.print(",");
+    Serial.print(ygoal_dis);
+    Serial.print(",");
+    Serial.print(bgoal_deg);
+    Serial.print(",");
+    Serial.println(bgoal_dis);
       
-    if(_line_data != -1)
-    {
-        // Serial.print(_line_data);
-        // Serial.print(",");
-        for(int i = 0; i < 16; i++)
-        {
-            Serial.print(line_data[i]);
-        }
-        Serial.print("\n");
-    }
+    // if(_line_data != -1)
+    // {
+    //     // Serial.print(_line_data);
+    //     // Serial.print(",");
+    //     for(int i = 0; i < 16; i++)
+    //     {
+    //         Serial.print(line_data[i]);
+    //     }
+    //     Serial.print("\n");
+    // }
 }

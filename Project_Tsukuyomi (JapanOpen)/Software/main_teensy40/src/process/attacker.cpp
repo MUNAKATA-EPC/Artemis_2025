@@ -8,23 +8,23 @@
 #include "process/engelline.hpp"
 
 int ball_front_near[2] = {15, 345};
-int ball_front[2] = {8, 352};
+int ball_front[2] = {11, 349};
 int ball_front_far[2] = {5, 355};
 float front_diff = 50;
 
-bool is_ball_front()
-{
-    return (ball_dis > 60 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
-            ( ball_dis > 190 && (ball_deg <= ball_front_near[0] || ball_deg >= ball_front_near[1]));
-}
 bool is_ball_front_far()
 {
     return ball_dis <= 60 && (ball_deg <= ball_front_far[0] || ball_deg >= ball_front_far[1]);
 }
 
+bool is_ball_front()
+{
+    return (ball_dis > 60 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
+            ( ball_dis > 190 && (ball_deg <= ball_front_near[0] || ball_deg >= ball_front_near[1])) || is_ball_front_far() == true;
+}
 bool is_ball_hold()
 {
-    return is_ball_front() && ball_dis >= 220;
+    return is_ball_front() == true && ball_dis >= 222;
 }
 
 void init_attacker()
@@ -59,14 +59,14 @@ void process_attacker(int speed)
         {
             if(is_ball_front() == true || is_ball_front_far() == true)
             {
-                if(is_ball_hold()) //近距離
+                if(is_ball_hold() == true) //近距離
                 {
                     motor_move(0, 90);
-                    f_kicker.kick(500, 200);
+                    f_kicker.kick(200, 200);
                 }
                 else if(ball_dis >= 100)
                 {
-                    motor_move(0, 80);
+                    motor_move(0, 65);
                 }
                 else
                 {
@@ -80,7 +80,8 @@ void process_attacker(int speed)
                 int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
                 int ball_y = sin(radians(ball_vec_dir)) * ball_vec_dis;
                 int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 80));
-                int move_speed = ball_dis >= 160 ? 65 : 75;
+                int move_speed = ball_dis >= 160 ? 60 : 75;
+
                 motor_move(ball_deg_from_front, move_speed);
             }
             else 
@@ -91,17 +92,17 @@ void process_attacker(int speed)
     
                 vec_to_ball.add(vec_to_tan_ball);
     
-                int motor_speed = 95;
+                int motor_speed = 90;
                 int move_speed = motor_speed;
     
                 if(ball_deg <= 90)
                 {
-                    float speed_scale = (ball_deg + 160) / 250.0;
+                    float speed_scale = (ball_deg + 120) / 210.0;
                     move_speed = pow(speed_scale, 1.2) * motor_speed;
                 }
                 else if(ball_deg >= 270)
                 {
-                    float speed_scale = (360 - ball_deg + 160) / 250.0;
+                    float speed_scale = (360 - ball_deg + 120) / 210.0;
                     move_speed = pow(speed_scale, 1.2) * motor_speed;
                 }
     

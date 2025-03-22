@@ -72,7 +72,7 @@ void setup() {
 
 void loop() {
     process_serial();
-    process_engelline(true);
+    process_engelline(is_running);
     process_ui();
     process_ball_process();
 
