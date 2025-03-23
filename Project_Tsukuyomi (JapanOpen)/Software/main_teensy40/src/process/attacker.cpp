@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include "attacker.hpp"
 
 #include "common/sensors_variables.hpp"
@@ -8,23 +7,23 @@
 #include "process/engelline.hpp"
 
 int ball_front_near[2] = {15, 345};
-int ball_front[2] = {11, 349};
-int ball_front_far[2] = {5, 355};
-float front_diff = 50;
+int ball_front[2] = {7, 353};
+int ball_front_far[2] = {5, 357};
+float front_diff = 45;
 
 bool is_ball_front_far()
 {
-    return ball_dis <= 60 && (ball_deg <= ball_front_far[0] || ball_deg >= ball_front_far[1]);
+    return ball_deg != -1 && (ball_dis <= 60 && (ball_deg <= ball_front_far[0] || ball_deg >= ball_front_far[1]));
 }
 
 bool is_ball_front()
 {
-    return (ball_dis > 60 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
-            ( ball_dis > 190 && (ball_deg <= ball_front_near[0] || ball_deg >= ball_front_near[1])) || is_ball_front_far() == true;
+    return ball_deg != -1 && ((ball_dis > 60 && (ball_deg <= ball_front[0] || ball_deg >= ball_front[1])) ||
+            ( ball_dis > 155 && (ball_deg <= ball_front_near[0] || ball_deg >= ball_front_near[1])) || is_ball_front_far() == true);
 }
 bool is_ball_hold()
 {
-    return is_ball_front() == true && ball_dis >= 222;
+    return ball_deg != -1 && (is_ball_front() == true && ball_dis >= 222);
 }
 
 void init_attacker()
@@ -75,6 +74,25 @@ void process_attacker(int speed)
             }
             else if((ball_deg <= ball_front[0] + front_diff || ball_deg >= ball_front[1] - front_diff) && (ball_dis >= 100))
             {
+                if((ball_deg <= 50 || ball_deg >= 310) && ball_deg <= 125)
+                {
+                    if(ball_deg <= 50)
+                    {
+                        int move_speed = ball_dis >= 160 ? 70 : 75;
+                        motor_move(ball_deg + ball_deg * 1.5, move_speed);
+                    }
+                    else
+                    {
+                        int move_speed = ball_dis >= 160 ? 70 : 75;
+                        int ball_deg_ = 360 - ball_deg;
+                        ball_deg_ = ball_deg_ * 1.55;
+                        ball_deg_ = 360 - ball_deg_;
+                        motor_move(ball_deg - ball_deg_, move_speed);
+                    }
+                }
+                else
+                {
+                    
                 int ball_vec_dis = 240 - ball_dis;
                 int ball_vec_dir = ball_deg;
                 int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
@@ -83,6 +101,8 @@ void process_attacker(int speed)
                 int move_speed = ball_dis >= 160 ? 60 : 75;
 
                 motor_move(ball_deg_from_front, move_speed);
+
+                }
             }
             else 
             {
