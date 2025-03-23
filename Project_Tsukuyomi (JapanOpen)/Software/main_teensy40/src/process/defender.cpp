@@ -20,6 +20,7 @@ int defender_mode = 0;
 int goalkeep_mode = 0;
 
 bool is_fast_coming = false;
+int keeper_previous_line_deg;
 
 void init_defender()
 {
@@ -72,241 +73,166 @@ void process_defender()
 
         if(is_line_detected())
         {
-            { 
-                if(count_of_detected_line_group == 1)
-                {
-                    Vector start_line_vec = Vector(radians(line_detected_groups[0].start_index * 22.5), 1);
-                    Vector end_line_vec = Vector(radians(line_detected_groups[0].end_index * 22.5), 1);
-                    start_line_vec.add(end_line_vec);
+            if(count_of_detected_line_group == 1)
+            {
+                Vector start_line_vec = Vector(radians(line_detected_groups[0].start_index * 22.5), 1);
+                Vector end_line_vec = Vector(radians(line_detected_groups[0].end_index * 22.5), 1);
+                start_line_vec.add(end_line_vec);
 
-                    motor_move(start_line_vec.get_deg(), 70);
+                motor_move(start_line_vec.get_deg(), 50);
+            }
+            else if(count_of_detected_line_group == 2)
+            {
+                //ゴールの反対側にボールがあったら止まる
+                //[0]が[1]より小さくなるように調整
+                int stop_base_deg[2] = {ygoal_deg, (ygoal_deg + 180) % 360};
+
+                if(stop_base_deg[0] > stop_base_deg[1])
+                {
+                    stop_base_deg[0] = (ygoal_deg + 180) % 360;
+                    stop_base_deg[1] = ygoal_deg;
                 }
-                else if(count_of_detected_line_group == 2)
+
+                //2つの群の角度を計算
+                Vector first_line_start_vec = Vector(radians(line_detected_groups[0].start_index * 22.5), 1);
+                Vector first_line_end_vec = Vector(radians(line_detected_groups[0].end_index * 22.5), 1);
+                Vector second_line_start_vec = Vector(radians(line_detected_groups[1].start_index * 22.5), 1);
+                Vector second_line_end_vec = Vector(radians(line_detected_groups[1].end_index * 22.5), 1);
+                
+                first_line_start_vec.add(first_line_end_vec);
+                second_line_start_vec.add(second_line_end_vec);
+
+                int first_line_deg = first_line_start_vec.get_deg() > 0 ? first_line_start_vec.get_deg() : 360 + first_line_start_vec.get_deg();
+                int second_line_deg = second_line_start_vec.get_deg() > 0 ? second_line_start_vec.get_deg() : 360 + second_line_start_vec.get_deg();
+
+                //真横に動きやすくする
+                if(is_exist_deg_value_in_range(first_line_deg, 90, 30))
                 {
-                    //ゴールの反対側にボールがあったら止まる
-                    //[0]が[1]より小さくなるように調整
-                    int stop_base_deg[2] = {ygoal_deg, (ygoal_deg + 180) % 360};
+                    first_line_deg = 90;
+                }
+                else if(is_exist_deg_value_in_range(first_line_deg, 270, 30))
+                {
+                    first_line_deg = 270;
+                }
 
-                    if(stop_base_deg[0] > stop_base_deg[1])
+                if(is_exist_deg_value_in_range(second_line_deg, 90, 30))
+                {
+                    second_line_deg = 90;
+                }
+                else if(is_exist_deg_value_in_range(second_line_deg, 270, 30))
+                {
+                    second_line_deg = 270;
+                }
+
+                Serial.print(first_line_deg);
+                Serial.print(",");
+                Serial.print(second_line_deg);
+                Serial.print(",");
+                Serial.print(ygoal_deg);
+                Serial.print(",");
+                Serial.print(stop_base_deg[0] + 90);
+                Serial.print(",");
+                Serial.print( (stop_base_deg[1] + 90) % 360);
+                Serial.print(",");
+                Serial.print(goalkeep_mode);
+                Serial.print(",");
+                Serial.print(is_exist_deg_value_in_range(ball_deg, stop_base_deg[0] + 90, 40));
+                Serial.print(",");
+                Serial.println(is_exist_deg_value_in_range(ball_deg,(stop_base_deg[1] + 90) % 360, 40));
+                
+                int ball_stop_range = ball_dis >= 180 ? 2 : ball_dis >= 100 ? 3 : 3;
+                
+                int speed = 0;
+                
+                if( !is_exist_deg_value_in_range(ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range - 3) && 
+                    !is_exist_deg_value_in_range(ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range - 3))
+                {
+                    speed = 60;
+                }
+                else
+                {
+                    if(ball_deg >= 100 && ball_deg <= 260)
                     {
-                        stop_base_deg[0] = (ygoal_deg + 180) % 360;
-                        stop_base_deg[1] = ygoal_deg;
-                    }
-
-                    //2つの群の角度を計算
-                    Vector first_line_start_vec = Vector(radians(line_detected_groups[0].start_index * 22.5), 1);
-                    Vector first_line_end_vec = Vector(radians(line_detected_groups[0].end_index * 22.5), 1);
-                    Vector second_line_start_vec = Vector(radians(line_detected_groups[1].start_index * 22.5), 1);
-                    Vector second_line_end_vec = Vector(radians(line_detected_groups[1].end_index * 22.5), 1);
-                    
-                    first_line_start_vec.add(first_line_end_vec);
-                    second_line_start_vec.add(second_line_end_vec);
-
-                    int first_line_deg = first_line_start_vec.get_deg() > 0 ? first_line_start_vec.get_deg() : 360 + first_line_start_vec.get_deg();
-                    int second_line_deg = second_line_start_vec.get_deg() > 0 ? second_line_start_vec.get_deg() : 360 + second_line_start_vec.get_deg();
-
-                    //真横に動きやすくする
-                    if(is_exist_deg_value_in_range(first_line_deg, 90, 30))
-                    {
-                        first_line_deg = 90;
-                    }
-                    else if(is_exist_deg_value_in_range(first_line_deg, 270, 30))
-                    {
-                        first_line_deg = 270;
-                    }
-
-                    if(is_exist_deg_value_in_range(second_line_deg, 90, 30))
-                    {
-                        second_line_deg = 90;
-                    }
-                    else if(is_exist_deg_value_in_range(second_line_deg, 270, 30))
-                    {
-                        second_line_deg = 270;
-                    }
-
-                    int ball_stop_range = ball_dis >= 100 ? ((ball_deg >= 45 && ball_deg <= 90) || (ball_deg >= 270 && ball_deg <= 315) ? 5 : 10) : ball_dis >= 50 ? 10 : 10;
-                    
-                    int speed = 0;
-                    int virtual_ball_deg = ball_deg;
-
-                    // Serial.print(first_line_deg);
-                    // Serial.print(",");
-                    // Serial.print(second_line_deg);
-                    // Serial.print(",");
-                    // Serial.print(ygoal_deg);
-                    // Serial.print(",");
-                    // Serial.print(ygoal_dis);
-                    // Serial.print(",");
-                    // Serial.print(ball_deg);
-                    // Serial.print(",");
-                    // Serial.print(ball_dis);
-                    // Serial.print(",");
-                    // Serial.print(get_ball_speed().get_size());
-                    // Serial.print(",");
-                    // Serial.print(is_exist_deg_value_in_range(ball_deg, stop_base_deg[0] + 90, 90 - ball_stop_range));
-                    // Serial.print(",");
-                    // Serial.println(is_exist_deg_value_in_range(ball_deg,(stop_base_deg[1] + 90) % 360, 90 - ball_stop_range));
-                    
-                    //後ろにあったら問答無用で速度を落とす
-                    if(virtual_ball_deg >= 110 && virtual_ball_deg <= 250)
-                    {
-                        speed = 55;
+                        speed = 60;
                     }
                     else
                     {
-                        if((ball_dis >= 200 && get_ball_speed().get_size() < 300.0) || get_ball_speed().get_size() < 100.0)
+                        if(ball_dis >= 180)
                         {
-                            is_fast_coming = false;
-                        }
-
-                        bool is_coming = (ball_dis <= 30 ? (get_ball_speed().get_deg() >= -90 && get_ball_speed().get_deg() <= 90) : (get_ball_speed().get_deg() >= -140 && get_ball_speed().get_deg() <= 140)) &&
-                                        !(get_ball_speed().get_size() >= -40 && get_ball_speed().get_size() <= 40);
-                        bool is_fast = ball_dis <= 30 ? get_ball_speed().get_size() >= 400.0 : get_ball_speed().get_size() >= 200.0;
-
-                        bool is_straight = false;
-
-                        if(ball_dis >= 5 && ball_dis <= 150 && is_fast && is_coming)
-                        {
-                            is_fast_coming = true;
-                        }
-
-                        if(is_fast_coming)
-                        {
-                            speed = 95;
-                            ball_stop_range = 0;
-
-                            if(!is_straight)
+                            if((ball_deg >= 70 && ball_deg <= 100) || (ball_deg >= 260 && ball_deg <= 290))
                             {
-                                if((get_ball_speed().get_deg() <= 20) && (get_ball_speed().get_deg() >= -120))
-                                {
-                                    if(virtual_ball_deg <= 180)
-                                    {
-                                        virtual_ball_deg = (virtual_ball_deg + 70 + 360) % 360;
-                                    }
-                                    else
-                                    {
-                                        virtual_ball_deg = (virtual_ball_deg + 40 + 360) % 360;
-                                    }
-                                } 
-                                else if((get_ball_speed().get_deg() >= 20) && (get_ball_speed().get_deg() <= 120))
-                                {
-                                    if(virtual_ball_deg <= 180)
-                                    {
-                                        virtual_ball_deg = (virtual_ball_deg - 40 + 360) % 360;
-                                    }
-                                    else
-                                    {
-                                        virtual_ball_deg = (virtual_ball_deg - 70 + 360) % 360;
-                                    }
-                                } 
+                                speed = 100;
+                            }
+                            else if((ball_deg >= 15 && ball_deg <= 70) || (ball_deg >= 290 && ball_deg <= 345))
+                            {
+                                speed = 95;
+                            }
+                            else
+                            {
+                                speed = 75;
                             }
                         }
                         else
                         {
-                            //前方周辺にあったら速度を落とす
-                            if( ball_dis <= 100 && 
-                                !is_exist_deg_value_in_range(virtual_ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range - 2) && 
-                                !is_exist_deg_value_in_range(virtual_ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range - 2))
+                            if((ball_deg >= 70 && ball_deg <= 100) || (ball_deg >= 260 && ball_deg <= 290))
                             {
-                                speed = 60;
+                                speed = 100;
                             }
                             else
                             {
-                                //ボールが近かったら条件厳しめで速度設定
-                                if(ball_dis >= 130)
-                                {
-                                    if((virtual_ball_deg >= 70 && virtual_ball_deg <= 100) || (virtual_ball_deg >= 260 && virtual_ball_deg <= 290))
-                                    {
-                                        speed = 95;
-                                    }
-                                    else if((virtual_ball_deg >= 10 && virtual_ball_deg <= 70) || (virtual_ball_deg >= 290 && virtual_ball_deg <= 350))
-                                    {
-                                        speed = 85;
-                                    }
-                                    else
-                                    {
-                                        speed = 70;
-                                    }
-                                }
-                                else if(ball_dis >= 40)
-                                {
-                                    if((virtual_ball_deg >= 70 && virtual_ball_deg <= 100) || (virtual_ball_deg >= 260 && virtual_ball_deg <= 290))
-                                    {
-                                        speed = 80;
-                                    }
-                                    else if((virtual_ball_deg >= 15 && virtual_ball_deg <= 70) || (virtual_ball_deg >= 290 && virtual_ball_deg <= 345))
-                                    {
-                                        speed = 75;
-                                    }
-                                    else
-                                    {
-                                        speed = 70;
-                                    }
-                                }
-                                else
-                                {
-                                    //ボールが遠かったらぼちぼちの速度で
-                                    if((virtual_ball_deg >= 70 && virtual_ball_deg <= 100) || (virtual_ball_deg >= 260 && virtual_ball_deg <= 290))
-                                    {
-                                        speed = 70;
-                                    }
-                                    else
-                                    {
-                                        speed = 65;
-                                    }
-                                }
-                            }    
+                                speed = 90;
+                            }
                         }
                     }
+                }
 
+                if(ball_deg == -1)
+                {
+                    if(is_exist_deg_value_in_range(ygoal_deg, 180, 3))
+                    {
+                        motor_move(0, 0);
+                    }
+                    else
+                    {
+                        if(is_exist_deg_value_in_range(first_line_deg, ygoal_deg, 90))
+                        {
+                            motor_move(first_line_deg, 65);
+                        }
+                        else
+                        {
+                            motor_move(second_line_deg, 65);
+                        }
+                    }
+                }
+                else
+                { 
                     if(goalkeep_mode == 0)
                     {
-                        if(virtual_ball_deg == -1)
+                        if(is_exist_deg_value_in_range(ball_deg, stop_base_deg[0] + 90, 90 - ball_stop_range))
                         {
-                            if(is_exist_deg_value_in_range(ygoal_deg, 180, 3))
+                            if(is_exist_deg_value_in_range(first_line_deg, stop_base_deg[0] + 90, 90))
                             {
-                                motor_move(0, 0);
+                                motor_move(first_line_deg, speed);
                             }
-                            else
+                            else if(is_exist_deg_value_in_range(second_line_deg, stop_base_deg[0] + 90, 90))
                             {
-                                if(is_exist_deg_value_in_range(first_line_deg, ygoal_deg, 90))
-                                {
-                                    motor_move(first_line_deg, 65);
-                                }
-                                else if(is_exist_deg_value_in_range(second_line_deg, ygoal_deg, 90))
-                                {
-                                    motor_move(second_line_deg, 65);
-                                }
+                                motor_move(second_line_deg, speed);
+                            }
+                        }
+                        else if(is_exist_deg_value_in_range(ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range))
+                        {
+                            if(is_exist_deg_value_in_range(first_line_deg, (stop_base_deg[1] + 90) % 360, 90))
+                            {
+                                motor_move(first_line_deg, speed);
+                            }
+                            else if(is_exist_deg_value_in_range(second_line_deg, (stop_base_deg[1] + 90) % 360, 90))
+                            {
+                                motor_move(second_line_deg, speed);
                             }
                         }
                         else
                         {
-                            if(is_exist_deg_value_in_range(virtual_ball_deg, stop_base_deg[0] + 90, 90 - ball_stop_range))
-                            {
-                                if(is_exist_deg_value_in_range(first_line_deg, stop_base_deg[0] + 90, 90))
-                                {
-                                    motor_move(first_line_deg, speed);
-                                }
-                                else if(is_exist_deg_value_in_range(second_line_deg, stop_base_deg[0] + 90, 90))
-                                {
-                                    motor_move(second_line_deg, speed);
-                                }
-                            }
-                            else if(is_exist_deg_value_in_range(virtual_ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range))
-                            {
-                                if(is_exist_deg_value_in_range(first_line_deg, (stop_base_deg[1] + 90) % 360, 90))
-                                {
-                                    motor_move(first_line_deg, speed);
-                                }
-                                else if(is_exist_deg_value_in_range(second_line_deg, (stop_base_deg[1] + 90) % 360, 90))
-                                {
-                                    motor_move(second_line_deg, speed);
-                                }
-                            }
-                            else
-                            {
-                                motor_move(0, 0);
-                            }
+                            motor_move(0, 0);
                         }
 
                         //縦のラインに入ったのでモード変更
@@ -318,47 +244,31 @@ void process_defender()
                     }
                     else if(goalkeep_mode == 1)
                     {
-                        //is_fast_coming = false;
-
-                        if(virtual_ball_deg == -1)
+                        if(is_exist_deg_value_in_range(ball_deg, stop_base_deg[0] + 90, 90 - ball_stop_range))
                         {
-                            if(is_exist_deg_value_in_range(first_line_deg, 0, 50))
+                            if(is_exist_deg_value_in_range(first_line_deg, stop_base_deg[0] + 90, 90))
                             {
-                                motor_move(first_line_deg, 70);
+                                motor_move(first_line_deg, 50);
                             }
-                            else if(is_exist_deg_value_in_range(second_line_deg, 0, 50))
+                            else if(is_exist_deg_value_in_range(second_line_deg, stop_base_deg[0] + 90, 90))
                             {
-                                motor_move(second_line_deg, 70);
+                                motor_move(second_line_deg, 50);
+                            }
+                        }
+                        else if(is_exist_deg_value_in_range(ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range))
+                        {
+                            if(is_exist_deg_value_in_range(first_line_deg, (stop_base_deg[1] + 90) % 360, 90))
+                            {
+                                motor_move(first_line_deg, 85);
+                            }
+                            else if(is_exist_deg_value_in_range(second_line_deg, (stop_base_deg[1] + 90) % 360, 90))
+                            {
+                                motor_move(second_line_deg, 85);
                             }
                         }
                         else
                         {
-                            if(is_exist_deg_value_in_range(virtual_ball_deg, stop_base_deg[0] + 90, 90 - ball_stop_range))
-                            {
-                                if(is_exist_deg_value_in_range(first_line_deg, stop_base_deg[0] + 90, 90))
-                                {
-                                    motor_move(first_line_deg, 50);
-                                }
-                                else if(is_exist_deg_value_in_range(second_line_deg, stop_base_deg[0] + 90, 90))
-                                {
-                                    motor_move(second_line_deg, 50);
-                                }
-                            }
-                            else if(is_exist_deg_value_in_range(virtual_ball_deg, (stop_base_deg[1] + 90) % 360, 90 - ball_stop_range))
-                            {
-                                if(is_exist_deg_value_in_range(first_line_deg, (stop_base_deg[1] + 90) % 360, 90))
-                                {
-                                    motor_move(first_line_deg, 80);
-                                }
-                                else if(is_exist_deg_value_in_range(second_line_deg, (stop_base_deg[1] + 90) % 360, 90))
-                                {
-                                    motor_move(second_line_deg, 80);
-                                }
-                            }
-                            else
-                            {
-                                motor_move(0, 70);
-                            }
+                            motor_move(0, 60);
                         }
 
                         if( !(is_exist_deg_value_in_range(first_line_deg, 0, 45) && is_exist_deg_value_in_range(second_line_deg, 180, 45)) && 
@@ -367,16 +277,26 @@ void process_defender()
                                 goalkeep_mode = 0;
                             }
                     }
-                }
-                else
-                {
-                    motor_move(0, 80);
+                    else
+                    {
+                        motor_move(0, 60);
+                    }
                 }
             }
         }
         else
         {
-            motor_move(ygoal_deg, 60);
+            defender_mode = 1;
         }
     }
+    else if(defender_mode == 1) //ちょっとラインから外れた時
+    {
+        motor_move(keeper_previous_line_deg, 60); 
+
+        if(is_line_detected())
+            defender_mode = 0;
+    }
+
+    if(line_deg != -1)
+        keeper_previous_line_deg = line_deg;
 }

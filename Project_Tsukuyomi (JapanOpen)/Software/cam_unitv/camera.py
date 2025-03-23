@@ -121,7 +121,7 @@ while True:
         ball_x = 0
         ball_y = 0
 
-        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 10, area_threshold = 10):
+        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 2, area_threshold = 2):
             if blob[2] < 150:
                 ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 

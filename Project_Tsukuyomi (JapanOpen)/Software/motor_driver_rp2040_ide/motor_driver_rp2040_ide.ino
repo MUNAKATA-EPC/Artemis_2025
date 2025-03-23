@@ -109,8 +109,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  front_bldc.writeMicroseconds(1300);
-  back_bldc.writeMicroseconds(1300);
+  front_bldc.writeMicroseconds(f_bldc_power);
+  back_bldc.writeMicroseconds(b_bldc_power);
 
   get_motor_data();
 
