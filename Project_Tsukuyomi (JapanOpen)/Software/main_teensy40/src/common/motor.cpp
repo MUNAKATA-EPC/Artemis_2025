@@ -201,7 +201,7 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b, bool b_b , bool c_
         power_d = "000";
     }
 
-    String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d + power_b_f + power_b_b;
+    String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d;
 
     Serial2.println(send_data);
 }

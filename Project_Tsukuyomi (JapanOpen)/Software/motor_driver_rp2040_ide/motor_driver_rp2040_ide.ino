@@ -67,7 +67,6 @@ void get_motor_data()
     f_bldc_power = 1000 + (((String)data[16] + (String)data[17] + (String)data[18]).toInt()) / 100.0 * 300.0;
     b_bldc_power = 1000 + (((String)data[19] + (String)data[20] + (String)data[21]).toInt()) / 100.0 * 300.0;
 
-
     motors[0].set(motor_a_power, motor_a_rotate);
     motors[1].set(motor_b_power, motor_b_rotate);
     motors[2].set(motor_c_power, motor_c_rotate);
