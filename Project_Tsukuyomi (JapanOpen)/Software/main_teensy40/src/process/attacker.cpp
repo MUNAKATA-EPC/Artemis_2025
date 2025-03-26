@@ -46,7 +46,17 @@ void process_attacker(int speed)
     {
         tone(2, 4000, 10);
 
-        motor_move(line_evacuation_deg + 180, 100);
+        motor_move(line_evacuation_deg + 180, speed);
+        
+        if(ball_deg <= 30 || ball_deg >= 330)
+        {
+            motor_set_bldc(10, 0);
+            
+            if(is_ball_hold())
+            {
+                f_kicker.kick(100);
+            }
+        }
     }
     else
     {
@@ -60,12 +70,12 @@ void process_attacker(int speed)
             {
                 if(is_ball_hold() == true) //近距離
                 {
-                    motor_move(0, 90);
+                    motor_move(0, speed);
                     f_kicker.kick(200, 200);
                 }
                 else if(ball_dis >= 100)
                 {
-                    motor_move(0, 65);
+                    motor_move(0, speed * 0.8);
                 }
                 else
                 {
@@ -112,7 +122,7 @@ void process_attacker(int speed)
     
                 vec_to_ball.add(vec_to_tan_ball);
     
-                int motor_speed = 90;
+                int motor_speed = speed;
                 int move_speed = motor_speed;
     
                 if(ball_deg <= 90)

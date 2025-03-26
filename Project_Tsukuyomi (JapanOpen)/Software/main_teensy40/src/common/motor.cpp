@@ -109,7 +109,7 @@ float get_max_value_in_array(float* ar, int ar_cnt)
 
 void motor_break()
 {
-    Serial1.println("1000100010001000");
+    Serial2.println("1000100010001000");
 }
 
 void motor_direct_drive(int a, int b, int c, int d, bool a_b, bool b_b , bool c_b, bool d_b)
@@ -180,30 +180,12 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b, bool b_b , bool c_
     String rotate_c = c < 0 ? "1" : "0";
     String rotate_d = d < 0 ? "1" : "0";
 
-    if(a_b)
-    {
-        rotate_a = "1";
-        power_a = "000";
-    }
-    if(b_b)
-    {
-        rotate_b = "1";
-        power_b = "000";
-    }
-    if(c_b)
-    {
-        rotate_c = "1";
-        power_c = "000";
-    }
-    if(d_b)
-    {
-        rotate_d = "1";
-        power_d = "000";
-    }
+    String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d + power_f_bldc + power_b_bldc;
 
-    String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d;
+    Serial.println(send_data);
 
     Serial2.println(send_data);
+    Serial2.flush();
 }
 
 void motor_move(int deg, int power)

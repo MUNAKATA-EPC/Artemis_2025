@@ -34,6 +34,8 @@ BNO055 bno055;
 Kicker f_kicker;
 Kicker b_kicker;
 
+Timer test;
+
 Button debug_bt;
 Button start_bt;
 
@@ -50,14 +52,23 @@ void play_startup_sound()
     tone(2, 4500, 90);
     delay(110);
 }
+void play_startup_sound_pre()
+{
+    tone(2, 3500, 90);
+    delay(110);
+    tone(2, 3500, 90);
+    delay(110);
+    tone(2, 3500, 90);
+    delay(110);
+}
 
 void setup() {
     Serial.println(9600);
 
-    init_ui();
-    init_serial();
+    play_startup_sound_pre();
+
     init_motor();
-    init_engelline();
+    init_serial();
     init_ball_process();
 
     bno055.init(6);
@@ -67,13 +78,15 @@ void setup() {
     f_kicker.init(30, 31);
     b_kicker.init(30, 32);
 
+    init_engelline();
+    init_ui();
+
     play_startup_sound();
 }
 
 void loop() {
     process_serial();
     process_engelline(is_running);
-    process_ui();
     process_ball_process();
 
     bno055.process();
@@ -88,14 +101,16 @@ void loop() {
     //メインルーチンの実行
     if(start_bt.is_pushed())
     {
-        is_running = !is_running;
+        //is_running = !is_running;
+
+        f_kicker.kick(100);
     }
 
     if(is_running)
     {
         if(process_mode == 0)       //黄色ゴール・アタッカー
         {
-            process_attacker(100);
+            process_attacker(80);
         }
         else if(process_mode == 1)  //青色ゴール・アタッカー
         {
@@ -119,4 +134,6 @@ void loop() {
         motor_set_bldc(0, 0);
         motor_direct_drive(0, 0, 0, 0);
     }
+
+    process_ui();
 }

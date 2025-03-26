@@ -37,11 +37,15 @@ class Motor{
 };
   
 Motor motors[4];
-int f_bldc_power = 1000;
-int b_bldc_power = 1000;
+int f_bldc_power = 1050;
+int b_bldc_power = 1050;
 
 Servo front_bldc;
 Servo back_bldc;
+
+float motor_power;
+
+int test;
 
 void get_motor_data()
 {
@@ -50,6 +54,7 @@ void get_motor_data()
   if(Serial1.available() > 0)
   {
     data = Serial1.readStringUntil('\n');
+    Serial.println(data);
   }
 
   if(data[0] != 'a')
@@ -72,21 +77,31 @@ void get_motor_data()
     motors[2].set(motor_c_power, motor_c_rotate);
     motors[3].set(motor_d_power, motor_d_rotate);
   }
+
+
+  while(Serial1.available() > 0)
+  {
+    Serial1.readStringUntil('\n');
+  }
 }
 
 void setup() {
   // put your setup code here, to run once:
 
-  analogWriteResolution(10);
-  analogReadResolution(10);
+  analogWriteRange(1023);
 
   for(int i = 0; i < 4; i++)
   {
     motors[i].set(0, 0);
+
+    pinMode(PIN_MOTOR_INA[i], OUTPUT);
+    pinMode(PIN_MOTOR_INB[i], OUTPUT);
   }
 
   Serial.begin(9600);
 
+  Serial1.setTX(D0);
+  Serial1.setRX(D1);
   Serial1.begin(115200);
   Serial1.setTimeout(10);
 
@@ -108,10 +123,10 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
+  get_motor_data();
+  
   front_bldc.writeMicroseconds(f_bldc_power);
   back_bldc.writeMicroseconds(b_bldc_power);
-
-  get_motor_data();
 
   for(int i = 0; i < 4; i++)
   {
