@@ -101,9 +101,13 @@ void loop() {
     //メインルーチンの実行
     if(start_bt.is_pushed())
     {
-        //is_running = !is_running;
+        is_running = !is_running;
+    }
 
+    if(debug_bt.is_pushed())
+    {
         f_kicker.kick(100);
+        b_kicker.kick(100);
     }
 
     if(is_running)
