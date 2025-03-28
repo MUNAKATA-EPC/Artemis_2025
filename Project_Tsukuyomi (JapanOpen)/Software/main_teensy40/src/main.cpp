@@ -108,29 +108,27 @@ void loop() {
     {
         f_kicker.kick(100);
         b_kicker.kick(100);
+        is_running = !is_running;
+        process_mode = 0;
     }
 
     if(is_running)
     {
         if(process_mode == 0)       //黄色ゴール・アタッカー
         {
-            process_attacker(80);
+            process_attacker(true, 100);
         }
         else if(process_mode == 1)  //青色ゴール・アタッカー
         {
-            pid_gyro();
-
-            motor_move(0, 0);
+            process_attacker(false, 100);
         }
         else if(process_mode == 2)  //黄色ゴール・ディフェンダー
         {
-            process_defender();
+            process_defender(true);
         }
         else if(process_mode == 3)  //青色ゴール・ディフェンダー
         {
-            pid_gyro();
-
-            motor_move(0, 0);
+            process_defender(false);
         }
     }
     else

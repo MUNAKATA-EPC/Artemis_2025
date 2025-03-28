@@ -27,8 +27,28 @@ void init_defender()
 
 }
 
-void process_defender()
+void process_defender(bool is_yellow)
 {
+    int our_goal_deg;
+    int our_goal_dis;
+    int ene_goal_deg;
+    int ene_goal_dis;
+
+    if(is_yellow)
+    {
+        our_goal_deg = ygoal_deg;
+        our_goal_dis = ygoal_dis;
+        ene_goal_deg = bgoal_deg;
+        ene_goal_dis = bgoal_dis;
+    }
+    else
+    {
+        our_goal_deg = bgoal_deg;
+        our_goal_dis = bgoal_dis;
+        ene_goal_deg = ygoal_deg;
+        ene_goal_dis = ygoal_dis;
+    }
+    
     pid_gyro();
 
     if(defender_mode == 0)
