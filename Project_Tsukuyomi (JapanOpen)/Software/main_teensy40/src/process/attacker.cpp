@@ -9,7 +9,7 @@
 int ball_front_near[2] = {15, 345};
 int ball_front[2] = {7, 353};
 int ball_front_far[2] = {5, 357};
-float front_diff = 45;
+float front_diff = 60;
 
 bool is_ball_front_far()
 {
@@ -35,23 +35,23 @@ void process_attacker(int speed)
 {
     if(is_ball_hold())
     {
-        pid_camera(ygoal_deg);
+        pid_gyro();
     }
     else
     {
         pid_gyro();
     }
 
+    motor_set_bldc(10, 0);
+            
     if(is_line_evacuation())
     {
-        tone(2, 4000, 10);
+        //tone(2, 4000, 10);
 
-        motor_move(line_evacuation_deg + 180, speed);
+        motor_move(line_evacuation_deg + 180, 100);
         
         if(ball_deg <= 30 || ball_deg >= 330)
         {
-            motor_set_bldc(10, 0);
-            
             if(is_ball_hold())
             {
                 f_kicker.kick(100);
@@ -75,42 +75,56 @@ void process_attacker(int speed)
                 }
                 else if(ball_dis >= 100)
                 {
-                    motor_move(0, speed * 0.8);
+                    motor_move(0, speed * 0.9);
                 }
                 else
                 {
-                    motor_move(ball_deg, 80);
+                    motor_move(0, 80);
                 }
             }
-            else if((ball_deg <= ball_front[0] + front_diff || ball_deg >= ball_front[1] - front_diff) && (ball_dis >= 100))
+            else if((ball_deg <= ball_front[0] + front_diff || ball_deg >= ball_front[1] - front_diff) && (ball_dis <= 180))
             {
-                if((ball_deg <= 50 || ball_deg >= 310) && ball_deg <= 125)
+                /*if((ball_deg <= 50 || ball_deg >= 310) && ball_deg <= 170)
                 {
                     if(ball_deg <= 50)
                     {
-                        int move_speed = ball_dis >= 160 ? 70 : 75;
-                        motor_move(ball_deg + ball_deg * 1.5, move_speed);
+                        if(ball_deg < 8)
+                        {
+                            motor_move(0, 70);
+                        }
+                        else
+                        {
+                            int move_speed = ball_dis >= 160 ? 70 : 75;
+                            motor_move(ball_deg + ball_deg * 1.65, move_speed);
+                        }
                     }
                     else
                     {
-                        int move_speed = ball_dis >= 160 ? 70 : 75;
-                        int ball_deg_ = 360 - ball_deg;
-                        ball_deg_ = ball_deg_ * 1.55;
-                        ball_deg_ = 360 - ball_deg_;
-                        motor_move(ball_deg - ball_deg_, move_speed);
+                        if(ball_deg > 348)
+                        {
+                            motor_move(0, 70);
+                        }
+                        else
+                        {
+                            int move_speed = ball_dis >= 160 ? 70 : 75;
+                            int ball_deg_ = 360 - ball_deg;
+                            ball_deg_ = ball_deg_ * 1.65;
+                            ball_deg_ = 360 - ball_deg_;
+                            motor_move(ball_deg_, move_speed);
+                        }
                     }
                 }
-                else
+                else*/
                 {
                     
-                int ball_vec_dis = 240 - ball_dis;
-                int ball_vec_dir = ball_deg;
-                int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
-                int ball_y = sin(radians(ball_vec_dir)) * ball_vec_dis;
-                int ball_deg_from_front = degrees(atan2(ball_y, ball_x - 80));
-                int move_speed = ball_dis >= 160 ? 60 : 75;
+                    int ball_vec_dis = 240 - ball_dis;
+                    int ball_vec_dir = ball_deg;
+                    int ball_x = cos(radians(ball_vec_dir)) * ball_vec_dis;
+                    int ball_y = sin(radians(ball_vec_dir)) * ball_vec_dis;
+                    int ball_deg_from_front = degrees(atan2(ball_y, abs(ball_x - 90)));
+                    int move_speed = ball_dis >= 30 ? 68 : 75;
 
-                motor_move(ball_deg_from_front, move_speed);
+                    motor_move(ball_deg_from_front, move_speed);
 
                 }
             }
@@ -125,15 +139,31 @@ void process_attacker(int speed)
                 int motor_speed = speed;
                 int move_speed = motor_speed;
     
-                if(ball_deg <= 90)
+                if(ball_dis >= 90)
                 {
-                    float speed_scale = (ball_deg + 120) / 210.0;
-                    move_speed = pow(speed_scale, 1.2) * motor_speed;
+                    if(ball_deg <= 90)
+                    {
+                        float speed_scale = (ball_deg + 90) / 210.0;
+                        move_speed = pow(speed_scale, 1) * motor_speed;
+                    }
+                    else if(ball_deg >= 270)
+                    {
+                        float speed_scale = (360 - ball_deg + 90) / 210.0;
+                        move_speed = pow(speed_scale, 1) * motor_speed;
+                    }
                 }
-                else if(ball_deg >= 270)
+                else
                 {
-                    float speed_scale = (360 - ball_deg + 120) / 210.0;
-                    move_speed = pow(speed_scale, 1.2) * motor_speed;
+                    if(ball_deg <= 90)
+                    {
+                        float speed_scale = (ball_deg + 140) / 260.0;
+                        move_speed = pow(speed_scale, 2.25) * motor_speed;
+                    }
+                    else if(ball_deg >= 270)
+                    {
+                        float speed_scale = (360 - ball_deg + 140) / 260.0;
+                        move_speed = pow(speed_scale, 2.25) * motor_speed;
+                    }
                 }
     
                 motor_move(vec_to_ball.get_deg(), move_speed);            

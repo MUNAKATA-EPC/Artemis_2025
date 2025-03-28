@@ -84,14 +84,14 @@ void process_serial()
     // Serial.print(",");
     // Serial.println(bgoal_dis);
       
-    // if(_line_data != -1)
-    // {
-    //     // Serial.print(_line_data);
-    //     // Serial.print(",");
-    //     for(int i = 0; i < 16; i++)
-    //     {
-    //         Serial.print(line_data[i]);
-    //     }
-    //     Serial.print("\n");
-    // }
+    if(_line_data != -1)
+    {
+        // Serial.print(_line_data);
+        // Serial.print(",");
+        for(int i = 0; i < 16; i++)
+        {
+            Serial.print(line_data[i]);
+        }
+        Serial.print("\n");
+    }
 }

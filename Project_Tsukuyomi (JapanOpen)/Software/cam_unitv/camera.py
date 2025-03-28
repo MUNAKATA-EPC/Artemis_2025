@@ -32,19 +32,19 @@ sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.skip_frames(time = 400)
 sensor.set_contrast(-3)#コントラスト
 sensor.set_brightness(-3)#明るさ
-sensor.set_saturation(3)#彩3~-3
+sensor.set_saturation(0)#彩3~-3
 sensor.skip_frames(time = 250)
 sensor.set_auto_gain(False, gain_db=20, gain_db_ceiling=0) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 #sensor.set_auto_whitebal(True, (-3, -0.5, -0.5))
-sensor.set_auto_whitebal(False, rgb_gain_db = (13, 14, 28))
+#sensor.set_auto_whitebal(False, rgb_gain_db = (23, 20, 30))
 #sensor.__write_reg(0x13, 0x00001000)
 #sensor.set_jb_quality(1)
 
 sensor.skip_frames(time = 200)
 
 #各閾値
-ball_thresholds = [             (35, 68, 38, 82, 30, 73)        ]
+ball_thresholds = [           (53, 82, 15, 77, 59, 75)       ]
 y_goal_thresholds = [       (60, 71, -77, -17, 22, 84)     ]
 b_goal_thresholds = [       (13, 35, 20, 73, -99, -44)      ]
 
@@ -113,7 +113,7 @@ while True:
     clock.tick()                    # Update the FPS clock.
     img = sensor.snapshot() #映像の取得
 
-    img.gamma_corr(gamma=1.0, contrast=1.5, brightness=0)
+    img.gamma_corr(gamma=1.0, contrast=1.2, brightness=0)
 
     if color_tracking_mode == 0 or color_tracking_mode == 1:
         #ボールを見つける
@@ -121,7 +121,7 @@ while True:
         ball_x = 0
         ball_y = 0
 
-        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 2, area_threshold = 2):
+        for blob in img.find_blobs(ball_thresholds, pixel_threshold = 3, area_threshold = 3):
             if blob[2] < 150:
                 ball_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
@@ -170,7 +170,7 @@ while True:
         b_goal_width = 0
         b_goal_hight = 0
 
-        for blob in img.find_blobs(b_goal_thresholds, pixel_threshold = 100, area_threshold = 100, merge = True, margin = 75):
+        for blob in img.find_blobs(b_goal_thresholds, pixel_threshold = 100, area_threshold = 100):
             b_goal_rectarray.append(list(blob.rect()))     #見つかった閾値内のオブジェクトをリストに格納
 
         try:

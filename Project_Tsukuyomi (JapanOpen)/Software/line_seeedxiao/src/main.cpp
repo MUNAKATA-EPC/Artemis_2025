@@ -121,7 +121,7 @@ void loop() {
   //16ピン分のセンサーの値をマルチプレクサから取得する
   for(int i = 0; i < 16; i++)
   {
-    line_circle_values[i] = line_data[i].moving_average(get_from_multiplexer(i)) >= 60 ? 1 : 0;
+    line_circle_values[i] = line_data[i].moving_average(get_from_multiplexer(i)) >= 34 ? 1 : 0;
   }
   output_value = 0;
   

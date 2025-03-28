@@ -182,7 +182,7 @@ void motor_direct_drive(int a, int b, int c, int d, bool a_b, bool b_b , bool c_
 
     String send_data = rotate_a + power_a + rotate_b + power_b + rotate_c + power_c + rotate_d + power_d + power_f_bldc + power_b_bldc;
 
-    Serial.println(send_data);
+    //Serial.println(send_data);
 
     Serial2.println(send_data);
     Serial2.flush();
