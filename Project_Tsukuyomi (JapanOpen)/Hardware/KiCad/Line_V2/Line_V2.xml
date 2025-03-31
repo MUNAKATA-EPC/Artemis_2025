@@ -1,0 +1,1792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi (JapanOpen)/Hardware/KiCad/Line_V2/Line_V2.kicad_sch</source>
+    <date>Thursday, March 06, 2025 at 10:37:18 PM</date>
+    <tool>Eeschema 7.0.11</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Line_V2.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>0.1μ</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>607e9b03-91d3-486e-8142-75a7af1626e6</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>0.1μ</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e0205759-b82a-47e3-92dc-94bed7252646</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7506df27-b8c6-40e1-aac9-ec847aadbb6e</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>59031699-762a-4eb7-8b78-259446f16375</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>74884ab0-5f22-4abc-a9d3-8c09d7811a28</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cff16502-7be8-41be-be7a-87f5520e9ee3</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b453b6e4-3800-4e5e-89c3-f1d382b85b3b</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>39e1effc-cdfa-496d-ab48-c090b545e7dc</tstamps>
+    </comp>
+    <comp ref="D7">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ddefa80d-916b-464f-b2ae-92ae7f43db08</tstamps>
+    </comp>
+    <comp ref="D8">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9037afab-dce8-46ee-a4cb-0119fee03308</tstamps>
+    </comp>
+    <comp ref="D9">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c01db86f-4f8b-4131-b170-63e4656c91e8</tstamps>
+    </comp>
+    <comp ref="D10">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>32ebe95e-a208-41de-9a9b-7fe2005df6c5</tstamps>
+    </comp>
+    <comp ref="D11">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c8313122-7051-4ac7-bb44-05f6bf6cfbd8</tstamps>
+    </comp>
+    <comp ref="D12">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>09ebe350-bd1e-4cd8-a931-8d6d895811f0</tstamps>
+    </comp>
+    <comp ref="D13">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9ecce10-2c2e-4465-a532-2c0e98104c96</tstamps>
+    </comp>
+    <comp ref="D14">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dd84fbbd-179d-4efd-9718-fdfef258df40</tstamps>
+    </comp>
+    <comp ref="D15">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>daf602f8-256d-46f2-994f-8b47ad60554e</tstamps>
+    </comp>
+    <comp ref="D16">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d97bf29a-6eee-4205-bdce-7934534e449e</tstamps>
+    </comp>
+    <comp ref="D17">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eede53ed-5566-4b7f-892b-46472f67296d</tstamps>
+    </comp>
+    <comp ref="D18">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>628994d5-c5c8-43fd-8776-f795447bed7a</tstamps>
+    </comp>
+    <comp ref="D19">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c8cb9c2a-6ca7-4064-87c6-567be609a108</tstamps>
+    </comp>
+    <comp ref="D20">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>86fd5a07-98f5-4826-94a8-c2629cfc980b</tstamps>
+    </comp>
+    <comp ref="D21">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5120530f-3445-4d3c-9d47-5befc2002be2</tstamps>
+    </comp>
+    <comp ref="D22">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6014a08a-3cc9-4a9c-9113-e1420692658e</tstamps>
+    </comp>
+    <comp ref="D23">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>afbf1dbd-420d-4232-a777-5920b496fd40</tstamps>
+    </comp>
+    <comp ref="D24">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c1ce994a-d39a-48f4-9a73-b4bf62a7414f</tstamps>
+    </comp>
+    <comp ref="D25">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3c99a77b-ad14-4851-9dd3-d93ae2610dd0</tstamps>
+    </comp>
+    <comp ref="D26">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a7524897-f1c1-44c6-9745-0b5fe59c76c9</tstamps>
+    </comp>
+    <comp ref="D27">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>98c53e55-2dd0-4d31-9baa-dcde04709038</tstamps>
+    </comp>
+    <comp ref="D28">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0f83156f-6a73-43d1-bbeb-4810f94ecb01</tstamps>
+    </comp>
+    <comp ref="D29">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1e142163-a77d-4f16-9c88-2dc8237a3583</tstamps>
+    </comp>
+    <comp ref="D30">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b79a74c7-72b8-4737-b46c-50f9d75e2523</tstamps>
+    </comp>
+    <comp ref="D31">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f9752cc6-a69b-4537-a925-408a6fbbf742</tstamps>
+    </comp>
+    <comp ref="D32">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C965555</field>
+      </fields>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="LCSC" value="C965555"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="RGB LED with integrated controller"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel addressable"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>690c1ddd-6e3c-402d-87a6-fcc33f724544</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x05_Socket</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x05_Socket" description="Generic connector, single row, 01x05, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x05, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>32b03381-cf04-4b9f-bdfd-e097e157178d</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7a74cacd-a3fc-49cb-8b8c-79e4a32555dc</tstamps>
+    </comp>
+    <comp ref="Q2">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c174540c-95aa-4d9c-a78c-b8f507173c7c</tstamps>
+    </comp>
+    <comp ref="Q3">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0f0ee010-4265-4088-8054-56b834b4bf5a</tstamps>
+    </comp>
+    <comp ref="Q4">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>edcef6ca-26d8-4267-a76d-b743f88278c3</tstamps>
+    </comp>
+    <comp ref="Q5">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>539e7350-3807-4275-94ac-b33d7454ab0c</tstamps>
+    </comp>
+    <comp ref="Q6">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5323ff79-ec45-4295-ad3f-7696699ca2e4</tstamps>
+    </comp>
+    <comp ref="Q7">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>976cb6e6-a85d-46ee-8915-f66deabd2823</tstamps>
+    </comp>
+    <comp ref="Q8">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c3a174fa-557e-42b8-86f4-5905d41d5e37</tstamps>
+    </comp>
+    <comp ref="Q9">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5e2db2f3-f790-4780-b9c4-f40f3e5e7099</tstamps>
+    </comp>
+    <comp ref="Q10">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ccda453e-9e68-43c6-91fb-e291690b07f5</tstamps>
+    </comp>
+    <comp ref="Q11">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9f846895-d16c-4444-9df5-3573ce41ebfd</tstamps>
+    </comp>
+    <comp ref="Q12">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f6d25229-6667-4730-b554-26d46ebceac5</tstamps>
+    </comp>
+    <comp ref="Q13">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7a08449c-95cc-45d0-827b-398db1aa70b9</tstamps>
+    </comp>
+    <comp ref="Q14">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>011e46fc-6109-4b07-8f8c-5e52098a70d6</tstamps>
+    </comp>
+    <comp ref="Q15">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0229ed73-ff73-48b4-b02e-44f49741570b</tstamps>
+    </comp>
+    <comp ref="Q16">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>89f86d01-f17a-4a4a-80b8-2aa6b2da2f65</tstamps>
+    </comp>
+    <comp ref="Q17">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b4ee0e29-76b6-4c2e-b150-0dde42a63250</tstamps>
+    </comp>
+    <comp ref="Q18">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e47ea64a-e9e0-4288-9d97-3a7a2dcda484</tstamps>
+    </comp>
+    <comp ref="Q19">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a06df17-1c76-414a-aeb7-b6f5d56670be</tstamps>
+    </comp>
+    <comp ref="Q20">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1384e208-34e7-4ca1-b067-d444f54608d0</tstamps>
+    </comp>
+    <comp ref="Q21">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ab8c899d-64dd-4ce0-b72d-d35170450afb</tstamps>
+    </comp>
+    <comp ref="Q22">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>898a23e3-1aca-400a-9754-ead3d7f9597f</tstamps>
+    </comp>
+    <comp ref="Q23">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>31057b40-1e58-4c20-b776-867d873e834f</tstamps>
+    </comp>
+    <comp ref="Q24">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8305751e-b4a8-453b-a20e-d93951e52752</tstamps>
+    </comp>
+    <comp ref="Q25">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e2df09c2-984b-4fee-8978-d12f25919b0f</tstamps>
+    </comp>
+    <comp ref="Q26">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b1cae841-2fcb-4344-856f-e295367292e7</tstamps>
+    </comp>
+    <comp ref="Q27">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cff91b64-73b8-48fe-b5ad-ae0360f4e4be</tstamps>
+    </comp>
+    <comp ref="Q28">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00fe9a1e-53b5-4412-8e17-5853f86169b3</tstamps>
+    </comp>
+    <comp ref="Q29">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3c044877-419c-4a84-9745-71fc59c89134</tstamps>
+    </comp>
+    <comp ref="Q30">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>29c1849c-291e-4ec6-82b2-43fedbf4d73a</tstamps>
+    </comp>
+    <comp ref="Q31">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4b3e2df7-731c-4fa1-a860-953a54553054</tstamps>
+    </comp>
+    <comp ref="Q32">
+      <value>Q_Photo_NPN</value>
+      <footprint>LED_THT:LED_D3.0mm</footprint>
+      <libsource lib="Device" part="Q_Photo_NPN" description="NPN phototransistor, collector/emitter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="NPN phototransistor, collector/emitter"/>
+      <property name="ki_keywords" value="phototransistor NPN"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d12ebdf7-15a3-4f4b-9021-a844500b4574</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a67d31ff-3225-40af-8faf-e340ee3fac80</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1630912e-7fce-4413-99a6-1d2238bbad60</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>033a4e42-645c-45b8-b881-547f34914874</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>29ed818b-5e94-4e25-b1e2-90f9a2436ab0</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>64247da3-8333-494d-bcd7-4e8194590d2d</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2a53707a-333f-486e-b0c5-68801762f91a</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e1a11fa6-2470-492b-a08e-3eea7b096802</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7adab07c-d502-4032-8888-3000414e4b58</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2a42bd8e-be00-44b7-8c4c-3cec6136e092</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>832dab22-b8c2-4ebb-9d73-8b23b27efc6b</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dce79bee-4792-44ff-b65e-cdc2fc828f45</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0d53090f-0824-4b88-b06f-69ae43e935bf</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e9844646-1f1e-45de-b71f-9e53a5d03375</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fed01c97-51bd-48be-9d8b-5ade545c4db2</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ac0e6769-cdd3-4703-886a-f081819a7faf</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C912493</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C912493"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>55b492b6-3754-42a1-8ec7-22f6a202f3c3</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>CD74HC4067SM</value>
+      <footprint>Package_SO:SSOP-24_5.3x8.2mm_P0.65mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C98457</field>
+      </fields>
+      <libsource lib="74xx" part="CD74HC4067SM" description="High-Speed CMOS Logic 16-Channel Analog Multiplexer/Demultiplexer, SSOP-24"/>
+      <property name="LCSC" value="C98457"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="High-Speed CMOS Logic 16-Channel Analog Multiplexer/Demultiplexer, SSOP-24"/>
+      <property name="ki_keywords" value="multiplexer demultiplexer mux demux"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>37407d92-b26a-4826-b9a2-81ec966391f9</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>Seeeduino_Xiao</value>
+      <footprint>Seeeduino_Xiao:seeeduinoXIAO</footprint>
+      <libsource lib="seeeduino_xiao" part="Seeeduino_Xiao" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>34bc9491-787a-4f97-872f-032627459ad2</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>AZ1084-5.0</value>
+      <footprint>Package_TO_SOT_SMD:TO-252-2</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/AZ1084.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="AZ1084-5.0" description="5A 12V Fixed LDO Linear Regulator, 1.5V, TO-220/TO-252/TO-263"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Line_V2.kicad_sch"/>
+      <property name="ki_description" value="5A 12V Fixed LDO Linear Regulator, 1.5V, TO-220/TO-252/TO-263"/>
+      <property name="ki_keywords" value="Fixed Voltage Regulator 5A Positive LDO"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eb0c7808-8c38-4955-b979-3cac0f413c75</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="74xx" part="CD74HC4067SM">
+      <description>High-Speed CMOS Logic 16-Channel Analog Multiplexer/Demultiplexer, SSOP-24</description>
+      <docs>http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf</docs>
+      <footprints>
+        <fp>SSOP*5.3x8.2mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CD74HC4067SM</field>
+        <field name="Footprint">Package_SO:SSOP-24_5.3x8.2mm_P0.65mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="COM" type="passive"/>
+        <pin num="2" name="I7" type="passive"/>
+        <pin num="3" name="I6" type="passive"/>
+        <pin num="4" name="I5" type="passive"/>
+        <pin num="5" name="I4" type="passive"/>
+        <pin num="6" name="I3" type="passive"/>
+        <pin num="7" name="I2" type="passive"/>
+        <pin num="8" name="I1" type="passive"/>
+        <pin num="9" name="I0" type="passive"/>
+        <pin num="10" name="S0" type="input"/>
+        <pin num="11" name="S1" type="input"/>
+        <pin num="12" name="GND" type="power_in"/>
+        <pin num="13" name="S3" type="input"/>
+        <pin num="14" name="S2" type="input"/>
+        <pin num="15" name="~{E}" type="input"/>
+        <pin num="16" name="I15" type="passive"/>
+        <pin num="17" name="I14" type="passive"/>
+        <pin num="18" name="I13" type="passive"/>
+        <pin num="19" name="I12" type="passive"/>
+        <pin num="20" name="I11" type="passive"/>
+        <pin num="21" name="I10" type="passive"/>
+        <pin num="22" name="I9" type="passive"/>
+        <pin num="23" name="I8" type="passive"/>
+        <pin num="24" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x05_Socket">
+      <description>Generic connector, single row, 01x05, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Q_Photo_NPN">
+      <description>NPN phototransistor, collector/emitter</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_Photo_NPN</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="passive"/>
+        <pin num="2" name="E" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="LED" part="WS2812B">
+      <description>RGB LED with integrated controller</description>
+      <docs>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</docs>
+      <footprints>
+        <fp>LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WS2812B</field>
+        <field name="Footprint">LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</field>
+        <field name="Datasheet">https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="DOUT" type="output"/>
+        <pin num="3" name="VSS" type="power_in"/>
+        <pin num="4" name="DIN" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="AZ1084-5.0">
+      <description>5A 12V Fixed LDO Linear Regulator, 1.5V, TO-220/TO-252/TO-263</description>
+      <docs>https://www.diodes.com/assets/Datasheets/AZ1084.pdf</docs>
+      <footprints>
+        <fp>TO?220*</fp>
+        <fp>TO?252*</fp>
+        <fp>TO?263*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AZ1084-5.0</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AZ1084.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="VO" type="power_out"/>
+        <pin num="3" name="VI" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="seeeduino_xiao" part="Seeeduino_Xiao">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Seeeduino_Xiao</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DAC" type="bidirectional"/>
+        <pin num="2" name="" type="bidirectional"/>
+        <pin num="3" name="" type="bidirectional"/>
+        <pin num="4" name="" type="bidirectional"/>
+        <pin num="5" name="SDA" type="bidirectional"/>
+        <pin num="6" name="SCL" type="bidirectional"/>
+        <pin num="7" name="TX" type="bidirectional"/>
+        <pin num="8" name="RX" type="bidirectional"/>
+        <pin num="9" name="SCK" type="bidirectional"/>
+        <pin num="10" name="MISO" type="bidirectional"/>
+        <pin num="11" name="MOSI" type="bidirectional"/>
+        <pin num="12" name="3V3" type="power_out"/>
+        <pin num="13" name="GND" type="bidirectional"/>
+        <pin num="14" name="5V" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="74xx">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//74xx.kicad_sym</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="LED">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//LED.kicad_sym</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Regulator_Linear.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3.3V">
+      <node ref="Q1" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q10" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q11" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q12" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q13" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q14" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q15" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q16" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q17" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q18" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q19" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q20" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q21" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q22" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q23" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q24" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q25" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q26" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q27" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q28" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q29" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q3" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q30" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q31" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q32" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q4" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q5" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q6" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q7" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q8" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="Q9" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U2" pin="12" pinfunction="3V3" pintype="power_out"/>
+    </net>
+    <net code="2" name="+5V">
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D10" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D11" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D12" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D13" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D14" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D15" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D16" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D17" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D18" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D19" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D2" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D20" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D21" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D22" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D23" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D24" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D25" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D26" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D27" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D28" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D29" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D3" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D30" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D31" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D32" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D4" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D5" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D6" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D7" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D8" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D9" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U2" pin="14" pinfunction="5V" pintype="power_in"/>
+      <node ref="U3" pin="2" pinfunction="VO" pintype="power_out"/>
+    </net>
+    <net code="3" name="+12V">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="VI" pintype="power_in"/>
+    </net>
+    <net code="4" name="/1">
+      <node ref="Q1" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="I0" pintype="passive"/>
+    </net>
+    <net code="5" name="/1E">
+      <node ref="U1" pin="15" pinfunction="~{E}" pintype="input"/>
+      <node ref="U2" pin="6" pinfunction="SCL" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/1S1">
+      <node ref="U1" pin="11" pinfunction="S1" pintype="input"/>
+      <node ref="U2" pin="3" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/1S2">
+      <node ref="U1" pin="14" pinfunction="S2" pintype="input"/>
+      <node ref="U2" pin="4" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="/1S3">
+      <node ref="U1" pin="13" pinfunction="S3" pintype="input"/>
+      <node ref="U2" pin="5" pinfunction="SDA" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/1SO">
+      <node ref="U1" pin="10" pinfunction="S0" pintype="input"/>
+      <node ref="U2" pin="2" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="/2">
+      <node ref="Q3" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q4" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="I1" pintype="passive"/>
+    </net>
+    <net code="11" name="/3">
+      <node ref="Q5" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q6" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="I2" pintype="passive"/>
+    </net>
+    <net code="12" name="/4">
+      <node ref="Q7" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q8" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="I3" pintype="passive"/>
+    </net>
+    <net code="13" name="/5">
+      <node ref="Q10" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q9" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="I4" pintype="passive"/>
+    </net>
+    <net code="14" name="/6">
+      <node ref="Q11" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q12" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="I5" pintype="passive"/>
+    </net>
+    <net code="15" name="/7">
+      <node ref="Q13" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q14" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="I6" pintype="passive"/>
+    </net>
+    <net code="16" name="/8">
+      <node ref="Q15" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q16" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="I7" pintype="passive"/>
+    </net>
+    <net code="17" name="/9">
+      <node ref="Q17" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q18" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U1" pin="23" pinfunction="I8" pintype="passive"/>
+    </net>
+    <net code="18" name="/10">
+      <node ref="Q19" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q20" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="I9" pintype="passive"/>
+    </net>
+    <net code="19" name="/11">
+      <node ref="Q21" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q22" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="U1" pin="21" pinfunction="I10" pintype="passive"/>
+    </net>
+    <net code="20" name="/12">
+      <node ref="Q23" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q24" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="I11" pintype="passive"/>
+    </net>
+    <net code="21" name="/13">
+      <node ref="Q25" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q26" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U1" pin="19" pinfunction="I12" pintype="passive"/>
+    </net>
+    <net code="22" name="/14">
+      <node ref="Q27" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q28" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="I13" pintype="passive"/>
+    </net>
+    <net code="23" name="/15">
+      <node ref="Q29" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q30" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="I14" pintype="passive"/>
+    </net>
+    <net code="24" name="/16">
+      <node ref="Q31" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q32" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="I15" pintype="passive"/>
+    </net>
+    <net code="25" name="/A">
+      <node ref="D2" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="D29" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="26" name="/B">
+      <node ref="D3" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="D30" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="27" name="/C">
+      <node ref="D31" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D4" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="28" name="/COM1">
+      <node ref="U1" pin="1" pinfunction="COM" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="DAC" pintype="bidirectional"/>
+    </net>
+    <net code="29" name="/LineRX">
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="RX" pintype="bidirectional"/>
+    </net>
+    <net code="30" name="/LineTX">
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="TX" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="/PWM">
+      <node ref="D1" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+    </net>
+    <net code="32" name="GND">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="D1" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D10" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D11" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D12" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D13" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D14" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D15" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D16" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D17" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D18" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D19" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D2" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D20" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D21" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D22" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D23" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D24" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D25" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D26" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D27" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D28" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D29" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D3" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D30" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D31" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D32" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D4" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D5" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D6" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D7" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D8" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D9" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="13" pinfunction="GND" pintype="bidirectional"/>
+      <node ref="U3" pin="1" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="33" name="Net-(D1-DOUT)">
+      <node ref="D1" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D5" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="34" name="Net-(D2-DOUT)">
+      <node ref="D2" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D6" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="35" name="Net-(D3-DOUT)">
+      <node ref="D3" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D7" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="36" name="Net-(D4-DOUT)">
+      <node ref="D4" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D8" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="37" name="Net-(D5-DOUT)">
+      <node ref="D5" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D9" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="38" name="Net-(D10-DIN)">
+      <node ref="D10" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="D6" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="39" name="Net-(D10-DOUT)">
+      <node ref="D10" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D14" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="40" name="Net-(D11-DIN)">
+      <node ref="D11" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="D7" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="41" name="Net-(D11-DOUT)">
+      <node ref="D11" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D15" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="42" name="Net-(D12-DIN)">
+      <node ref="D12" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="D8" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="43" name="Net-(D12-DOUT)">
+      <node ref="D12" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D16" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="44" name="Net-(D13-DIN)">
+      <node ref="D13" pin="4" pinfunction="DIN" pintype="input"/>
+      <node ref="D9" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="45" name="Net-(D13-DOUT)">
+      <node ref="D13" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D17" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="46" name="Net-(D14-DOUT)">
+      <node ref="D14" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D18" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="47" name="Net-(D15-DOUT)">
+      <node ref="D15" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D19" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="48" name="Net-(D16-DOUT)">
+      <node ref="D16" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D20" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="49" name="Net-(D17-DOUT)">
+      <node ref="D17" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D21" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="50" name="Net-(D18-DOUT)">
+      <node ref="D18" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D22" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="51" name="Net-(D19-DOUT)">
+      <node ref="D19" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D23" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="52" name="Net-(D20-DOUT)">
+      <node ref="D20" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D24" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="53" name="Net-(D21-DOUT)">
+      <node ref="D21" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D25" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="54" name="Net-(D22-DOUT)">
+      <node ref="D22" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D26" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="55" name="Net-(D23-DOUT)">
+      <node ref="D23" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D27" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="56" name="Net-(D24-DOUT)">
+      <node ref="D24" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D28" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="57" name="Net-(D25-DOUT)">
+      <node ref="D25" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D29" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="58" name="Net-(D26-DOUT)">
+      <node ref="D26" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D30" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="59" name="Net-(D27-DOUT)">
+      <node ref="D27" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D31" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="60" name="Net-(D28-DOUT)">
+      <node ref="D28" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D32" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="61" name="unconnected-(D32-DOUT-Pad2)">
+      <node ref="D32" pin="2" pinfunction="DOUT" pintype="output+no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(U2-MISO-Pad10)">
+      <node ref="U2" pin="10" pinfunction="MISO" pintype="bidirectional"/>
+    </net>
+    <net code="63" name="unconnected-(U2-MOSI-Pad11)">
+      <node ref="U2" pin="11" pinfunction="MOSI" pintype="bidirectional"/>
+    </net>
+    <net code="64" name="unconnected-(U2-SCK-Pad9)">
+      <node ref="U2" pin="9" pinfunction="SCK" pintype="bidirectional"/>
+    </net>
+  </nets>
+</export>

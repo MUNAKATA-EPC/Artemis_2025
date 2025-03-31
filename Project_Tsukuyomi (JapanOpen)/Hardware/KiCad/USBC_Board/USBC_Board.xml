@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi (JapanOpen)/Hardware/KiCad/USBC_Board/USBC_Board.kicad_sch</source>
+    <date/>
+    <tool>Eeschema 7.0.11</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>USBC_Board.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>45602324-5cd6-45c7-a328-e3604de2b87d</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0ec3911e-6f7a-45f8-a3e9-83f2b320135d</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4643ca43-b59f-45ed-83e1-467237be76d5</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b5b0562e-1ac3-4325-9425-b947c8c39cad</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b8cda8b4-d060-48d0-9cda-2bf69c9e6f32</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>461366a8-cb2e-46c1-9ba4-713c263beeb9</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>be6dc1b5-fbf8-4064-9bf9-8e4f7b12ec91</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9f0ffef8-3d70-4069-8fae-36fda2fb9073</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7aabf178-7e56-4567-9323-534b603d1a4f</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>818bf2aa-32c6-44a5-a557-5c42196996cc</tstamps>
+    </comp>
+    <comp ref="J11">
+      <value>DX07P024MJ1R1500</value>
+      <footprint>DX07P024MJ1R1500:JAE_DX07P024MJ1R1500</footprint>
+      <fields>
+        <field name="Availability">In Stock</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/DX07P024MJ1R1500/JAE+Electronics/view-part/?ref=eda</field>
+        <field name="Description">
+                        
+                            Connector, Plug top mount 24 pos. DX07 Series | JAE Electronics Inc. DX07P024MJ1R1500
+                        
+</field>
+        <field name="LCSC">C134112</field>
+        <field name="MANUFACTURER">JAE Electronics</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">1.625mm</field>
+        <field name="MF">JAE Electronics</field>
+        <field name="MP">DX07P024MJ1R1500</field>
+        <field name="PARTREV">1.0</field>
+        <field name="Package">None</field>
+        <field name="Price">None</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/DX07P024MJ1R1500/JAE+Electronics/view-part/?ref=snap</field>
+      </fields>
+      <libsource lib="DX07P024MJ1R150" part="DX07P024MJ1R1500" description=""/>
+      <property name="MF" value="JAE Electronics"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="1.625mm"/>
+      <property name="Package" value="None"/>
+      <property name="Price" value="None"/>
+      <property name="Check_prices" value="https://www.snapeda.com/parts/DX07P024MJ1R1500/JAE+Electronics/view-part/?ref=eda"/>
+      <property name="STANDARD" value="Manufacturer Recommendations"/>
+      <property name="PARTREV" value="1.0"/>
+      <property name="SnapEDA_Link" value="https://www.snapeda.com/parts/DX07P024MJ1R1500/JAE+Electronics/view-part/?ref=snap"/>
+      <property name="MP" value="DX07P024MJ1R1500"/>
+      <property name="Description" value="&#xA;                        &#xA;                            Connector, Plug top mount 24 pos. DX07 Series | JAE Electronics Inc. DX07P024MJ1R1500&#xA;                        &#xA;"/>
+      <property name="Availability" value="In Stock"/>
+      <property name="MANUFACTURER" value="JAE Electronics"/>
+      <property name="LCSC" value="C134112"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9310e0dc-5c63-4324-9b04-a0e2022d8903</tstamps>
+    </comp>
+    <comp ref="J12">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>75c1ef8a-7699-40c7-acef-0ee2441ac8dc</tstamps>
+    </comp>
+    <comp ref="J13">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>467490af-e68f-4e0b-9036-452a54c93823</tstamps>
+    </comp>
+    <comp ref="J14">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>89dd89b7-5040-4332-9b1f-387ada8f1836</tstamps>
+    </comp>
+    <comp ref="J15">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>846aa1f9-7475-4255-b3c7-b04ed6739876</tstamps>
+    </comp>
+    <comp ref="J16">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eb9ed9f9-9099-4764-88fc-7785f6fdb733</tstamps>
+    </comp>
+    <comp ref="J17">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d799d04e-fe40-4953-a170-c2c05f10909c</tstamps>
+    </comp>
+    <comp ref="J18">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c49e1cf6-0cc2-466b-9009-d19fa4c1b393</tstamps>
+    </comp>
+    <comp ref="J19">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d59e292b-730d-4a39-88f6-23e2b561aad0</tstamps>
+    </comp>
+    <comp ref="J20">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b5429c7d-ac80-488d-ba7e-486401ba81cf</tstamps>
+    </comp>
+    <comp ref="J21">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f47ae7bf-2183-417a-969c-0cafc764da96</tstamps>
+    </comp>
+    <comp ref="J22">
+      <value>Conn_01x01_Socket</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Socket" description="Generic connector, single row, 01x01, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="USBC_Board.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x01, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0ecede21-0318-4571-92e2-82dd1c4ead1f</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x01_Socket">
+      <description>Generic connector, single row, 01x01, script generated</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="DX07P024MJ1R150" part="DX07P024MJ1R1500">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">DX07P024MJ1R1500</field>
+        <field name="Footprint">DX07P024MJ1R1500:JAE_DX07P024MJ1R1500</field>
+        <field name="MF">JAE Electronics</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">1.625mm</field>
+        <field name="Package">None</field>
+        <field name="Price">None</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/DX07P024MJ1R1500/JAE+Electronics/view-part/?ref=eda</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="PARTREV">1.0</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/DX07P024MJ1R1500/JAE+Electronics/view-part/?ref=snap</field>
+        <field name="MP">DX07P024MJ1R1500</field>
+        <field name="Description">
+                        
+                            Connector, Plug top mount 24 pos. DX07 Series | JAE Electronics Inc. DX07P024MJ1R1500
+                        
+</field>
+        <field name="Availability">In Stock</field>
+        <field name="MANUFACTURER">JAE Electronics</field>
+      </fields>
+      <pins>
+        <pin num="A1" name="GNDA" type="power_in"/>
+        <pin num="A2" name="TX1+" type="passive"/>
+        <pin num="A3" name="TX1-" type="passive"/>
+        <pin num="A4" name="A_VBUS" type="power_in"/>
+        <pin num="A5" name="CC1" type="passive"/>
+        <pin num="A6" name="DA+" type="passive"/>
+        <pin num="A7" name="DA-" type="passive"/>
+        <pin num="A8" name="SBU1" type="passive"/>
+        <pin num="A9" name="A_VBUS" type="power_in"/>
+        <pin num="A10" name="RX2-" type="passive"/>
+        <pin num="A11" name="RX2+" type="passive"/>
+        <pin num="A12" name="GNDA" type="power_in"/>
+        <pin num="B1" name="GNDB" type="power_in"/>
+        <pin num="B2" name="TX2+" type="passive"/>
+        <pin num="B3" name="TX2-" type="passive"/>
+        <pin num="B4" name="B_VBUS" type="power_in"/>
+        <pin num="B5" name="CC2" type="passive"/>
+        <pin num="B6" name="DB+" type="passive"/>
+        <pin num="B7" name="DB-" type="passive"/>
+        <pin num="B8" name="SBU2" type="passive"/>
+        <pin num="B9" name="B_VBUS" type="power_in"/>
+        <pin num="B10" name="RX1-" type="passive"/>
+        <pin num="B11" name="RX1+" type="passive"/>
+        <pin num="B12" name="GNDB" type="power_in"/>
+        <pin num="S3" name="SHIELD" type="power_in"/>
+        <pin num="S4" name="SHIELD" type="power_in"/>
+        <pin num="S5" name="SHIELD" type="power_in"/>
+        <pin num="S6" name="SHIELD" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="DX07P024MJ1R150">
+      <uri>/Users/kyle.matsuda/GitHub/Artemis_2025/Project_Tsukuyomi (JapanOpen)/Hardware/KiCad/KiCad_Library/DX07P024MJ1R1500/DX07P024MJ1R1500.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(J1-Pin_1)">
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J11" pin="A4" pinfunction="A_VBUS" pintype="power_in"/>
+      <node ref="J11" pin="A9" pinfunction="A_VBUS" pintype="power_in"/>
+    </net>
+    <net code="2" name="Net-(J10-Pin_1)">
+      <node ref="J10" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J11" pin="A1" pinfunction="GNDA" pintype="power_in"/>
+      <node ref="J11" pin="A12" pinfunction="GNDA" pintype="power_in"/>
+    </net>
+    <net code="3" name="Net-(J11-CC1)">
+      <node ref="J11" pin="A5" pinfunction="CC1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="4" name="Net-(J11-CC2)">
+      <node ref="J11" pin="B5" pinfunction="CC2" pintype="passive"/>
+      <node ref="J15" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="5" name="Net-(J11-DA+)">
+      <node ref="J11" pin="A6" pinfunction="DA+" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(J11-DA-)">
+      <node ref="J11" pin="A7" pinfunction="DA-" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="7" name="Net-(J11-DB+)">
+      <node ref="J11" pin="B6" pinfunction="DB+" pintype="passive"/>
+      <node ref="J13" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(J11-DB-)">
+      <node ref="J11" pin="B7" pinfunction="DB-" pintype="passive"/>
+      <node ref="J14" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(J11-RX1+)">
+      <node ref="J11" pin="B11" pinfunction="RX1+" pintype="passive"/>
+      <node ref="J19" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(J11-RX1-)">
+      <node ref="J11" pin="B10" pinfunction="RX1-" pintype="passive"/>
+      <node ref="J20" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="11" name="Net-(J11-RX2+)">
+      <node ref="J11" pin="A11" pinfunction="RX2+" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="12" name="Net-(J11-RX2-)">
+      <node ref="J11" pin="A10" pinfunction="RX2-" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(J11-SBU1)">
+      <node ref="J11" pin="A8" pinfunction="SBU1" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(J11-SBU2)">
+      <node ref="J11" pin="B8" pinfunction="SBU2" pintype="passive"/>
+      <node ref="J18" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(J11-TX1+)">
+      <node ref="J11" pin="A2" pinfunction="TX1+" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(J11-TX1-)">
+      <node ref="J11" pin="A3" pinfunction="TX1-" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(J11-TX2+)">
+      <node ref="J11" pin="B2" pinfunction="TX2+" pintype="passive"/>
+      <node ref="J16" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(J11-TX2-)">
+      <node ref="J11" pin="B3" pinfunction="TX2-" pintype="passive"/>
+      <node ref="J17" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="19" name="Net-(J12-Pin_1)">
+      <node ref="J11" pin="B4" pinfunction="B_VBUS" pintype="power_in"/>
+      <node ref="J11" pin="B9" pinfunction="B_VBUS" pintype="power_in"/>
+      <node ref="J12" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(J21-Pin_1)">
+      <node ref="J11" pin="B1" pinfunction="GNDB" pintype="power_in"/>
+      <node ref="J11" pin="B12" pinfunction="GNDB" pintype="power_in"/>
+      <node ref="J21" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(J22-Pin_1)">
+      <node ref="J11" pin="S3" pinfunction="SHIELD" pintype="power_in"/>
+      <node ref="J11" pin="S4" pinfunction="SHIELD" pintype="power_in"/>
+      <node ref="J11" pin="S5" pinfunction="SHIELD" pintype="power_in"/>
+      <node ref="J11" pin="S6" pinfunction="SHIELD" pintype="power_in"/>
+      <node ref="J22" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+  </nets>
+</export>
